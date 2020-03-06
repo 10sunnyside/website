@@ -164,7 +164,7 @@ header.masthead {
 }
 
 header.masthead .header-content {
-  max-width: 500px;
+  max-width: 100%;
   margin-bottom: 100px;
   text-align: center;
 }
@@ -196,6 +196,12 @@ header.masthead .device-container .screen img {
   }
   header.masthead .header-content h1 {
     font-size: 50px;
+  }
+  header.masthead .header-content .btn {
+    
+  }
+  header.masthead .header-content .al {
+    float : left;
   }
   header.masthead .device-container {
     max-width: 325px;
