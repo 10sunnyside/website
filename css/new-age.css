@@ -172,7 +172,9 @@ header.masthead .header-content {
 header.masthead .header-content h1 {
   font-size: 30px;
 }
-
+header.masthead .header-content .btn {
+  font-size: 30px;
+}
 header.masthead .device-container {
   max-width: 325px;
   margin-right: auto;
@@ -198,7 +200,7 @@ header.masthead .device-container .screen img {
     font-size: 50px;
   }
   header.masthead .header-content .btn {
-    
+    font-size: 45px;
   }
   header.masthead .header-content .al {
     float : left;
