@@ -179,7 +179,7 @@ header.masthead {
   padding-top: 150px;
   padding-bottom: 100px;
   color: white;
-
+  background: linear-gradient(#fdcc52, #fdc539);
 }
 
 header.masthead .header-content {
