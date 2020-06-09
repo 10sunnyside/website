@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+  
+    <style>
+
+       /* Set the size of the div element that contains the map */
+
+      #map {
+
+        height: 100%;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+        margin: 0px;
+        padding: 0px;
+        position : absolute;
+
+       }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <h3>My Google Maps Demo</h3>
+
+    <!--The div element for the map -->
+
+    <div id="map"></div>
+
+    <script>
+
+// Initialize and add the map
+
+
+var map;
+
+function initMap() {
+
+  // The location of Uluru
+  
+  var uluru = {lat: 45.434038, lng: 12.346914};
+
+  // The map, centered at Uluru
+
+ map = new google.maps.Map(
+
+      document.getElementById('map'), {zoom: 8, center: uluru});
+
+  // The marker, positioned at Uluru
+
+  //var marker = new google.maps.Marker({position: uluru, map: map});
+  for (markerId in markerData) {
+        markers[markerId] = createMarker(markerData[markerId]);
+    }
+    //markers['bing'].setTitle("new title");
+}
+ var markers = {};
+ var boxList =[];
+ var url;
+ var count=0;
+    // inside function createMap(...)
+  
+    markerData = {
+        bing: {
+            lat: 45.434038,
+            lng: 12.346914,
+            icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+            url: "https://www.atributetomusic.it/",
+            title: "Tribute to Music Venice"
+        },
+        yahoo: {
+            lat: 23.688458,
+            lng: -79.300619,
+            icon: "http://labs.google.com/ridefinder/images/mm_20_blue.png",
+            url: "http://www.yahoo.com/",
+            title: "Great free games"
+        }
+    };
+
+
+
+
+function createMarker(data) {
+    var myLatLng = new google.maps.LatLng(data.lat, data.lng);
+    count++;
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        icon: data.icon,
+        map: map,
+        title: data.title
+        //animation:google.maps.Animation.BOUNCE
+
+
+    });
+    //var content = "Loan Number: " + data.title + '</h3>' + "Address: " + data.url
+
+   /* var boxText = document.createElement("div");
+            boxText.id = markerId;
+            boxText.style.cssText = "border: 1px solid black; margin-top: 8px; background: yellow; padding: 5px;";
+            boxText.innerHTML = "InfoBox for " + "hello";
+
+    var ib = new InfoBox(myOptions);
+            boxList.push(ib); */
+
+
+            var boxText = document.createElement("div");
+            boxText.id = count;
+            boxText.style.cssText = "border: 1px solid black; margin-top: 8px; background: yellow; padding: 5px;";
+            boxText.innerHTML = "InfoBox for ";
+
+            var myOptions = {
+                content: boxText
+                ,disableAutoPan: false
+                ,maxWidth: 0
+                ,pixelOffset: new google.maps.Size(-140, 0)
+                ,zIndex: null
+                ,boxStyle: {
+                    background: "url('tipbox.gif') no-repeat"
+                    ,opacity: 0.75
+                    ,width: "280px"
+                }
+                ,closeBoxMargin: "10px 2px 2px 2px"
+                ,closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
+                ,infoBoxClearance: new google.maps.Size(1, 1)
+                ,isHidden: false
+                ,pane: "floatPane"
+                ,enableEventPropagation: false
+            };
+            var ib = new InfoBox(myOptions);
+            boxList.push(ib);
+
+
+//var infowindow = new google.maps.InfoWindow()
+
+var infowindow = new google.maps.InfoWindow({
+            disableAutoPan: true
+          ,isHidden:false
+          ,pixelOffset: new google.maps.Size(-10, -10)
+          ,closeBoxURL: ""
+          ,pane: "mapPane"
+          ,enableEventPropagation: true
+        });
+
+google.maps.event.addListener(marker, "click", (function(marker) {
+      return function(evt) {
+        url=data.url;
+        var content = '<div id="infoWindow" onclick="window.open('
+                    +url
+                    +')">'
+                    +'<div id="bodyContent">'
+                    +'<p>'
+                   // + "This location is:<br>"
+                    + marker.getTitle()
+                    +'</p>'
+                    +'</div>'
+                    + '</div>';
+
+        //var content = "<button onclick='openYT("+ data.url + ")'>" + marker.getTitle() + "</button>";
+        infowindow.setContent(content);
+        infowindow.open(map, marker);
+        boxList[count].open(map, this);
+      }
+    })(marker),count);
+    google.maps.event.addDomListener(boxList[count].content_,'click',(function(marker, i) {
+                    return function() {
+                      alert('clicked ' + count)
+                    }
+                  })(marker, i));
+  }
+
+  
+  function openYT(url){
+    alert(url);
+    var YT = window.open(url);
+  }
+  
+
+  
+    </script>
+
+    <!--Load the API from the specified URL
+
+    * The async attribute allows the browser to render the page while the API loads
+
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+
+    * The callback parameter executes the initMap() function
+
+    -->
+
+    <script
+
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu6Sfm83Qr5-o_k3olARNCQTbq1BjX7WQ&callback=initMap">
+
+    </script>
+        <script type="text/javascript"
+        src="js/infobox.js"> </script>
+        <script type="text/javascript"
+        src="js/infobox_packed.js"> </script>
+        
+  <!--<script src="js/map.js"></script>-->
+  </body>
+
+</html>
