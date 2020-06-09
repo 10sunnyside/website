@@ -50,8 +50,15 @@ p {
   font-size: 18px;
   line-height: 1.5;
   margin-bottom: 20px;
+  text-align:left;
 }
+@media (min-width: 992px) {
 
+  p {
+    text-align:center;
+
+  }
+}
 section {
   padding: 100px 0;
 }
@@ -120,7 +127,8 @@ section h2 {
     background-color: transparent;
   }
   #mainNav .navbar-brand {
-    color: fade(white, 70%);
+    color: white;
+    /*color: fade(white, 70%);*/
   }
   #mainNav .navbar-brand:hover, #mainNav .navbar-brand:focus {
     color: rgb(251, 255, 0);
@@ -328,6 +336,14 @@ section.cta .cta-content {
 
 section.cta .cta-content h2 {
   font-size: 50px;
+  max-width: 450px;
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: white;
+}
+
+section.cta .cta-content h5 {
+  font-size: 30px;
   max-width: 450px;
   margin-top: 0;
   margin-bottom: 25px;
@@ -567,3 +583,6 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
     opacity: 1;
   }
 }
+
+
+
