@@ -3,7 +3,7 @@
 <html>
 
   <head>
-  
+    <link href="css/map.css" rel="stylesheet">
     <style>
 
        /* Set the size of the div element that contains the map */
@@ -23,13 +23,39 @@
   </head>
 
   <body>
-
+      <div class="container">
+        <div class="row">
+      <div class="col-lg-12 my-auto">
+          <div class="container-fluid">
+            <div class="row">
+           <div class="col-lg-8 my-auto">
     <h3>My Google Maps Demo</h3>
 
+</div>
     <!--The div element for the map -->
-
+    <div class="col-lg-4 my-auto">
     <div id="map"></div>
-
+    <button class="accordion">Section 1</button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
+    </div>
+    
+    <button class="accordion">Section 2</button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
+    </div>
+    
+    <button class="accordion">Section 3</button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
     <script>
 
 // Initialize and add the map
@@ -40,14 +66,14 @@ var map;
 function initMap() {
 
   // The location of Uluru
-  
-  var uluru = {lat: 45.434038, lng: 12.346914};
+
+  var NStower = {lat: 36.631154, lng: 127.502926};
 
   // The map, centered at Uluru
 
  map = new google.maps.Map(
 
-      document.getElementById('map'), {zoom: 8, center: uluru});
+      document.getElementById('map'), {zoom: 8, center: NStower});
 
   // The marker, positioned at Uluru
 
@@ -63,32 +89,111 @@ function initMap() {
  var count=0;
     // inside function createMap(...)
   
-    markerData = {
-        bing: {
+    markerData = [
+        {
             lat: 45.434038,
             lng: 12.346914,
             icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
-            url: "https://www.atributetomusic.it/",
+            url: "https://youtu.be/eE6VVJ3hvv8",
             title: "Tribute to Music Venice"
         },
-        yahoo: {
-            lat: 23.688458,
-            lng: -79.300619,
+        {
+            lat: 45.430309688458,
+            lng: 12.329755300619,
             icon: "http://labs.google.com/ridefinder/images/mm_20_blue.png",
-            url: "http://www.yahoo.com/",
-            title: "Great free games"
+            url: "https://youtu.be/JqUREqYduHw",
+            title: "Hotel American Dinesen"
+        },
+        {
+            lat: 45.203078,
+            lng: 12.299722,
+            icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+            url: "https://youtu.be/1pf1qjYpHlY",
+            title: "Hotel Park Chioggia"
+        },        {
+            lat: 45.440705,
+            lng: 12.332468,
+            icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+            url: "https://youtu.be/cjCmsRjxVL0",
+            title: "Hotel San Cassiano"
+        },        {
+            lat: 45.437783,
+            lng: 12.340628,
+            icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+            url: "https://youtu.be/WjOGhNDX51M",
+            title: "Ruzzini Palace Hotel"
+        },        {
+            lat: 45.437039,
+            lng: 12.335081,
+            icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+            url: "https://youtu.be/BPXtn15_9qo",
+            title: "Rialto Bridge"
+        }, {
+            lat: 42.792238,
+            lng: 13.092661,
+            icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+            url: "https://youtu.be/C78daVqDpB8",
+            title: "Piazza S. Benedetto"
+        }, {
+            lat: 67.289901,
+            lng: 14.398237,
+            icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+            url: "https://youtu.be/5BHJBR3_dv8",
+            title: "Bodo harbor KF"
+        }, {
+            lat: 46.521178,
+            lng: 6.636441,
+            icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+            url: "https://youtu.be/TyElel0QjCI",
+            title: "Lausanne, pont Bessières"
+        }, {
+            lat: 43.479394434038,
+            lng: -110.762717,
+            icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+            url: "https://youtu.be/1EiC9bvVGnk",
+            title: "Jackson Hole Wyoming USA Town Square"
+        },        {
+            lat: 37.551279,
+            lng: 126.988227,
+            icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+            url: "https://youtu.be/am2Ivi346tQ",
+            title: "N Seoul Tower"
+        },
+        {
+            lat: 35.147920,
+            lng: 129.130059,
+            icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+            url: "https://youtu.be/_YDqoaTAtww",
+            title: "Gwangan Bridge"
+        },
+        {
+            lat: 37.563188,
+            lng: 126.987358,
+            icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+            url: "https://youtu.be/qFSdE5RTb_g",
+            title: "Myeongdong Catholic Cathedral"
+        },
+        {
+            lat: 35.168334,
+            lng: 129.057178,
+            icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+            url: "https://youtu.be/Zlxa4-BTPAQ",
+            title: "Busan Citizen Park"
         }
-    };
+
+
+    ];
 
 
 
 
 function createMarker(data) {
     var myLatLng = new google.maps.LatLng(data.lat, data.lng);
-    count++;
+    
     var marker = new google.maps.Marker({
+        id : count,
         position: myLatLng,
-        icon: data.icon,
+        //icon: data.icon,
         map: map,
         title: data.title
         //animation:google.maps.Animation.BOUNCE
@@ -107,11 +212,14 @@ function createMarker(data) {
 
 
             var boxText = document.createElement("div");
+            var boxUrl = document.createElement("a");
+            boxUrl.setAttribute('href',markerData[count].url);
+            boxUrl.innerText = markerData[count].title;
             boxText.id = count;
-            boxText.style.cssText = "border: 1px solid black; margin-top: 8px; background: yellow; padding: 5px;";
-            boxText.innerHTML = "InfoBox for ";
+            boxUrl.innerHTML = markerData[count].title;
+            boxList.push(boxUrl);
 
-            var myOptions = {
+            /*var myOptions = {
                 content: boxText
                 ,disableAutoPan: false
                 ,maxWidth: 0
@@ -128,9 +236,8 @@ function createMarker(data) {
                 ,isHidden: false
                 ,pane: "floatPane"
                 ,enableEventPropagation: false
-            };
-            var ib = new InfoBox(myOptions);
-            boxList.push(ib);
+            };*/
+            //var ib = new InfoBox(myOptions);
 
 
 //var infowindow = new google.maps.InfoWindow()
@@ -147,28 +254,26 @@ var infowindow = new google.maps.InfoWindow({
 google.maps.event.addListener(marker, "click", (function(marker) {
       return function(evt) {
         url=data.url;
-        var content = '<div id="infoWindow" onclick="window.open('
-                    +url
-                    +')">'
+        /*var content = '<div id="infoWindow">'
                     +'<div id="bodyContent">'
                     +'<p>'
                    // + "This location is:<br>"
                     + marker.getTitle()
                     +'</p>'
                     +'</div>'
-                    + '</div>';
+                    + '</div>';*/
 
-        //var content = "<button onclick='openYT("+ data.url + ")'>" + marker.getTitle() + "</button>";
-        infowindow.setContent(content);
-        infowindow.open(map, marker);
-        boxList[count].open(map, this);
+        
+
+        var content = boxList[this.id];
+        
+                    infowindow.setContent(content);
+                    infowindow.open(map, marker);
+                
       }
-    })(marker),count);
-    google.maps.event.addDomListener(boxList[count].content_,'click',(function(marker, i) {
-                    return function() {
-                      alert('clicked ' + count)
-                    }
-                  })(marker, i));
+    })(marker));
+
+    count++;
   }
 
   
@@ -190,16 +295,13 @@ google.maps.event.addListener(marker, "click", (function(marker) {
     * The callback parameter executes the initMap() function
 
     -->
-
-    <script
+    
+    <script async defer
 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu6Sfm83Qr5-o_k3olARNCQTbq1BjX7WQ&callback=initMap">
 
     </script>
-        <script type="text/javascript"
-        src="js/infobox.js"> </script>
-        <script type="text/javascript"
-        src="js/infobox_packed.js"> </script>
+
         
   <!--<script src="js/map.js"></script>-->
   </body>
