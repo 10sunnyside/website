@@ -12,7 +12,6 @@
 
   gtag('config', 'UA-169303598-1');
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
     <link href="css/map.css" rel="stylesheet">
     
     <style>
@@ -21,35 +20,14 @@
 
       #map {
 
-        height: 80%;  /* The height is 400 pixels */
-        width: 100%;  /* The width is the width of the web page */
+        height: 100%;  /* The height is 400 pixels */
+        width: 60%;  /* The width is the width of the web page */
         margin: 0px;
-        padding: 0px;
+        padding: 10px;
         position : relative;
         float: left; 
 
        }
-
-       #yt {
-
-height: 100%;  /* The height is 400 pixels */
-width: 60%;  /* The width is the width of the web page */
-margin: 0px;
-padding: 10px;
-position : relative;
-float: left; 
-
-}
-#video {
-
-height: 20%;  /* The height is 400 pixels */
-width: 100%;  /* The width is the width of the web page */
-margin: 0px;
-padding: 0px;
-position : relative;
-float: left; 
-
-}
 
        #list {
          height:100%;
@@ -69,13 +47,8 @@ float: left;
 
 </div>
     <!--The div element for the map -->
-    <div id = "yt">
-      <div id = "video" style ="display:none">
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eE6VVJ3hvv8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div>
-      <div id ="map"></div>
-    </div>
-    <div id ="list">
+    <div id="map"></div>
+    <div id="list">
     <button class="accordion">Section 1</button>
     <div class="panel">
       <p>Lorem ipsum...</p>
@@ -99,7 +72,7 @@ var markerData = [
             lat: 45.434038,
             lng: 12.346914,
             icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
-            url: "https://www.youtube.com/embed/eE6VVJ3hvv8",
+            url: "https://youtu.be/eE6VVJ3hvv8",
             title: "Tribute to Music Venice",
             nation:"Italy"
         },
@@ -107,7 +80,7 @@ var markerData = [
             lat: 45.430309688458,
             lng: 12.329755300619,
             icon: "http://labs.google.com/ridefinder/images/mm_20_blue.png",
-            url: "https://www.youtube.com/embed/JqUREqYduHw",
+            url: "https://youtu.be/JqUREqYduHw",
             title: "Hotel American Dinesen",
             nation:"Italy"
         },
@@ -115,63 +88,63 @@ var markerData = [
             lat: 45.203078,
             lng: 12.299722,
             icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
-            url: "https://www.youtube.com/embed/1pf1qjYpHlY",
+            url: "https://youtu.be/1pf1qjYpHlY",
             title: "Hotel Park Chioggia",
             nation:"Italy"
         },        {
             lat: 45.440705,
             lng: 12.332468,
             icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
-            url: "https://www.youtube.com/embed/cjCmsRjxVL0",
+            url: "https://youtu.be/cjCmsRjxVL0",
             title: "Hotel San Cassiano",
             nation:"Italy"
         },        {
             lat: 45.437783,
             lng: 12.340628,
             icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
-            url: "https://www.youtube.com/embed/WjOGhNDX51M",
+            url: "https://youtu.be/WjOGhNDX51M",
             title: "Ruzzini Palace Hotel",
             nation:"Italy"
         },        {
             lat: 45.437039,
             lng: 12.335081,
             icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
-            url: "https://www.youtube.com/embed/BPXtn15_9qo",
+            url: "https://youtu.be/BPXtn15_9qo",
             title: "Rialto Bridge",
             nation:"Italy"
         }, {
             lat: 42.792238,
             lng: 13.092661,
             icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
-            url: "https://www.youtube.com/embed/C78daVqDpB8",
+            url: "https://youtu.be/C78daVqDpB8",
             title: "Piazza S. Benedetto",
             nation:"Italy"
         }, {
             lat: 67.289901,
             lng: 14.398237,
             icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
-            url: "https://www.youtube.com/embed/5BHJBR3_dv8",
+            url: "https://youtu.be/5BHJBR3_dv8",
             title: "Bodo harbor KF",
             nation:"Norway"
         }, {
             lat: 46.521178,
             lng: 6.636441,
             icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
-            url: "https://www.youtube.com/embed/TyElel0QjCI",
+            url: "https://youtu.be/TyElel0QjCI",
             title: "Lausanne, pont Bessières",
             nation:"Swiss"
         }, {
             lat: 43.479394434038,
             lng: -110.762717,
             icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
-            url: "https://www.youtube.com/embed/1EiC9bvVGnk",
+            url: "https://youtu.be/1EiC9bvVGnk",
             title: "Jackson Hole Wyoming USA Town Square",
             nation:"USA"
         },        {
             lat: 37.551279,
             lng: 126.988227,
             icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
-            url: "https://www.youtube.com/embed/am2Ivi346tQ",
+            url: "https://youtu.be/am2Ivi346tQ",
             title: "N Seoul Tower",
             nation:"Korea"
         },
@@ -179,7 +152,7 @@ var markerData = [
             lat: 35.147920,
             lng: 129.130059,
             icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
-            url: "https://www.youtube.com/embed/_YDqoaTAtww",
+            url: "https://youtu.be/_YDqoaTAtww",
             title: "Gwangan Bridge",
             nation:"Korea"
         },
@@ -187,7 +160,7 @@ var markerData = [
             lat: 37.563188,
             lng: 126.987358,
             icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
-            url: "https://www.youtube.com/embed/qFSdE5RTb_g",
+            url: "https://youtu.be/qFSdE5RTb_g",
             title: "Myeongdong Catholic Cathedral",
             nation:"Korea"
         },
@@ -195,7 +168,7 @@ var markerData = [
             lat: 35.168334,
             lng: 129.057178,
             icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
-            url: "https://www.youtube.com/embed/Zlxa4-BTPAQ",
+            url: "https://youtu.be/Zlxa4-BTPAQ",
             title: "Busan Citizen Park",
             nation:"Korea"
         }
@@ -214,31 +187,22 @@ var i;
 for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
       this.classList.toggle("active");
-        var panel = $(this).nextUntil('button')
+      var children = this.childNodes;
+      for(Cid in children){
       //var panel = this.nextElementSibling;
-      for(Pid in panel){
-        if(Pid=="length"){
-          break;
-        }
-      if (panel[Pid].style.display === "block") {
-        panel[Pid].style.display = "none";
+      if(Cid >0){
+      var panel = children[Cid];
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
       } else {
-        panel[Pid].style.display = "block";
+        panel.style.display = "block";
       }
     }
-    
-  
+  }
     });
   }
 // Initialize and add the map
 
-function moveToLocation(lat, lng){
-
-var center = new google.maps.LatLng(lat, lng);
-
-map.panTo(center);
-
-}
 
 var map;
 
@@ -299,23 +263,22 @@ p.innerText = markerData[id].title;
 //p.addEventListener("click",window.open(markerData[id].url));
 
 div.appendChild(p);
-
+bt.appendChild(div);
 list.appendChild(bt);
-$('#'+ markerData[id].nation).after(div);
 }
 
 else if(checkNation==1){
 var bt = document.getElementById(markerData[id].nation);
 var div = document.createElement("div");
 div.className="panel";
-//div.onclick
+div.onclick
 var p = document.createElement("p")
 p.title = markerData[id].title;
 p.innerText = markerData[id].title;
 //p.addEventListener("click",window.open(markerData[id].url));
 
+bt.appendChild(div);
 div.appendChild(p);
-$('#'+ markerData[id].nation).after(div);
 }
 
 
@@ -412,30 +375,6 @@ google.maps.event.addListener(marker, "click", (function(marker) {
 
     count++;
   }
-
-  $(function(){
-  $('.panel').click(function(){
-    var title =$(this).find("p")[0].title;
-    var url;
-    var lat;
-    var lng;
-    for(tt in markerData){
-      if(markerData[tt].title==title){
-        url=markerData[tt].url;
-        lat=markerData[tt].lat;
-        lng=markerData[tt].lng;
-        break;
-      }
-    }
-
-    $(video).find("iframe")[0].src=url;
-    $(video).css("display","block");
-    moveToLocation(lat,lng);
-
-
-
-  });
-});
 
   
   function openYT(url){
