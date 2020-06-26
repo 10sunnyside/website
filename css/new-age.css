@@ -496,7 +496,7 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 @media (max-width: 768px) {
 .mb-4 {
 
-top:300px;
+top:100px;
   /*border-color: #fdcc52;
   background-color: #fdcc52;*/
 }
@@ -524,7 +524,7 @@ top:300px;
 }
 @media (max-width: 768px) {
 .mb-5 {
-  margin-top: 200px;
+  margin-top: 150px;
 
   color: #fdcc52;
   float: right;
