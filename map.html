@@ -58,6 +58,24 @@ float: left;
          position : relative;
          float: left; 
        }
+
+       #title {
+
+height:auto;  /* The height is 400 pixels */
+width: 60%;  /* The width is the width of the web page */
+margin: 0px;
+padding: 10px;
+position : relative;
+float: left; 
+
+}
+#input-form {
+         height:auto;
+         width: 30%;
+         padding: 10px;
+         position : relative;
+         float: left; 
+       }
     </style>
 
   </head>
@@ -65,8 +83,10 @@ float: left;
   <body>
 
 
-    <h3>Sunny5ive realtime camera map</h3>
-
+    <h3 id="title">Sunny5ive realtime camera map</h3>
+    <div id="input-form">
+      검색 : <input type="text" id="keyword" />
+  </div>
 </div>
     <!--The div element for the map -->
     <div id = "yt">
@@ -93,6 +113,8 @@ float: left;
   </div>
 
     <script>
+      document.cookie = 'same-site-cookie=foo; SameSite=Lax';
+document.cookie = 'cross-site-cookie=bar; SameSite=None; Secure';
 
 var markerData = [
         {
@@ -443,6 +465,25 @@ google.maps.event.addListener(marker, "click", (function(marker) {
     var YT = window.open(url);
   }
   
+  $.extend($.expr[":"], { "containsIN": function(elem, i, match, array) { return (elem.textContent || elem.innerText || "").toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0; } });
+
+
+
+
+  $(document).ready(function() {
+            $("#keyword").keyup(function() {
+                var k = $(this).val();
+                //$("#user-table > tbody > tr").hide();
+                $('.panel').hide();
+                if (k==""){
+                  k=null;
+                }
+                //var temp = $("#user-table > tbody > tr > td:nth-child(5n+2):contains('" + k + "')");
+                var temp = $("p:containsIN('" + k + "')");
+                //$(temp).css("display","block");
+                $(temp).parent().show();
+            })
+        })
 
   
     </script>
