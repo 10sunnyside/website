@@ -504,7 +504,7 @@ top:300px;
 @media (min-width: 768px) {
   .mb-4 {
   
-  top:300px;
+  top:350px;
   
     /*border-color: #fdcc52;
     background-color: #fdcc52;*/
@@ -517,7 +517,7 @@ top:300px;
 
   color: #fdcc52;
   float: right;
-  margin-top: 400px;
+  margin-top: 500px;
   /*border-color: #fdcc52;
   background-color: #fdcc52;*/
 }
