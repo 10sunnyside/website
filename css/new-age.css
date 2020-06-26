@@ -214,7 +214,7 @@ header.masthead .device-container .screen img {
 
 @media (min-width: 992px) {
   header.masthead {
-    height: 100vh;
+    /*height: 100vh;*/
     min-height: 775px;
     padding-top: 0;
     padding-bottom: 0;
@@ -442,6 +442,7 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 }
 
 .bg-primary {
+  opacity:0;
   background: #fdcc52;
   background: -webkit-gradient(linear, left top, left bottom, from(#fdcc52), to(#fdc539));
   background: linear-gradient(#fdcc52, #fdc539);
