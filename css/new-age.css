@@ -215,7 +215,7 @@ header.masthead .device-container .screen img {
 @media (min-width: 992px) {
   header.masthead {
     /*height: 100vh;*/
-    min-height: 775px;
+    /*min-height: 775px;*/
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -540,6 +540,20 @@ top:100px;
 .text-blur-out {
 	-webkit-animation: text-blur-out 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) 3s both;
 	        animation: text-blur-out 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) 3s both;
+}
+
+.paralleogram {
+
+  background-color: white;
+  transform: skew(-20deg);
+  height:100%;
+
+}
+
+.navbar-board {
+
+
+  color:black!important;
 }
 
 /* ----------------------------------------------
