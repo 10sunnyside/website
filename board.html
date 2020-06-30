@@ -100,12 +100,12 @@
     <div class="container h-auto" >
       
       
-      <div class="col-lg-9 my-auto" style="z-index: 10000">
+      <div class="col-lg-9 my-auto" style="z-index: 10000; max-width:100%">
         <!--<div class="header-content mx-auto" style="width:80%">-->
         <div class="header-content mx-auto" >  
           <!--<a href="#download" style="position:absolute; " class="mb-4 btn btn-outline btn-xl js-scroll-trigger text-blur-out">SunnyFive</a>
           <h1 id="1p" style="padding:50px 0px;" class="mb-5 text-blur-out">Anytime, Anywhere</h1></div>-->
-          <h1 id="1p" style="padding:0px 0px; margin-top: 100px; color: black;" >공 고</h1></div>
+          <h1 id="1p" style="padding:0px 0px; margin-top: 100px; color: black; text-align: center;" >공 고</h1></div>
         </div>
       </div>
 
@@ -147,7 +147,7 @@ padding-bottom: 10px;
 .board__container,
 .contents__container,
 .editor__container {
-width: 700px;
+/*width: 700px;*/
 display: flex;
 justify-content: flex-start;
 align-items: center;
@@ -156,7 +156,7 @@ background-color: #ffffff;
 }
  
 .board__container {
-margin: 10px 0px 0px 0px;
+margin: 30px 30px 30px 30px;
 height: 220px;
 padding-top: 10px;
 padding-bottom: 10px;
@@ -185,7 +185,7 @@ box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
  
 /* Board Lists */
 .board {
-width: 600px;
+/*width: 600px;*/
 text-align: center;
 margin-bottom: 15px;
 }
@@ -278,12 +278,54 @@ transform: scale(0.93);
 <th class="board__column">제목</th>
 <th class="board__column">작성자</th>
 <th class="board__column">작성일</th>
-<th class="board__column">조회</th>
+
 </tr>
 </thead>
-<tbody class="board__contents" id="board-body"></tbody>
+
+<tbody class="board__contents" id="board-body">
+  <tr class="board__content">
+    <td class="board__content-column">1</td>
+    <a href="#" id="link-to-content0">
+      <td class="board__content-column"  onClick="window.open('https://www.kipost.net/news/articleView.html?idxno=204071','','')">C랩 인사이드, 이번엔 누가 우수 스타트업으로 선정됐나</td></a>
+      <td class="board__content-column">KIPOST</td>
+      <td class="board__content-column">2020.5.18</td>
+      
+    </tr>
+    <tr class="board__content">
+      <td class="board__content-column">2</td>
+      <a href="#" id="link-to-content0">
+        <td class="board__content-column"  onClick="window.open('https://bit.ly/2zIg8Sw','','')">삼성전자, C랩 과제 5개 스타트업 창업 지원</td></a>
+        <td class="board__content-column">Samsung Newsroom</td>
+        <td class="board__content-column">2020.5.18</td>
+        
+      </tr>
+      <tr class="board__content">
+        <td class="board__content-column">3</td>
+        <a href="#" id="link-to-content0">
+          <td class="board__content-column"  onClick="window.open('http://news.khan.co.kr/kh_news/khan_art_view.html?art_id=202005182144025','','')">햇볕이 쫙…창문을 벽에 붙인다?</td></a>
+          <td class="board__content-column">경향신문</td>
+          <td class="board__content-column">2020.5.18</td>
+          
+        </tr>
+        <tr class="board__content">
+          <td class="board__content-column">4</td>
+          <a href="#" id="link-to-content0">
+            <td class="board__content-column"  onClick="window.open('https://techrecipe.co.kr/posts/17313','','')">햇빛 조명을 그대로 본뜬 스마트창</td></a>
+            <td class="board__content-column">Tech Recipe</td>
+            <td class="board__content-column">2020.6.6</td>
+            
+          </tr>
+          <tr class="board__content">
+            <td class="board__content-column">5</td>
+            <a href="#" id="link-to-content0">
+              <td class="board__content-column"  onClick="window.open('https://www.fnnews.com/news/202005291714181960','','')">[fn이사람]박수연 써니파이브 이사 "물·공기 사는데 햇빛은?"… 벤처사업 뛰어든 10년차 회사원</td></a>
+              <td class="board__content-column">파이낸셜뉴스</td>
+              <td class="board__content-column">2020.5.29</td>
+              
+            </tr>
+</tbody>
 </table>
-<div class="board__index-container" id="index-container"></div>
+<!--<div class="board__index-container" id="index-container"></div>
 </div>
 <div class="contents__container"></div>
 <div class="editor__container">
@@ -302,7 +344,7 @@ placeholder="내용"
 />
 <button class="editor__btn" id="editor-submit-btn">작성 완료</button>
 </form>
-</div>
+</div>-->
 </main>
 <script>
 const boardTableBody = document.querySelector('#board-body');
