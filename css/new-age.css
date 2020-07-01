@@ -589,7 +589,7 @@ table.type10 .even {
 .bgmj {
   position: relative;
   padding: 250px 0;
-  background-image: url("https://github.com/10sunnyside/website/blob/master/img/bgmj.JPG");
+  background-image: url("https://raw.githubusercontent.com/10sunnyside/website/master/img/bgmj.JPG");
   background-position: center;
   background-size: cover;
   max-width: 100%!important;
