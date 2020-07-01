@@ -618,7 +618,7 @@ table.type10 .even {
 .bgjh {
   position: relative;
   padding: 250px 0;
-  background-image: url("../img/bgjh.jpg");
+  background-image: url("../img/bgjh.png");
   background-position: center;
   background-size: cover;
   max-width: 100%!important;
@@ -627,7 +627,7 @@ table.type10 .even {
 .bgmk {
   position: relative;
   padding: 250px 0;
-  background-image: url("../img/bgmk.jpg");
+  background-image: url("../img/bgmk.png");
   background-position: center;
   background-size: cover;
   max-width: 100%!important;
