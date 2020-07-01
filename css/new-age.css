@@ -350,6 +350,19 @@ section.cta .cta-content h5 {
   color: white;
 }
 
+@media (max-width: 768px) {
+  section.cta{
+    padding: 55px 0;
+    background-position: center;
+    background-size: auto;
+
+  }
+  section.cta .cta-content h5 {
+    font-size: 18px;
+  }
+}
+
+
 @media (min-width: 768px) {
   section.cta .cta-content h2 {
     font-size: 80px;
@@ -614,7 +627,7 @@ table.type10 .even {
   position: relative;
   padding: 250px 0;
   background-image: url("../img/bgts.png");
-  background-position: 60%;
+  background-position: 57%;
   background-size: cover;
   max-width: 100%!important;
 
@@ -668,7 +681,7 @@ table.type10 .even {
     position: relative;
     padding: 250px 0;
     background-image: url("../img/m_bgts.png");
-    background-position: 60%;
+    background-position: 57%;
     background-size: cover;
     max-width: 100%!important;
   
@@ -705,6 +718,13 @@ table.type10 .even {
   position: absolute;
   bottom:50px;
  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff; 
+}
+
+@media (max-width: 768px) {
+  .member{
+margin-left: 2vh;
+    font-size: 20px!important;
+  }
 }
 
 .intro{
