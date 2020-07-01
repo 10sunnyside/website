@@ -130,6 +130,7 @@ function(){
 });
 
 
+
 setInterval(function(){
   $('#1p').text(plist[i]);
 
