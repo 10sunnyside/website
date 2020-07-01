@@ -589,7 +589,8 @@ table.type10 .even {
 .bgmj {
   position: relative;
   padding: 250px 0;
-  background-image: url("https://raw.githubusercontent.com/10sunnyside/website/master/img/bgmj.JPG");
+  /*background-image: url("https://raw.githubusercontent.com/10sunnyside/website/master/img/bgmj.png");*/
+  background-image: url("../img/bgmj.png");
   background-position: center;
   background-size: cover;
   max-width: 100%!important;
@@ -599,7 +600,7 @@ table.type10 .even {
 .bgsy {
   position: relative;
   padding: 250px 0;
-  background-image: url("../img/bgsy.jpg");
+  background-image: url("../img/bgsy.png");
   background-position: center;
   background-size: cover;
   max-width: 100%!important;
@@ -609,7 +610,7 @@ table.type10 .even {
 .bgts {
   position: relative;
   padding: 250px 0;
-  background-image: url("../img/clabfair.png");
+  background-image: url("../img/bgts.png");
   background-position: center;
   background-size: cover;
   max-width: 100%!important;
