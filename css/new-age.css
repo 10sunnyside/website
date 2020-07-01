@@ -586,12 +586,15 @@ table.type10 .even {
   background: #fdf3f5;
 }
 
+@media (min-width: 768px) {
 .bgmj {
   position: relative;
   padding: 250px 0;
   /*background-image: url("https://raw.githubusercontent.com/10sunnyside/website/master/img/bgmj.png");*/
   background-image: url("../img/bgmj.png");
   background-position: center;
+  /*background-size: contain;
+  background-repeat: no-repeat;*/
   background-size: cover;
   max-width: 100%!important;
 }
@@ -601,7 +604,7 @@ table.type10 .even {
   position: relative;
   padding: 250px 0;
   background-image: url("../img/bgsy.png");
-  background-position: center;
+  background-position: 65%;
   background-size: cover;
   max-width: 100%!important;
 
@@ -611,7 +614,7 @@ table.type10 .even {
   position: relative;
   padding: 250px 0;
   background-image: url("../img/bgts.png");
-  background-position: center;
+  background-position: 60%;
   background-size: cover;
   max-width: 100%!important;
 
@@ -629,12 +632,67 @@ table.type10 .even {
   position: relative;
   padding: 250px 0;
   background-image: url("../img/bgmk.png");
-  background-position: center;
+  background-position: 60%;
   background-size: cover;
   max-width: 100%!important;
 
 }
 
+}
+
+@media (max-width: 768px) {
+
+  .bgmj {
+    position: relative;
+    padding: 250px 0;
+    /*background-image: url("https://raw.githubusercontent.com/10sunnyside/website/master/img/m_bgmj.png");*/
+    background-image: url("../img/m_bgmj.png");
+    background-position: center;
+    background-size: cover;
+    max-width: 100%!important;
+    height:auto;
+  }
+  
+  
+  .bgsy {
+    position: relative;
+    padding: 250px 0;
+    background-image: url("../img/m_bgsy.png");
+    background-position: 65%;
+    background-size: cover;
+    max-width: 100%!important;
+  
+  
+  }
+  .bgts {
+    position: relative;
+    padding: 250px 0;
+    background-image: url("../img/m_bgts.png");
+    background-position: 60%;
+    background-size: cover;
+    max-width: 100%!important;
+  
+  }
+  .bgjh {
+    position: relative;
+    padding: 250px 0;
+    background-image: url("../img/m_bgjh.png");
+    background-position: center;
+    background-size: cover;
+    max-width: 100%!important;
+  
+  }
+  .bgmk {
+    position: relative;
+    padding: 250px 0;
+    background-image: url("../img/m_bgmk.png");
+    background-position: 60%;
+    background-size: cover;
+    max-width: 100%!important;
+  
+  }
+
+} 
 .mhover {
   position:absolute;
   opacity: 1!important;
