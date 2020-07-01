@@ -80,43 +80,53 @@ $(document).ready(function() {
 
 $('.bgmj').hover(function(){
   $(this).css('opacity','0.5');
-  $(this).find('.mhover').css('display','block');
+  //$(this).find('.mhover').css('display','block');
+  $(this).prev('.mhover').css('display','block');
 },
 function(){
   $(this).css('opacity','1');
-  $(this).find('.mhover').css('display','none');
+  //$(this).find('.mhover').css('display','none');
+  $(this).prev('.mhover').css('display','none');
 });
 $('.bgsy').hover(function(){
   $(this).css('opacity','0.5');
-  $(this).find('.mhover').css('display','block');
+  //$(this).find('.mhover').css('display','block');
+  $(this).prev('.mhover').css('display','block');
 },
 function(){
   $(this).css('opacity','1');
-  $(this).find('.mhover').css('display','none');
+  //$(this).find('.mhover').css('display','none');
+  $(this).prev('.mhover').css('display','none');
 });
 $('.bgts').hover(function(){
   $(this).css('opacity','0.5');
-  $(this).find('.mhover').css('display','block');
+  //$(this).find('.mhover').css('display','block');
+  $(this).prev('.mhover').css('display','block');
 },
 function(){
   $(this).css('opacity','1');
-  $(this).find('.mhover').css('display','none');
+  //$(this).find('.mhover').css('display','none');
+  $(this).prev('.mhover').css('display','none');
 });
 $('.bgjh').hover(function(){
   $(this).css('opacity','0.5');
-  $(this).find('.mhover').css('display','block');
+  //$(this).find('.mhover').css('display','block');
+  $(this).prev('.mhover').css('display','block');
 },
 function(){
   $(this).css('opacity','1');
-  $(this).find('.mhover').css('display','none');
+  //$(this).find('.mhover').css('display','none');
+  $(this).prev('.mhover').css('display','none');
 });
 $('.bgmk').hover(function(){
   $(this).css('opacity','0.5');
-  $(this).find('.mhover').css('display','block');
+  //$(this).find('.mhover').css('display','block');
+  $(this).prev('.mhover').css('display','block');
 },
 function(){
   $(this).css('opacity','1');
-  $(this).find('.mhover').css('display','none');
+  //$(this).find('.mhover').css('display','none');
+  $(this).prev('.mhover').css('display','none');
 });
 
 
