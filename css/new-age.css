@@ -242,6 +242,13 @@ section.download {
   padding: 150px 0;
 }
 
+@media (max-width: 768px) {
+  section.download {
+
+  padding: 100px 0;
+  }
+}
+
 section.download h2 {
   font-size: 50px;
   margin-top: 0;
