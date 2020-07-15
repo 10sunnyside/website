@@ -723,6 +723,7 @@ table.type10 .even {
   z-index: 99999;
   display:none;
   padding:10px;
+  font-size:larger
 }
 
 .member{
