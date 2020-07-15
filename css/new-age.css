@@ -608,6 +608,8 @@ table.type10 .even {
 
 @media (min-width: 768px) {
 .bgmj {
+  /*border-radius: 70%;
+  overflow: hidden;*/
   position: relative;
   padding: 250px 0;
   /*background-image: url("https://raw.githubusercontent.com/10sunnyside/website/master/img/bgmj.png");*/
@@ -638,6 +640,8 @@ table.type10 .even {
   background-size: cover;
   max-width: 100%!important;
 
+  filter: brightness(550%);
+  
 }
 .bgjh {
   position: relative;
