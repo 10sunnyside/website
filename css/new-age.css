@@ -640,7 +640,7 @@ table.type10 .even {
   background-size: cover;
   max-width: 100%!important;
 
-  filter: brightness(550%);
+  /*filter: brightness(550%);*/
   
 }
 .bgjh {
