@@ -111,8 +111,32 @@ float: left;
       <p>Lorem ipsum...</p>
     </div>
   </div>
-
+  <a href="https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=t0m7bcvtee84igtp7lrd080gbno6uf&redirect_uri=http://localhost&scope=user_read">aaaaaaa</a>
     <script>
+
+/*
+$.ajax({
+    url:"https://api.twitch.tv/kraken/streams/?offset=0&limit=100&channel=149747285,197886470",
+    type: "GET",
+    dataType:"json",
+    headers: {
+        "Accept": "application/vnd.twitchtv.v5+json",
+        "Client-ID": "wlamtfby1oxgzfzzemr02kpl32wj6c"
+    },
+})
+    .done(function(channel){
+        console.log(channel);
+    })
+    .fail(function(error){
+        console.log(error);
+    });
+*/
+
+
+
+
+
+
       document.cookie = 'same-site-cookie=foo; SameSite=Lax';
 document.cookie = 'cross-site-cookie=bar; SameSite=None; Secure';
 
