@@ -10,7 +10,7 @@
 <!-- 클라이언트 ID를 넣는다. -->
 <input type="text" name="client_id" value="t0m7bcvtee84igtp7lrd080gbno6uf"> <br />
 <!-- 클라이언트 보안 키를 넣는다. -->
-<input type="text" name="client_secret" value="y824hlyozstlj86t6fk6e0h0ylxnuv"> <br />
+<input type="text" name="client_secret" value="o6d5ngohgbz0jtd22mds4x0kfihges"> <br />
 <!-- 등록한 리디렉트 주소를 여기에 넣는다. -->
 <input type="text" name="redirect_uri" value="https://10sunnyside.github.io/website/redirect.html"> <br />
 <!-- 고정값 -->
@@ -35,12 +35,11 @@ return null;
 // 파라미터 code를 취득하고 URL 디코딩해서 input code에 넣는다.
 $("input[name=code]").val(decodeURIComponent(getParameter('code')));
 
-alert(decodeURIComponent(getParameter('code')));
 
 var token;
 
 $.post("https://id.twitch.tv/oauth2/token", { code : getParameter('code'), client_id: "t0m7bcvtee84igtp7lrd080gbno6uf", 
-client_secret: "y824hlyozstlj86t6fk6e0h0ylxnuv", redirect_uri : "https://10sunnyside.github.io/website/redirect.html",
+client_secret: "o6d5ngohgbz0jtd22mds4x0kfihges", redirect_uri : "https://10sunnyside.github.io/website/redirect.html",
 grant_type : "authorization_code" }, // 서버가 필요한 정보를 같이 보냄. 
 function(data, status) { token = JSON.parse(data).access_token; alert(token); alert(status); //$("#text").html(data + "<br>" + status); // 전송받은 데이터와 전송 성공 여부를 보여줌. 
 } );
