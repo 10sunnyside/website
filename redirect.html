@@ -48,7 +48,7 @@ function(data, status) { token=data; alert(status);
 var test_token =JSON.stringify(token);
 var access_token = JSON.parse(test_token);
 alert(access_token.access_token);
-token = access_token.access_token
+token = access_token.access_token;
 token();
 //$("#text").html(data + "<br>" + status); // 전송받은 데이터와 전송 성공 여부를 보여줌. 
 } );
@@ -58,7 +58,6 @@ function token(){
     alert(token);
 }
 
-token();
 
 </script>
 </body>
