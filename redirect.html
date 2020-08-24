@@ -35,6 +35,7 @@ return null;
 // 파라미터 code를 취득하고 URL 디코딩해서 input code에 넣는다.
 $("input[name=code]").val(decodeURIComponent(getParameter('code')));
 
+alert(decodeURIComponent(getParameter('code')));
 
 var token;
 
