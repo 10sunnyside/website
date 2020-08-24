@@ -38,7 +38,7 @@ $("input[name=code]").val(decodeURIComponent(getParameter('code')));
 $.post("https://id.twitch.tv/oauth2/token", { code : getParameter('code'), client_id: "t0m7bcvtee84igtp7lrd080gbno6uf", 
 client_secret: "y824hlyozstlj86t6fk6e0h0ylxnuv", redirect_uri : "https://10sunnyside.github.io/website/redirect.html",
 grant_type : "authorization_code" }, // 서버가 필요한 정보를 같이 보냄. 
-function(data, status) { alert(data); alert(status); //$("#text").html(data + "<br>" + status); // 전송받은 데이터와 전송 성공 여부를 보여줌. 
+function(data, status) { alert(data[0]); alert(status); //$("#text").html(data + "<br>" + status); // 전송받은 데이터와 전송 성공 여부를 보여줌. 
 } );
 
 
@@ -46,5 +46,6 @@ function(data, status) { alert(data); alert(status); //$("#text").html(data + "<
 </script>
 </body>
 </html>
+
 
 
