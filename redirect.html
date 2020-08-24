@@ -46,7 +46,7 @@ client_secret: "o6d5ngohgbz0jtd22mds4x0kfihges", redirect_uri : "https://10sunny
 grant_type : "authorization_code" }, // 서버가 필요한 정보를 같이 보냄. 
 function(data, status) { token=data; alert(status); //$("#text").html(data + "<br>" + status); // 전송받은 데이터와 전송 성공 여부를 보여줌. 
 } );
-
+alert(token);
 var test_token =JSON.stringify(token);
 var access_token = JSON.parse(test_token);
 alert(access_token.access_token);
