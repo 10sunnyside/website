@@ -514,6 +514,15 @@ if(markerData[id].nation==nationList[Nid])
 
 }
 
+
+var split_url = markerData[id].url.split("embed/")
+var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
+
+
+
+
+
+
 if(checkNation==0){
   nationList.push(markerData[id].nation);
   
@@ -532,12 +541,23 @@ p.innerText = markerData[id].title;
 var split_url = markerData[id].url.split("embed/")
 var img = document.createElement("img")
 img.src = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
-img.style.position="relative"
+//img.style.position="relative"
+img.className = "thumbnail"
+
+img.onerror= "function(){$(this).parent().remove()}"
+
+var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
+
+var src = '<div class="panel"><img src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
+
+
+
 div.appendChild(img);
 div.appendChild(p);
 
 list.appendChild(bt);
-$('#'+ markerData[id].nation).after(div);
+//$('#'+ markerData[id].nation).after(div);
+$('#'+ markerData[id].nation).after(src);
 }
 
 else if(checkNation==1){
@@ -553,11 +573,22 @@ p.innerText = markerData[id].title;
 var split_url = markerData[id].url.split("embed/")
 var img = document.createElement("img")
 img.src = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
-img.style.position="relative"
+
+//img.onerror="function(){$(this).parent().remove()}"
+//var imgCheck = ImageExist("https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg")
+
+var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
+
+var src = '<div class="panel"><img src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
+
+//img.style.position="relative"
+//img.style.borderRadius="10px"
+img.className = "thumbnail"
 div.appendChild(img);
 div.appendChild(p);
 
-$('#'+ markerData[id].nation).after(div);
+//$('#'+ markerData[id].nation).after(div);
+$('#'+ markerData[id].nation).after(src);
 }
 
 
@@ -565,6 +596,23 @@ checkNation=0;
 }
 }
 
+function testImage(URL) {
+
+
+function ImageExist(url) 
+{
+   var img = new Image();
+   img.src = url;
+   return img.height != 0;
+}
+
+function UrlExists(url)
+{
+    var http = new XMLHttpRequest();
+    http.open('HEAD', url, false);
+    http.send();
+    return http.status!=404;
+}
 
 function createMarker(data) {
     var myLatLng = new google.maps.LatLng(data.lat, data.lng);
