@@ -108,7 +108,9 @@ float: left;
 
   <body>
 
-
+<!--https://palpit.tistory.com/828
+https://www.w3schools.com/graphics/google_maps_reference.asp
+-->
     <h3 id="title">Sunny5ive realtime camera map</h3>
     <div id="input-form">
       검색 : <input type="text" id="keyword" />
@@ -116,7 +118,7 @@ float: left;
 </div>
     <!--The div element for the map -->
     <div id ="list" style="overflow-y: scroll;">
-      <button class="accordion">Section 1</button>
+     <!-- <button class="accordion">Section 1</button>
       <div class="panel">
         <p>Lorem ipsum...</p>
       </div>
@@ -129,7 +131,7 @@ float: left;
       <button class="accordion">Section 3</button>
       <div class="panel">
         <p>Lorem ipsum...</p>
-      </div>
+      </div> -->
     </div>
     <div id = "yt">
       <div id = "video" style ="display:none">
@@ -532,28 +534,28 @@ bt.title = markerData[id].nation;
 bt.id = markerData[id].nation;
 bt.innerText=markerData[id].nation;
 
-var div = document.createElement("div");
-div.className="panel";
-var p = document.createElement("p")
-p.title = markerData[id].title;
-p.innerText = markerData[id].title;
-//p.addEventListener("click",window.open(markerData[id].url));
+//var div = document.createElement("div");
+//div.className="panel";
+//var p = document.createElement("p")
+//p.title = markerData[id].title;
+//p.innerText = markerData[id].title;
+////p.addEventListener("click",window.open(markerData[id].url));
 var split_url = markerData[id].url.split("embed/")
-var img = document.createElement("img")
-img.src = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
-//img.style.position="relative"
-img.className = "thumbnail"
+//var img = document.createElement("img")
+//img.src = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
+////img.style.position="relative"
+//img.className = "thumbnail"
 
-img.onerror= "function(){$(this).parent().remove()}"
+//img.onerror= "function(){$(this).parent().remove()}"
 
 var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
 
-var src = '<div class="panel"><img src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
+var src = '<div class="panel_list" ><img src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
 
 
 
-div.appendChild(img);
-div.appendChild(p);
+//div.appendChild(img);
+//div.appendChild(p);
 
 list.appendChild(bt);
 //$('#'+ markerData[id].nation).after(div);
@@ -579,7 +581,7 @@ img.src = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
 
 var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
 
-var src = '<div class="panel"><img src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
+var src = '<div class="panel_list" ><img src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
 
 //img.style.position="relative"
 //img.style.borderRadius="10px"
@@ -596,7 +598,6 @@ checkNation=0;
 }
 }
 
-function testImage(URL) {
 
 
 function ImageExist(url) 
@@ -616,11 +617,13 @@ function UrlExists(url)
 
 function createMarker(data) {
     var myLatLng = new google.maps.LatLng(data.lat, data.lng);
-    
+    var split_url = data.url.split("embed/")
+    var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/default.jpg"
+
     var marker = new google.maps.Marker({
         id : count,
         position: myLatLng,
-        //icon: data.icon,
+        //icon: imgsrc,
         map: map,
         title: data.title
         //animation:google.maps.Animation.BOUNCE
@@ -693,7 +696,7 @@ google.maps.event.addListener(marker, "click", (function(marker) {
         
 
         var content = boxList[this.id];
-        
+                    $('#keyword').val(data.title)
                     infowindow.setContent(content);
                     infowindow.open(map, marker);
                 
@@ -753,7 +756,10 @@ google.maps.event.addListener(marker, "click", (function(marker) {
             })
         })
 
-  
+
+;
+
+
     </script>
 
     <!--Load the API from the specified URL

@@ -28,6 +28,13 @@
   display: none;
   overflow: hidden;
 }
+.panel_list {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  border-bottom: ridge;
+}
 html,
 body {
   width: 100%;
