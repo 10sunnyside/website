@@ -115,6 +115,7 @@ https://www.w3schools.com/graphics/google_maps_reference.asp
     <div id="input-form">
       검색 : <input type="text" id="keyword" />
   </div>
+
 </div>
     <!--The div element for the map -->
     <div id ="list" style="overflow-y: scroll;">
@@ -475,6 +476,8 @@ map.panTo(center);
 }
 
 var map;
+var newNorthEast;
+var newSouthWest;
 
 function initMap() {
 
@@ -490,19 +493,83 @@ function initMap() {
 
   // The marker, positioned at Uluru
 
+
+
+
   //var marker = new google.maps.Marker({position: uluru, map: map});
   for (markerId in markerData) {
         markers[markerId] = createMarker(markerData[markerId]);
     }
     //markers['bing'].setTitle("new title");
+
+    var dragevent = new google.maps.event.addListener(map, 'dragend',
+     function() {
+       var center = map.getCenter();
+       //newlat = marker.getPosition().lat();
+       newlat = center.lat();
+       newlong = center.lng();
+
+       $('#keyword').val(newlat + ', ' + newlong);
+
+       newNorthEast = map.getBounds().getNorthEast();
+       newSouthWest = map.getBounds().getSouthWest();
+
+       //alert(newNorthEast.lat() + " "+ newNorthEast.lng());
+       //alert(newSouthWest.lat() + " "+ newSouthWest.lng());
+     })  //함수를 드래그안에 구현해야 한다.
+     var center = map.getCenter();
+    // var checkscreen = screen(center);
+   // alert(checkscreen); 
+
+ /*  for (markerId in markerData) { // 나중에 위에 FOR문이랑 합쳐야 함
+        if(markerData[markerId].lat < newNorthEast.lat() ){
+          if(markerData[markerId].lat > newSouthWest.lat() )
+          {
+            $(".panel_list").children('p').each( function() { 
+              if($(this).text()==markerData[markerId].title){
+                $(this).parent().display("block")
+              }
+            
+            })
+          }
+       }
+    } */
+
+
+    for (markerId in markerData) {
+        markers[markerId] = screen2(markerData[markerId]);
+    }
+
+    function screen2(data){
+
+if(data.lat < newNorthEast.lat() ){
+      if(data.lat > newSouthWest.lat() )
+      {
+        $(".panel_list").children('p').each( function() { 
+          if($(this).text()==data.title){
+            $(this).parent().display("block")
+          }
+        
+        })
+      }
+   }
 }
+
+
+
+}
+
+
+
+
+
  var markers = {};
  var boxList =[];
  var url;
  var count=0;
     // inside function createMap(...)
   
-    
+
 
 function createList(markerData){
   for(id in markerData){
@@ -630,6 +697,8 @@ function createMarker(data) {
 
 
     });
+
+    
     //var content = "Loan Number: " + data.title + '</h3>' + "Address: " + data.url
 
    /* var boxText = document.createElement("div");
@@ -703,7 +772,36 @@ google.maps.event.addListener(marker, "click", (function(marker) {
       }
     })(marker));
 
+
+
+
     count++;
+  }
+
+
+
+  function screen(latlng){
+    var numTiles = 1 << map.getZoom();
+var projection = map.getProjection();
+var worldCoordinate = projection.fromLatLngToPoint(latlng);
+var pixelCoordinate = new google.maps.Point(
+        worldCoordinate.x * numTiles,
+        worldCoordinate.y * numTiles);
+
+var topLeft = new google.maps.LatLng(
+    map.getBounds().getNorthEast().lat(),
+    map.getBounds().getSouthWest().lng()
+);
+
+var topLeftWorldCoordinate = projection.fromLatLngToPoint(topLeft);
+var topLeftPixelCoordinate = new google.maps.Point(
+        topLeftWorldCoordinate.x * numTiles,
+        topLeftWorldCoordinate.y * numTiles);
+
+return new google.maps.Point(
+        pixelCoordinate.x - topLeftPixelCoordinate.x,
+        pixelCoordinate.y - topLeftPixelCoordinate.y
+)
   }
 
   $(function(){
@@ -754,10 +852,9 @@ google.maps.event.addListener(marker, "click", (function(marker) {
                 //$(temp).css("display","block");
                 $(temp).parent().show();
             })
-        })
+        });
 
 
-;
 
 
     </script>
