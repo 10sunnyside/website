@@ -514,9 +514,19 @@ function initMap() {
        newNorthEast = map.getBounds().getNorthEast();
        newSouthWest = map.getBounds().getSouthWest();
 
+       for (markerId in markerData) {
+        $(".panel_list").children('p').each( function() { 
+          if($(this).text()==markerData[markerId].title){
+            $(this).parent().css( "display", "none" );
+          }
+        
+        })
+        markers[markerId] = screen2(markerData[markerId]);
+    }
+
        //alert(newNorthEast.lat() + " "+ newNorthEast.lng());
        //alert(newSouthWest.lat() + " "+ newSouthWest.lng());
-     })  //함수를 드래그안에 구현해야 한다.
+     })  // screen2 함수를 드래그안에 구현해야 한다.
      var center = map.getCenter();
     // var checkscreen = screen(center);
    // alert(checkscreen); 
@@ -536,21 +546,24 @@ function initMap() {
     } */
 
 
-    for (markerId in markerData) {
-        markers[markerId] = screen2(markerData[markerId]);
-    }
+
 
     function screen2(data){
 
 if(data.lat < newNorthEast.lat() ){
       if(data.lat > newSouthWest.lat() )
       {
+        if(data.lng < newNorthEast.lng() ){
+          if(data.lng > newSouthWest.lng() )
+         {
         $(".panel_list").children('p').each( function() { 
           if($(this).text()==data.title){
-            $(this).parent().display("block")
+            $(this).parent().css( "display", "block" );
           }
-        
+    
         })
+      }
+      }
       }
    }
 }
