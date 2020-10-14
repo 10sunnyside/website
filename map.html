@@ -502,7 +502,10 @@ function initMap() {
     }
     //markers['bing'].setTitle("new title");
 
-    var dragevent = new google.maps.event.addListener(map, 'dragend',
+
+
+// idle 이벤트로 드래그랑 줌을 커버가능함
+  /*  var dragevent = new google.maps.event.addListener(map, 'dragend',
      function() {
        var center = map.getCenter();
        //newlat = marker.getPosition().lat();
@@ -527,6 +530,57 @@ function initMap() {
        //alert(newNorthEast.lat() + " "+ newNorthEast.lng());
        //alert(newSouthWest.lat() + " "+ newSouthWest.lng());
      })  // screen2 함수를 드래그안에 구현해야 한다.
+
+
+     map.addListener("zoom_changed", () => {
+    //infowindow.setContent("Zoom: " + map.getZoom());
+    
+       var center = map.getCenter();
+       //newlat = marker.getPosition().lat();
+       newlat = center.lat();
+       newlong = center.lng();
+
+       $('#keyword').val(newlat + ', ' + newlong);
+
+       newNorthEast = map.getBounds().getNorthEast();
+       newSouthWest = map.getBounds().getSouthWest();
+
+       for (markerId in markerData) {
+        $(".panel_list").children('p').each( function() { 
+          if($(this).text()==markerData[markerId].title){
+            $(this).parent().css( "display", "none" );
+          }
+        
+        })
+        markers[markerId] = screen2(markerData[markerId]);
+    }
+  });*/
+  map.addListener("idle", () => {
+    //infowindow.setContent("Zoom: " + map.getZoom());
+    
+       var center = map.getCenter();
+       //newlat = marker.getPosition().lat();
+       newlat = center.lat();
+       newlong = center.lng();
+
+       $('#keyword').val(newlat + ', ' + newlong);
+
+       newNorthEast = map.getBounds().getNorthEast();
+       newSouthWest = map.getBounds().getSouthWest();
+
+       for (markerId in markerData) {
+        $(".panel_list").children('p').each( function() { 
+          if($(this).text()==markerData[markerId].title){
+            $(this).parent().css( "display", "none" );
+          }
+        
+        })
+        markers[markerId] = screen2(markerData[markerId]);
+    }
+  });
+
+
+
      var center = map.getCenter();
     // var checkscreen = screen(center);
    // alert(checkscreen); 
@@ -639,7 +693,9 @@ var src = '<div class="panel_list" ><img src =' + imgsrc + ' class = "thumbnail"
 
 list.appendChild(bt);
 //$('#'+ markerData[id].nation).after(div);
-$('#'+ markerData[id].nation).after(src);
+var toAddClickListener=$('#'+ markerData[id].nation).after(src);
+
+
 }
 
 else if(checkNation==1){
@@ -669,8 +725,10 @@ img.className = "thumbnail"
 div.appendChild(img);
 div.appendChild(p);
 
-//$('#'+ markerData[id].nation).after(div);
-$('#'+ markerData[id].nation).after(src);
+
+//$('#'+ markerData[id].nation).after(div); // 뒤에다 붙이던가 SRC로 접근
+var toAddClickListener = $('#'+ markerData[id].nation).after(src);
+
 }
 
 
@@ -818,7 +876,7 @@ return new google.maps.Point(
   }
 
   $(function(){
-  $('.panel').click(function(){
+  $('.panel_list').click(function(){
     var title =$(this).find("p")[0].title;
     var url;
     var lat;
