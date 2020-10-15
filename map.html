@@ -563,7 +563,7 @@ function initMap() {
        newlat = center.lat();
        newlong = center.lng();
 
-       $('#keyword').val(newlat + ', ' + newlong);
+       //$('#keyword').val(newlat + ', ' + newlong);
 
        newNorthEast = map.getBounds().getNorthEast();
        newSouthWest = map.getBounds().getSouthWest();
@@ -914,7 +914,7 @@ return new google.maps.Point(
             $("#keyword").keyup(function() {
                 var k = $(this).val();
                 //$("#user-table > tbody > tr").hide();
-                $('.panel').hide();
+                $('.panel_list').hide();
                 if (k==""){
                   k=null;
                 }
