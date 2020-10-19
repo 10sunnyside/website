@@ -19,9 +19,17 @@
 
        /* Set the size of the div element that contains the map */
 
+
+  #wrap {
+    width:100%;
+    height:100%;
+    display: flex;
+}
+
+
       #map {
 
-        height: 80%;  /* The height is 400 pixels */
+        height: 100%;  /* The height is 400 pixels */
         width: 100%;  /* The width is the width of the web page */
         margin: 0px;
         padding: 0px;
@@ -33,7 +41,7 @@
 
 #video {
 
-height: 20%;  /* The height is 400 pixels */
+height: 0%;  /* The height is 400 pixels */
 width: 100%;  /* The width is the width of the web page */
 margin: 0px;
 padding: 0px;
@@ -42,13 +50,33 @@ float: left;
 
 }
 @media (max-width: 744px) {
+  #wrap {
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column-reverse;
+}
   #list {
          height:100%;
          width: 100% !important;
          padding: 10px;
          position : relative;
          float: left; 
+        
        }
+       #yt {
+height: 100%;  /* The height is 400 pixels */
+/* width: calc(100% - 800px) !important;  /* The width is the width of the web page */
+margin: 0px;
+padding: 10px;
+position : relative;
+float: left; 
+display : block;
+
+
+}
+
+
 
 }
 @media (min-width: 744px) and (max-width:1128px) {
@@ -59,6 +87,16 @@ float: left;
          position : relative;
          float: left; 
        }
+       #yt {
+height: 100%;  /* The height is 400 pixels */
+width: calc(100% - 800px) !important;  /* The width is the width of the web page */
+margin: 0px;
+padding: 10px;
+position : relative;
+float: left; 
+display : none;
+
+}
 
 }
 @media (min-width: 1128px) {
@@ -69,6 +107,7 @@ float: left;
          position : relative;
          float: left; 
          min-height: calc(100vh - 80px);
+         
        }
        #yt {
 
@@ -118,6 +157,7 @@ https://www.w3schools.com/graphics/google_maps_reference.asp
 
 </div>
     <!--The div element for the map -->
+    <div id="wrap">
     <div id ="list" style="overflow-y: scroll;">
      <!-- <button class="accordion">Section 1</button>
       <div class="panel">
@@ -140,6 +180,7 @@ https://www.w3schools.com/graphics/google_maps_reference.asp
       </div>
       <div id ="map"></div>
     </div>
+  </div>
     
   <!--<a href="https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=t0m7bcvtee84igtp7lrd080gbno6uf&redirect_uri=http://localhost&scope=user_read">aaaaaaa</a>-->
     <script>
@@ -765,7 +806,7 @@ var split_url = markerData[id].url.split("embed/")
 
 var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
 
-var src = '<div class="panel_list" ><img src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
+var src = '<div class="panel_list" ><img id = "img_panel" src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <div id = "video_panel" style ="display:none"> <iframe width="100%" height="100%" src="'+markerData[id].url+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
 
 
 
@@ -798,7 +839,7 @@ img.src = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
 
 var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
 
-var src = '<div class="panel_list" ><img src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
+var src = '<div class="panel_list" ><img id = "img_panel" src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <div id = "video_panel" style ="display:none"> <iframe width="100%" height="100%" src="'+markerData[id].url+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
 
 //img.style.position="relative"
 //img.style.borderRadius="10px"
@@ -970,10 +1011,23 @@ return new google.maps.Point(
         break;
       }
     }
+    //리스트 클릭시 상단 비디오에 클릭된 비디오 유투브를 띄운다.
 
     $(video).find("iframe")[0].src=url;
     $(video).css("display","block");
-    moveToLocation(lat,lng);
+    
+    
+    
+    $("div[id='video_panel']").hide();
+    $("img[id='img_panel']").show();
+    
+
+    // 아래는 리스트에 직접 비디오를 보여주는 식으로 바꾼 것
+$(this).find("img").hide();
+$(this).find("div[id='video_panel']").show();
+
+//리스트 클릭시 해당 위치를 중점으로 이동 //이동하게되면 또 리스트를 새로 읽어와서 혼란이 있어서 주석처리함
+    //moveToLocation(lat,lng);
 
 
 
