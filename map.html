@@ -798,6 +798,7 @@ if(data.lat < newNorthEast.lat() ){
  var boxList =[];
  var url;
  var count=0;
+ var activeInfoWindow;
     // inside function createMap(...)
   
 
@@ -1000,9 +1001,11 @@ google.maps.event.addListener(marker, "click", (function(marker) {
         
 
         var content = boxList[this.id];
+        if (activeInfoWindow) { activeInfoWindow.close();}
                     $('#keyword').val(data.title)
                     infowindow.setContent(content);
                     infowindow.open(map, marker);
+                    activeInfoWindow = infowindow
                 
       }
     })(marker));
