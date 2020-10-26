@@ -646,13 +646,13 @@ function initMap() {
 
   // The location of Uluru
 
-  var NStower = {lat: 36.631154, lng: 127.502926};
+  var NStower = {lat: 37.522658, lng: 126.984316};
 
   // The map, centered at Uluru
 
  map = new google.maps.Map(
 
-      document.getElementById('map'), {zoom: 8, center: NStower});
+      document.getElementById('map'), {zoom: 12, center: NStower});
 
   // The marker, positioned at Uluru
 
@@ -742,6 +742,11 @@ function initMap() {
     }
   });
 
+  map.addListener("click", () => {
+    //infowindow.setContent("Zoom: " + map.getZoom());
+    
+      activeInfoWindow.close();
+  });
 
 
      var center = map.getCenter();
@@ -793,11 +798,13 @@ if(data.lat < newNorthEast.lat() ){
 
 
 
- var markers = {};
+ var markers = [];
  var boxList =[];
  var url;
  var count=0;
  var activeInfoWindow;
+
+ var markerList = [];
     // inside function createMap(...)
   
 
@@ -1010,6 +1017,7 @@ google.maps.event.addListener(marker, "click", (function(marker) {
     })(marker));
 
 
+    markerList[count]=marker;
 
 
     count++;
@@ -1079,6 +1087,93 @@ $(this).find("div[id='video_panel']").show();
   });
 });
 
+$('.panel_list').mouseenter(function(){
+    var title =$(this).find("p")[0].title;
+    var url;
+    var lat;
+    var lng;
+    for(tt in markerData){
+      if(markerData[tt].title==title){
+        url=markerData[tt].url;
+        lat=markerData[tt].lat;
+        lng=markerData[tt].lng;
+        break;
+      }
+    }
+    var split_url = url.split("embed/")
+    var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/default.jpg"
+
+    for(tt in markerList){
+      if(markerList[tt].title==title){
+        markerList[tt].setIcon(imgsrc);
+        break;
+      }
+    }
+
+    //markerList에서 찾아서 seticon imgsrc로 
+    //리스트 클릭시 상단 비디오에 클릭된 비디오 유투브를 띄운다.
+
+    $(video).find("iframe")[0].src=url;
+    $(video).css("display","block");
+    
+    
+  	$("iframe[id='yt_panel']").each(function() { $(this)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');} );
+    $("div[id='video_panel']").hide();
+    $("img[id='img_panel']").show();
+
+    
+
+    // 아래는 리스트에 직접 비디오를 보여주는 식으로 바꾼 것
+$(this).find("img").hide();
+$(this).find("div[id='video_panel']").show();
+
+//리스트 클릭시 해당 위치를 중점으로 이동 //이동하게되면 또 리스트를 새로 읽어와서 혼란이 있어서 주석처리함 
+    //moveToLocation(lat,lng);
+
+
+
+  });
+
+  $('.panel_list').mouseout(function(){
+    var title =$(this).find("p")[0].title;
+    var url;
+    var lat;
+    var lng;
+    for(tt in markerData){
+      if(markerData[tt].title==title){
+        url=markerData[tt].url;
+        lat=markerData[tt].lat;
+        lng=markerData[tt].lng;
+        break;
+      }
+    }
+    var split_url = url.split("embed/")
+    var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/default.jpg"
+
+    for(tt in markerList){
+      if(markerList[tt].title==title){
+        markerList[tt].setIcon("");
+        break;
+      }
+    }
+
+    //markerList에서 찾아서 seticon imgsrc로 
+    //리스트 클릭시 상단 비디오에 클릭된 비디오 유투브를 띄운다.
+
+
+
+    
+
+    // 아래는 리스트에 직접 비디오를 보여주는 식으로 바꾼 것
+
+
+//리스트 클릭시 해당 위치를 중점으로 이동 //이동하게되면 또 리스트를 새로 읽어와서 혼란이 있어서 주석처리함 
+    //moveToLocation(lat,lng);
+
+
+
+  });
+
   
   function openYT(url){
     alert(url);
@@ -1130,4 +1225,4 @@ $(this).find("div[id='video_panel']").show();
   <!--<script src="js/map.js"></script>-->
   </body>
 
-</html>
+</html> 
