@@ -776,6 +776,8 @@ function initMap() {
   });
 
 
+
+
      var center = map.getCenter();
     // var checkscreen = screen(center);
    // alert(checkscreen); 
@@ -979,13 +981,21 @@ function createMarker(data) {
             boxList.push(ib); */
 
 
+          var img = document.createElement("img");
+          img.src = "https://img.youtube.com/vi/" + split_url[1] + "/default.jpg";
+           img.style.float="left";
+
+
             var boxText = document.createElement("div");
             var boxUrl = document.createElement("a");
             boxUrl.setAttribute('href',markerData[count].url);
             boxUrl.innerText = markerData[count].title;
             boxText.id = count;
             boxUrl.innerHTML = markerData[count].title;
-            boxList.push(boxUrl);
+
+            boxText.appendChild(img);
+            boxText.appendChild(boxUrl);
+            boxList.push(boxText);
 
             /*var myOptions = {
                 content: boxText
@@ -1018,6 +1028,15 @@ var infowindow = new google.maps.InfoWindow({
           ,pane: "mapPane"
           ,enableEventPropagation: true
         });
+
+
+        google.maps.event.addListener(marker, 'mouseover', function() {
+    marker.setIcon();
+});
+google.maps.event.addListener(marker, 'mouseout', function() {
+    marker.setIcon();
+});
+
 
 google.maps.event.addListener(marker, "click", (function(marker) {
       return function(evt) {
