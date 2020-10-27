@@ -1158,7 +1158,7 @@ $('.panel_list').mouseenter(function(){
 
     //markerList에서 찾아서 seticon imgsrc로 
     //리스트 클릭시 상단 비디오에 클릭된 비디오 유투브를 띄운다.
-
+/*
     $(video).find("iframe")[0].src=url;
     $(video).css("display","block");
     
@@ -1173,6 +1173,9 @@ $('.panel_list').mouseenter(function(){
 $(this).find("img").hide();
 $(this).find("div[id='video_panel']").show();
 
+*/
+
+
 //리스트 클릭시 해당 위치를 중점으로 이동 //이동하게되면 또 리스트를 새로 읽어와서 혼란이 있어서 주석처리함 
     //moveToLocation(lat,lng);
 
@@ -1180,7 +1183,7 @@ $(this).find("div[id='video_panel']").show();
 
   });
 
-  $('.panel_list').mouseout(function(){
+  $('.panel_list').mouseleave(function(){
     var title =$(this).find("p")[0].title;
     var url;
     var lat;
