@@ -660,9 +660,9 @@ for (i = 0; i < acc.length; i++) {
 function moveToLocation(lat, lng){
 
 var center = new google.maps.LatLng(lat, lng);
-
 map.panTo(center);
 
+//map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, ZOOM_FACTOR));
 }
 
 var map;
@@ -1126,7 +1126,7 @@ $(this).find("img").hide();
 $(this).find("div[id='video_panel']").show();
 
 //리스트 클릭시 해당 위치를 중점으로 이동 //이동하게되면 또 리스트를 새로 읽어와서 혼란이 있어서 주석처리함
-    //moveToLocation(lat,lng);
+    moveToLocation(lat,lng);
 
 
 
@@ -1149,9 +1149,18 @@ $('.panel_list').mouseenter(function(){
     var split_url = url.split("embed/")
     var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/default.jpg"
 
+    var imgtest = {
+        url: "https://img.youtube.com/vi/" + split_url[1] + "/default.jpg",
+        scale: 8.5,
+        size: new google.maps.Size(200, 80),
+        borderRadius: 10,
+        fillColor: "#F00",
+        fillOpacity: 0.4,
+        strokeWeight: 0.4
+    }
     for(tt in markerList){
       if(markerList[tt].title==title){
-        markerList[tt].setIcon(imgsrc);
+        markerList[tt].setIcon(imgtest);
         break;
       }
     }
@@ -1267,7 +1276,7 @@ $(this).find("div[id='video_panel']").show();
     <script async defer
 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu6Sfm83Qr5-o_k3olARNCQTbq1BjX7WQ&callback=initMap">
-
+      //https://maps.googleapis.com/maps/api/geocode/json?latlng=11.2742848,75.8013801&language=en&result_type=country&key=AIzaSyDu6Sfm83Qr5-o_k3olARNCQTbq1BjX7WQ
     </script>
 
         
