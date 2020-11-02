@@ -607,7 +607,7 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
   /* Style the bubble. */
   /*background-color: white;*/
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 10px;
   font-family: sans-serif;
   overflow-y: auto;
   max-height: 32px;
@@ -658,7 +658,8 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
   /* Style the bubble. */
   /*background-color: white;*/
   
-  border-radius: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   font-family: sans-serif;
   overflow-y: auto;
   /*max-height: 120px ;*/
@@ -673,7 +674,7 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
   height:200px;
   bottom: 8px;
   left: 0;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color:white;
   transform: translate(10%, 0);
 }
@@ -701,8 +702,20 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
   white-space: nowrap;
   width: 200px;
   height: 20px;
-  font-size: small;
+  font-size: 15px;
   padding-left: 5px;
+}
+
+.popup-viewers {
+  float:right;
+  padding:10px;
+}
+
+.popup-broadcast{
+
+  float:right;
+  padding-right:5px;
+
 }
 
 

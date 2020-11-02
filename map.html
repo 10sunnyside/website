@@ -15,9 +15,33 @@
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
     <link href="css/map.css" rel="stylesheet">
-    <script type="text/javascript" src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <style>
 
+
+.fa{
+  font-size: 20px;
+  float: right;
+  position: absolute;
+    top: 10px;
+    right: 10px;
+    color:white;
+}
+
+.fa-bg{
+  font-size: 25px;
+    float: right;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: white;
+
+}
+
+.checked {
+  color: orange;
+}
        /* Set the size of the div element that contains the map */
 
 
@@ -112,12 +136,13 @@ display : none;
        }
        #yt {
 
-height: 100%;  /* The height is 400 pixels */
+height: 90%;  /* The height is 400 pixels */
 width: calc(100% - 800px) !important;  /* The width is the width of the web page */
 margin: 0px;
 padding: 10px;
-position : relative;
-float: left; 
+position : fixed;
+float: rifht;
+right:0px; 
 
 }
 }
@@ -152,14 +177,22 @@ float: left;
 https://www.w3schools.com/graphics/google_maps_reference.asp
 -->
     <h3 id="title">Sunny5ive realtime camera map</h3>
-    <div id="input-form">
+    <div id="input-form" style="display:none">
       검색 : <input type="text" id="keyword" />
   </div>
+  <input
+  id="pac-input"
+  class="controls"
+  type="text"
+  placeholder="Search Box"
+/>
 
 </div>
     <!--The div element for the map -->
     <div id="wrap">
-    <div id ="list" style="overflow-y: scroll;">
+    <div id ="list">
+<!--      <div id ="list" style="overflow-y: scroll;">-->
+
      <!-- <button class="accordion">Section 1</button>
       <div class="panel">
         <p>Lorem ipsum...</p>
@@ -665,6 +698,17 @@ map.panTo(center);
 //map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, ZOOM_FACTOR));
 }
 
+var clickStar = function(){
+  if($(this).hasClass("checked")){
+    $(this).removeClass("checked");
+  }
+  else {
+    $(this).addClass("checked");
+  }
+}
+
+
+
 var map;
 var newNorthEast;
 var newSouthWest;
@@ -699,11 +743,40 @@ function initMap() {
       const popupContent = document.createElement("div");
       popupContent.innerHTML = data.title;
       popupContent.classList.add("popup-content")
+
+      const popupStarBg = document.createElement("span");
+      popupStarBg.classList.add("fa")
+      popupStarBg.classList.add("fa-star")
+      popupStarBg.classList.add("fa-bg")
+
+      const popupStar = document.createElement("span");
+      popupStar.classList.add("fa")
+      popupStar.classList.add("fa-star")
+      popupStar.addEventListener('click', clickStar);
+
+      const popupViewers = document.createElement("div");
+      popupViewers.classList.add("popup-viewers");
+      popupViewers.innerHTML = "1308 watching now "
+
+      const popupBroadcast = document.createElement("img");
+      popupBroadcast.classList.add("popup-broadcast");
+      popupBroadcast.src = localimg;
+
+      const popupWrapper = document.createElement("div");
+      popupWrapper.appendChild(popupBroadcast);
+      popupWrapper.appendChild(popupViewers);
+
+
       // This zero-height div is positioned at the bottom of the bubble.
       const bubbleAnchor = document.createElement("div");
       bubbleAnchor.classList.add("popup2-bubble-anchor");
       bubbleAnchor.appendChild(imgs);
       bubbleAnchor.appendChild(popupContent);
+      bubbleAnchor.appendChild(popupStarBg);
+      bubbleAnchor.appendChild(popupStar);
+      bubbleAnchor.appendChild(popupWrapper);
+      bubbleAnchor.addEventListener('click', function(){ window.open(data.url + "?autoplay=1",data.title,"width=640,height=480")});
+      //function 없이 바로 함수를 넣으면 리스너 등록 과정에서 한번 불리게 됨
       // This zero-height div is positioned at the bottom of the tip.
       this.containerDiv = document.createElement("div");
       this.containerDiv.classList.add("popup-container");
@@ -725,11 +798,10 @@ function initMap() {
 
   // Add a listener - we'll accept clicks anywhere on this div, but you may want
   // to validate the click i.e. verify it occurred in some portion of your overlay.
-  google.maps.event.addDomListener(this.containerDiv, 'click', function() {
-
+  /*google.maps.event.addDomListener(this.containerDiv, 'click', function() {
 
     google.maps.event.trigger(me, 'click');
-  });
+  }); */
 
   // Position your overlay etc.
 
@@ -1003,6 +1075,67 @@ if(data.lat < newNorthEast.lat() ){
       }
    }
 }
+
+
+
+
+
+
+const input = document.getElementById("pac-input");
+  const searchBox = new google.maps.places.SearchBox(input);
+ // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener("bounds_changed", () => {
+    searchBox.setBounds(map.getBounds());
+  });
+  //let markers = [];
+  // Listen for the event fired when the user selects a prediction and retrieve
+  // more details for that place.
+  searchBox.addListener("places_changed", () => {
+    const places = searchBox.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+    // Clear out the old markers.
+    //markers.forEach((marker) => {
+    //  marker.setMap(null);
+    //});
+    //markers = [];
+    // For each place, get the icon, name and location.
+    const bounds = new google.maps.LatLngBounds();
+    places.forEach((place) => {
+      if (!place.geometry) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+      const icon = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25),
+      };
+      // Create a marker for each place.
+     /* markers.push(
+        new google.maps.Marker({
+          map,
+          icon,
+          title: place.name,
+          position: place.geometry.location,
+        })
+      ); */
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
+  });
+
 
 
 
@@ -1317,9 +1450,9 @@ return new google.maps.Point(
     // 아래는 리스트에 직접 비디오를 보여주는 식으로 바꾼 것
 $(this).find("img").hide();
 $(this).find("div[id='video_panel']").show();
-
+$(this).find("iframe[id='yt_panel']")[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
 //리스트 클릭시 해당 위치를 중점으로 이동 //이동하게되면 또 리스트를 새로 읽어와서 혼란이 있어서 주석처리함
-    moveToLocation(lat,lng);
+    //moveToLocation(lat,lng);
 
 
 
@@ -1384,6 +1517,16 @@ $(this).find("div[id='video_panel']").show();
 
 
   });
+
+
+
+
+
+
+
+
+
+
 
   $('.panel_list').mouseleave(function(){
     var title =$(this).find("p")[0].title;
@@ -1468,7 +1611,7 @@ $(this).find("div[id='video_panel']").show();
     
     <script async defer
 
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu6Sfm83Qr5-o_k3olARNCQTbq1BjX7WQ&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu6Sfm83Qr5-o_k3olARNCQTbq1BjX7WQ&callback=initMap&libraries=places&v=weekly">
       //https://maps.googleapis.com/maps/api/geocode/json?latlng=11.2742848,75.8013801&language=en&result_type=country&key=AIzaSyDu6Sfm83Qr5-o_k3olARNCQTbq1BjX7WQ
     </script>
 
