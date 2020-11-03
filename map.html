@@ -156,9 +156,12 @@ height:auto;  /* The height is 400 pixels */
 width: 60%;  /* The width is the width of the web page */
 margin: 0px;
 padding: 10px;
-position : relative;
+position : fixed;
 float: left; 
-
+z-index: 1;
+top: 0;
+/*text-shadow: 0 0 0.2em #F87, 0 0 0.2em #F87, 0 0 0.2em #F87;
+color:rgb(255, 250, 232);*/
 }
 #input-form {
          height:auto;
@@ -176,6 +179,8 @@ float: left;
 <!--https://palpit.tistory.com/828
 https://www.w3schools.com/graphics/google_maps_reference.asp
 -->
+<div id="fake-header" style ="height:40px;"></div>
+  <div id="header" class="sHeader">
     <h3 id="title">Sunny5ive realtime camera map</h3>
     <div id="input-form" style="display:none">
       검색 : <input type="text" id="keyword" />
@@ -186,8 +191,8 @@ https://www.w3schools.com/graphics/google_maps_reference.asp
   type="text"
   placeholder="Search Box"
 />
-
 </div>
+
     <!--The div element for the map -->
     <div id="wrap">
     <div id ="list">
@@ -725,7 +730,7 @@ function initMap() {
 
  map = new google.maps.Map(
 
-      document.getElementById('map'), {zoom: 12, center: NStower});
+      document.getElementById('map'), {zoom: 12, center: NStower,gestureHandling: "greedy"});
 
   // The marker, positioned at Uluru
 
