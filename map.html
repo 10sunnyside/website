@@ -44,6 +44,17 @@
 }
        /* Set the size of the div element that contains the map */
 
+  
+  #noList {
+    height: 50%;
+    position: absolute;
+    width: 50%;
+    /* margin: auto; */
+    /* text-align: center; */
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
 
   #wrap {
     width:100%;
@@ -213,6 +224,7 @@ https://www.w3schools.com/graphics/google_maps_reference.asp
         <p>Lorem ipsum...</p>
       </div> -->
     </div>
+    <div id="noList">There is no Live Camera in this area</div>
     <div id = "yt">
       <div id = "video" style ="display:none">
         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eE6VVJ3hvv8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -712,6 +724,15 @@ var clickStar = function(){
   }
 }
 
+var clickPopup = function(event,data){
+   
+   var starCheck = $(event.target).attr('class')
+   //즐겨찾기 클릭시 사이트 이동 방지
+if($(event.target).hasClass('fa')){ }
+else{
+   window.open(data.url + "?autoplay=1",data.title,"width=640,height=480");
+}
+}
 
 
 var map;
@@ -720,6 +741,8 @@ var newSouthWest;
 var tester;
 var popup2;
 var popupData;
+var panelCount;
+
 function initMap() {
 
   // The location of Uluru
@@ -759,9 +782,24 @@ function initMap() {
       popupStar.classList.add("fa-star")
       popupStar.addEventListener('click', clickStar);
 
+      var viewerNumbers;
+      var liveViewerNumbers;
       const popupViewers = document.createElement("div");
       popupViewers.classList.add("popup-viewers");
-      popupViewers.innerHTML = "1308 watching now "
+     
+      $.getJSON('https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails&id='+ split_url +'&fields=items%2FliveStreamingDetails%2FconcurrentViewers&key=AIzaSyDu6Sfm83Qr5-o_k3olARNCQTbq1BjX7WQ', function(data) {
+        liveViewerNumbers = data.items[0].liveStreamingDetails.concurrentViewers;
+          if(liveViewerNumbers==undefined){
+            $.getJSON('https://www.googleapis.com/youtube/v3/videos?part=statistics&id=' + split_url + '&key=AIzaSyDu6Sfm83Qr5-o_k3olARNCQTbq1BjX7WQ', function(data) {
+        viewerNumbers = data.items[0].statistics.viewCount;
+        popupViewers.innerHTML = viewerNumbers +" watched "
+      });
+          }
+          else {
+            popupViewers.innerHTML = liveViewerNumbers +" watching now "
+
+          }
+      });
 
       const popupBroadcast = document.createElement("img");
       popupBroadcast.classList.add("popup-broadcast");
@@ -780,7 +818,7 @@ function initMap() {
       bubbleAnchor.appendChild(popupStarBg);
       bubbleAnchor.appendChild(popupStar);
       bubbleAnchor.appendChild(popupWrapper);
-      bubbleAnchor.addEventListener('click', function(){ window.open(data.url + "?autoplay=1",data.title,"width=640,height=480")});
+      bubbleAnchor.addEventListener('click', function(){clickPopup(event,data)});
       //function 없이 바로 함수를 넣으면 리스너 등록 과정에서 한번 불리게 됨
       // This zero-height div is positioned at the bottom of the tip.
       this.containerDiv = document.createElement("div");
@@ -1009,7 +1047,8 @@ function initMap() {
   });*/
   map.addListener("idle", () => {
     //infowindow.setContent("Zoom: " + map.getZoom());
-    
+       panelCount = 0;
+
        var center = map.getCenter();
        //newlat = marker.getPosition().lat();
        newlat = center.lat();
@@ -1062,7 +1101,7 @@ function initMap() {
 
 
     function screen2(data){
-
+      $("#noList").css("display","none");
 if(data.lat < newNorthEast.lat() ){
       if(data.lat > newSouthWest.lat() )
       {
@@ -1072,12 +1111,21 @@ if(data.lat < newNorthEast.lat() ){
         $(".panel_list").children('p').each( function() { 
           if($(this).text()==data.title){
             $(this).parent().css( "display", "block" );
+            panelCount++;
           }
     
         })
       }
       }
       }
+   }
+   if(panelCount==0){
+     $("#noList").css("display","flex");
+     //현재 지도에 보여줄 카메라가 없는 경우  
+   }
+   else{
+    $("#noList").css("display","none");
+
    }
 }
 
@@ -1600,7 +1648,7 @@ $(this).find("div[id='video_panel']").show();
         });
 
 
-
+        
 
     </script>
 

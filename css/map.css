@@ -604,10 +604,10 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(-50%, -100%);
+ /* transform: translate(-50%, -100%);*/
   /* Style the bubble. */
   /*background-color: white;*/
-  padding: 5px;
+  /*padding: 5px;*/
   border-radius: 10px;
   font-family: sans-serif;
   overflow-y: auto;
