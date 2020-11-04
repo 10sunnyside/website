@@ -30,11 +30,12 @@
   overflow: hidden;
 }
 .panel_list {
-  padding: 0 18px;
+  width:108%;
+  padding: 10px 0px;
   background-color: white;
   display: none;
   overflow: hidden;
-  border-bottom: ridge;
+  border-bottom: 1px solid lightgray;
 }
 html,
 body {
@@ -803,7 +804,7 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 
 .sHeader {
   box-shadow: 0 3px 5px grey;
-  height: 40px;
+  height: 110px;
   /*background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background: linear-gradient(-45deg, #ff5f37, #ff9659, hsl(36, 100%, 58%), #ffe46b);*/
 	background-size: 400% 400%;
@@ -813,7 +814,84 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
     z-index: 1;
     top: 0;
     background-color: white;
+    background: #ffffff;
+  overflow: hidden;
+  font-family: 'Rubik Mono One', sans-serif;
 }
+
+
+
+
+.words {
+  margin-left: 30px;
+  color: #ffffff;
+  font-size: 0;
+  line-height: 1;
+}
+.words span {
+  font-size: 120px;
+  display: inline-block;
+  -webkit-animation: move 2s ease-in-out infinite;
+          animation: move 2s ease-in-out infinite;
+}
+.words span:nth-child(2) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.words span:nth-child(3) {
+  -webkit-animation-delay: 1.0s;
+          animation-delay: 1.0s;
+}
+.words span:nth-child(4) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+.words span:nth-child(5) {
+  -webkit-animation-delay: 2.0s;
+          animation-delay: 2.0s;
+}
+.words span:nth-child(6) {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+.words span:nth-child(7) {
+  -webkit-animation-delay: 3.0s;
+          animation-delay: 3.0s;
+}
+ 
+@-webkit-keyframes move {
+  0% {
+    -webkit-transform: translate(-33%, 0);
+            transform: translate(-33%, 0);
+  }
+  50% {
+    text-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  }
+  100% {
+    -webkit-transform: translate(33%, 0);
+            transform: translate(33%, 0);
+  }
+}
+ 
+@keyframes move {
+  0% {
+    -webkit-transform: translate(-33%, 0);
+            transform: translate(-33%, 0);
+  }
+  50% {
+    text-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  }
+  100% {
+    -webkit-transform: translate(33%, 0);
+            transform: translate(33%, 0);
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+
+
 
 
 @keyframes gradient {
