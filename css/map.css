@@ -204,10 +204,20 @@ section h2 {
   }
 }
 
-#video_panel{
-    width : 321px;
-    height : 181px;
+#img_panel{
+  width : 480px;
+  height : 272px;
+overflow:hidden;
+object-fit: cover;
+}
 
+#video_panel{
+    width : 480px;
+    height : 272px;
+}
+#yt_panel{
+  border-radius: 10px;
+  background-color: black;
 }
 
 /*header.masthead {
