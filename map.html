@@ -245,14 +245,14 @@ https://www.w3schools.com/graphics/google_maps_reference.asp
       <div id ="map"></div>
     </div>
   </div>
-  <!--<iframe
+  <iframe
   src="https://player.twitch.tv/?channel=minjuni2848&parent=sunnyfive.net&muted=true"
   height="720"
   width="1280"
   frameborder="0"
   scrolling="no"
   allowfullscreen="true">
-</iframe>-->
+</iframe>
   
   <a href="https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=t0m7bcvtee84igtp7lrd080gbno6uf&redirect_uri=https://sunnyfive.net/redirect.html&scope=user_read">aaaaaaa</a>
     <script>
@@ -1307,6 +1307,7 @@ if(markerData[id].url.indexOf("youtube")!=-1){
     var div = document.createElement("div");
     div.className = "panel_list";
     var img = document.createElement("img");
+        img.id = "img_panel";
         img.className = "thumbnail"
     var split_url = markerData[id].url.split("=");
         split_url = split_url[1].split("&");
@@ -1334,6 +1335,7 @@ if(markerData[id].url.indexOf("youtube")!=-1){
     parent: ["sunnyfive.net","localhost"]
   };
   var player = new Twitch.Player("twitch_panel_" + listCount, options);
+  eval("var player" + listCount + "=" + player );
   player.setVolume(0.5);
   
       }
@@ -1402,6 +1404,7 @@ if(markerData[id].url.indexOf("youtube")!=-1){
         var div = document.createElement("div");
     div.className = "panel_list";
     var img = document.createElement("img");
+        img.id = "img_panel";
         img.className = "thumbnail"
     var split_url = markerData[id].url.split("=");
         split_url = split_url[1].split("&");
