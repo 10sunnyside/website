@@ -13,6 +13,8 @@
 
   gtag('config', 'UA-169303598-1');
 </script>
+<script src="https://player.twitch.tv/js/embed/v1.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
     <link href="css/map.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -275,6 +277,7 @@ $.ajax({
 
 
 
+var listCount = 0;
 
 
 
@@ -1247,7 +1250,6 @@ const input = document.getElementById("pac-input");
  var activePopup;
  var popupCount = 0;
  var popupList=[];
-
  var markerList = [];
     // inside function createMap(...)
   
@@ -1282,12 +1284,65 @@ bt.className="accordion";
 bt.title = markerData[id].nation;
 bt.id = markerData[id].nation;
 bt.innerText=markerData[id].nation;
+var p = document.createElement("p")
+p.title = markerData[id].title;
+p.innerText = markerData[id].title;
+
+
+if(markerData[id].url.indexOf("youtube")!=-1){
+
+
+  var split_url = markerData[id].url.split("embed/")
+    var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
+    var localimg = "./img/youtube.png"
+
+    var src = '<div class="panel_list" ><img id = "img_panel" src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <div id = "video_panel" style ="display:none"> <iframe id="yt_panel" width="100%" height="100%" src="'+markerData[id].url+'?enablejsapi=1&version=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
+
+      var toAddClickListener=$('#'+ markerData[id].nation).after(src);
+
+      }
+      else{
+
+
+    var div = document.createElement("div");
+    div.className = "panel_list";
+    var img = document.createElement("img");
+        img.className = "thumbnail"
+    var split_url = markerData[id].url.split("=");
+        split_url = split_url[1].split("&");
+    var imgsrc = "https://static-cdn.jtvnw.net/previews-ttv/live_user_"+ split_url[0]+ "-480x272.jpg"
+
+    img.src = imgsrc;
+
+    var video_panel = document.createElement("div");
+    video_panel.id = "video_panel";
+
+    var twitch_panel = document.createElement("div");
+        twitch_panel.id = "twitch_panel_" + listCount;
+
+    div.appendChild(img)
+    video_panel.appendChild(twitch_panel);
+    div.appendChild(video_panel);
+    div.appendChild(p);
+    $('#'+ markerData[id].nation).after([div]); 
+
+    var options = {
+    width: 854,
+    height: 480,
+    channel: "minjuni2848",
+    // only needed if your site is also embedded on embed.example.com and othersite.example.com
+    parent: ["sunnyfive.net","localhost"]
+  };
+  var player = new Twitch.Player("twitch_panel_" + listCount, options);
+  player.setVolume(0.5);
+  
+      }
 
 //var div = document.createElement("div");
 //div.className="panel";
 //var p = document.createElement("p")
 //p.title = markerData[id].title;
-//p.innerText = markerData[id].title;
+//=p.innerText = markerData[id].title;
 ////p.addEventListener("click",window.open(markerData[id].url));
 var split_url = markerData[id].url.split("embed/")
 //var img = document.createElement("img")
@@ -1297,22 +1352,11 @@ var split_url = markerData[id].url.split("embed/")
 
 //img.onerror= "function(){$(this).parent().remove()}"
 
-var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
-
-if(markerData[id].url.indexOf("youtube")!=-1){
-    var split_url = markerData[id].url.split("embed/")
-    var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
-    var localimg = "./img/youtube.png"
-      }
-      else{
-        var split_url = markerData[id].url.split("=");
-        split_url = split_url[1].split("&");
-    var imgsrc = "https://static-cdn.jtvnw.net/previews-ttv/live_user_"+ split_url[0]+ "-480x272.jpg"
-      }
 
 
 
-var src = '<div class="panel_list" ><img id = "img_panel" src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <div id = "video_panel" style ="display:none"> <iframe id="yt_panel" width="100%" height="100%" src="'+markerData[id].url+'?enablejsapi=1&version=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
+
+//var src = '<div class="panel_list" ><img id = "img_panel" src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <div id = "video_panel" style ="display:none"> <iframe id="yt_panel" width="100%" height="100%" src="'+markerData[id].url+'?enablejsapi=1&version=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
 
 
 
@@ -1321,59 +1365,92 @@ var src = '<div class="panel_list" ><img id = "img_panel" src =' + imgsrc + ' cl
 
 list.appendChild(bt);
 //$('#'+ markerData[id].nation).after(div);
-var toAddClickListener=$('#'+ markerData[id].nation).after(src);
+//var toAddClickListener=$('#'+ markerData[id].nation).after(src);
 
 
 }
 
 else if(checkNation==1){
 var bt = document.getElementById(markerData[id].nation);
-var div = document.createElement("div");
-div.className="panel";
+//var div = document.createElement("div");
+//div.className="panel";
 //div.onclick
 var p = document.createElement("p")
 p.title = markerData[id].title;
 p.innerText = markerData[id].title;
 //p.addEventListener("click",window.open(markerData[id].url));
 
-var split_url = markerData[id].url.split("embed/")
-var img = document.createElement("img")
-img.src = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
+//var split_url = markerData[id].url.split("embed/")
+//var img = document.createElement("img")
+//img.src = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
 
 //img.onerror="function(){$(this).parent().remove()}"
 //var imgCheck = ImageExist("https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg")
 
-var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
+//var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
 
 if(markerData[id].url.indexOf("youtube")!=-1){
     var split_url = markerData[id].url.split("embed/")
     var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/hqdefault.jpg"
     var localimg = "./img/youtube.png"
+    var src = '<div class="panel_list" ><img id = "img_panel" src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <div id = "video_panel" style ="display:none"> <iframe id="yt_panel" width="100%" height="100%" src="'+markerData[id].url+'?enablejsapi=1&version=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
+
+      var toAddClickListener = $('#'+ markerData[id].nation).after(src);
+
       }
       else{
-        var split_url = markerData[id].url.split("=");
+        var div = document.createElement("div");
+    div.className = "panel_list";
+    var img = document.createElement("img");
+        img.className = "thumbnail"
+    var split_url = markerData[id].url.split("=");
         split_url = split_url[1].split("&");
     var imgsrc = "https://static-cdn.jtvnw.net/previews-ttv/live_user_"+ split_url[0]+ "-480x272.jpg"
+
+    img.src = imgsrc;
+
+    var video_panel = document.createElement("div");
+    video_panel.id = "video_panel";
+
+    var twitch_panel = document.createElement("div");
+        twitch_panel.id = "twitch_panel_" + listCount;
+
+    div.appendChild(img)
+    video_panel.appendChild(twitch_panel);
+    div.appendChild(video_panel);
+    div.appendChild(p);
+    $('#'+ markerData[id].nation).after([div]); 
+
+    var options = {
+    width: 854,
+    height: 480,
+    channel: "minjuni2848",
+    // only needed if your site is also embedded on embed.example.com and othersite.example.com
+    parent: ["sunnyfive.net","localhost"]
+  };
+  var player = new Twitch.Player("twitch_panel_" + listCount, options);
+  player.setVolume(0.5);
+
       }
 
 
-var src = '<div class="panel_list" ><img id = "img_panel" src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <div id = "video_panel" style ="display:none"> <iframe id="yt_panel" width="100%" height="100%" src="'+markerData[id].url+'?enablejsapi=1&version=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
+//var src = '<div class="panel_list" ><img id = "img_panel" src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <div id = "video_panel" style ="display:none"> <iframe id="yt_panel" width="100%" height="100%" src="'+markerData[id].url+'?enablejsapi=1&version=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
 
 //img.style.position="relative"
 //img.style.borderRadius="10px"
-img.className = "thumbnail"
-div.appendChild(img);
-div.appendChild(p);
+//img.className = "thumbnail"
+//div.appendChild(img);
+//div.appendChild(p);
 
 
 //$('#'+ markerData[id].nation).after(div); // 뒤에다 붙이던가 SRC로 접근
-var toAddClickListener = $('#'+ markerData[id].nation).after(src);
 
 }
 
 
 checkNation=0;
 }
+listCount++;
 }
 
 
@@ -1573,6 +1650,8 @@ $(this).find("iframe[id='yt_panel']")[0].contentWindow.postMessage('{"event":"co
 //리스트 클릭시 해당 위치를 중점으로 이동 //이동하게되면 또 리스트를 새로 읽어와서 혼란이 있어서 주석처리함
     //moveToLocation(lat,lng);
 
+
+$(this).find()
 
 
   });
