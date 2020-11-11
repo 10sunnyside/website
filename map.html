@@ -88,7 +88,7 @@ position : relative;
 float: left; 
 
 }
-@media (max-width: 768px) {
+@media (max-width: 1128px) {
   #wrap {
     width:100%;
     height:100%;
@@ -118,7 +118,7 @@ display : block;
 
 
 }
-@media (min-width: 768px) and (max-width:1128px) {
+/*@media (min-width: 768px) and (max-width:1128px) {
   #list {
          height:100%;
          width: 100% !important;
@@ -127,8 +127,8 @@ display : block;
          float: left; 
        }
        #yt {
-height: 100%;  /* The height is 400 pixels */
-width: calc(100% - 800px) !important;  /* The width is the width of the web page */
+height: 100%;  
+width: calc(100% - 800px) !important; 
 margin: 0px;
 padding: 10px;
 position : relative;
@@ -137,7 +137,7 @@ display : none;
 
 }
 
-}
+}*/
 @media (min-width: 1128px) {
        #list {
          height:100%;
@@ -1111,6 +1111,7 @@ function initMap() {
         })
         markers[markerId] = screen2(markerData[markerId]);
     }
+    
   });
 
   map.addListener("click", () => {
@@ -1170,6 +1171,7 @@ if(data.lat < newNorthEast.lat() ){
     $("#noList").css("display","none");
 
    }
+
 }
 
 
@@ -1797,6 +1799,15 @@ $(this).find("div[id='video_panel']").show();
 
 
         
+
+/*
+        $(window).resize(function() { 
+          if($(window).width() >768 && $(window).width() < 1128) {
+             $('.panel_list').show();
+
+             } 
+             }); */
+
 
     </script>
 
