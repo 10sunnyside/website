@@ -59,8 +59,8 @@
   }
 
   #wrap {
-    width:100%;
-    height:100%;
+    width:90%;
+    height:90%;
     display: flex;
     padding-top: 63px;
 }
@@ -90,8 +90,8 @@ float: left;
 }
 @media (max-width: 1128px) {
   #wrap {
-    width:100%;
-    height:100%;
+    width:90%;
+    height:90%;
     display: flex;
     flex-direction: column-reverse;
 }
@@ -145,7 +145,7 @@ display : none;
          padding: 10px;
          position : relative;
          float: left; 
-         min-height: calc(100vh - 80px);
+         /*min-height: calc(100vh - 80px);*/
          
        }
        #yt {
@@ -929,7 +929,7 @@ function initMap() {
     var localimg = "./img/youtube48.png"
       }
       else{
-        var localimg = "./img/zoom_icon.png"
+        var localimg = "./img/twitch5.png"
       }
       this.position = myLatLng;
       const imgs = document.createElement("img");
@@ -1330,8 +1330,8 @@ if(markerData[id].url.indexOf("youtube")!=-1){
     $('#'+ markerData[id].nation).after([div]); 
 
     var options = {
-    width: 420,
-    height: 272,
+    width: "100%",
+    height: "100%",
     channel: "minjuni2848",
     // only needed if your site is also embedded on embed.example.com and othersite.example.com
     parent: ["sunnyfive.net","localhost"]
