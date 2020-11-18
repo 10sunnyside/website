@@ -807,10 +807,17 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 
 .controls{
 
-  float: right;
+  
   margin-right: 20px;
   margin-top: 10px;
-
+  position: relative;
+  left: 50%;
+  border-radius: 30px;
+  text-align: center;
+  height: 40px;
+  width: 200px;
+  outline: brown;
+  z-index: 1;
 }
 
 .sHeader {

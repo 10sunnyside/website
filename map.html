@@ -3,7 +3,7 @@
 <html>
 
   <head>
-    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
+    <meta name="viewport" charset="utf-8" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169303598-1"></script>
 <script>
@@ -62,7 +62,7 @@
     width:90%;
     height:90%;
     display: flex;
-    padding-top: 63px;
+    padding-top: 15px;
 }
 
 
@@ -196,15 +196,18 @@ https://www.w3schools.com/graphics/google_maps_reference.asp
 -->
 <div id="fake-header" style ="height:40px;"></div>
   <div id="header" class="sHeader">
-    <div class="words words-1">
-      <span>N</span>
-      <span>O</span>
-      <span>W</span>
-      <span>H</span>
-      <span>E</span>
-      <span>R</span>
-      <span>E</span>
+    <!--<div class="words words-1"> 애니메이션 효과--> 
+
+      <div class="words"></div>
+      <span style="font-size: 100px;">N</span>
+      <span style="font-size: 100px;">O</span>
+      <span style="font-size: 100px;">W</span>
+      <span style="font-size: 100px;">H</span>
+      <span style="font-size: 100px;">E</span>
+      <span style="font-size: 100px;">R</span>
+      <span style="font-size: 100px;">E</span>
     </div>
+    <div style="position:absolute; left:50%; top:1.5%; z-index: 1; text-align:center"> 보고 싶은 도시를 검색해보세요</div>
     <!--<h3 id="title">Sunny5ive realtime camera map</h3>-->
     <div id="input-form" style="display:none">
       검색 : <input type="text" id="keyword" />
@@ -213,7 +216,7 @@ https://www.w3schools.com/graphics/google_maps_reference.asp
   id="pac-input"
   class="controls"
   type="text"
-  placeholder="Search Box"
+  placeholder="라스베가스"
 />
 </div>
 
@@ -237,6 +240,7 @@ https://www.w3schools.com/graphics/google_maps_reference.asp
         <p>Lorem ipsum...</p>
       </div> -->
     </div>
+    <div id ="best_list"></div>
     <div id="noList">There is no Live Camera in this area</div>
     <div id = "yt">
       <div id = "video" style ="display:none">
@@ -294,8 +298,8 @@ var markerData = [
             nation:"Italy"
         },
         {
-            lat: 45.430309688458,
-            lng: 12.329755300619,
+            lat: 45.430309,
+            lng: 12.329755,
             icon: "http://labs.google.com/ridefinder/images/mm_20_blue.png",
             url: "https://www.youtube.com/embed/JqUREqYduHw",
             title: "Hotel American Dinesen",
@@ -367,7 +371,7 @@ var markerData = [
             title: "Lausanne, pont Bessières",
             nation:"Swiss"
         }, {
-            lat: 43.479394434038,
+            lat: 43.479394,
             lng: -110.762717,
             icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
             url: "https://www.youtube.com/embed/1EiC9bvVGnk",
@@ -772,6 +776,8 @@ var tester;
 var popup2;
 var popupData;
 var panelCount;
+var bestWatching = new Array(0,0,0);
+var bestWatching_title = new Array("o","o","o");
 
 function initMap() {
 
@@ -791,7 +797,7 @@ function initMap() {
     constructor(data) {
       super();
       var myLatLng = new google.maps.LatLng(data.lat, data.lng);
-
+      var data2=data;
       if(data.url.indexOf("youtube")!=-1){
     var split_url = data.url.split("embed/")
     var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
@@ -835,6 +841,32 @@ function initMap() {
           }
           else {
             popupViewers.innerHTML = liveViewerNumbers +" watching now "
+
+            for (var index in bestWatching){
+              if(liveViewerNumbers >= bestWatching[index]){
+                if(index==0){
+                  bestWatching[2]=bestWatching[1];
+                  bestWatching[1]=bestWatching[0];
+                  bestWatching[0]=liveViewerNumbers;
+                  bestWatching_title[2]=bestWatching_title[1];
+                  bestWatching_title[1]=bestWatching_title[0];
+                  bestWatching_title[0]=data2.title;
+                  break;
+                }
+                else if(index==1){
+                  bestWatching[2]=bestWatching[1];
+                  bestWatching[1]=liveViewerNumbers;
+                  bestWatching_title[2]=bestWatching_title[1];
+                  bestWatching_title[1]=data2.title;
+                  break;
+                }
+                else{
+                  bestWatching[2]=liveViewerNumbers;
+                  bestWatching_title[2]=data2.title;
+                  break;
+                }
+              }
+            }
 
           }
       });
@@ -1143,7 +1175,6 @@ function initMap() {
 
 
 
-
     function screen2(data){
       $("#noList").css("display","none");
 if(data.lat < newNorthEast.lat() ){
@@ -1182,7 +1213,7 @@ if(data.lat < newNorthEast.lat() ){
 const input = document.getElementById("pac-input");
   const searchBox = new google.maps.places.SearchBox(input);
   //searchbox지도안으로 넣기
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
   // Bias the SearchBox results towards current map's viewport.
   map.addListener("bounds_changed", () => {
     searchBox.setBounds(map.getBounds());
@@ -1273,9 +1304,36 @@ if(markerData[id].nation==nationList[Nid])
 var split_url = markerData[id].url.split("embed/")
 var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
 
+var liveViewerNumbers;
+var viewerNumbers;
+var viewer = document.createElement("p");
+var viewerTag;
 
+/*
+if(markerData[id].url.indexOf("youtube")!=-1){
+$.getJSON('https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails&id='+ split_url +'&fields=items%2FliveStreamingDetails%2FconcurrentViewers&key=AIzaSyDu6Sfm83Qr5-o_k3olARNCQTbq1BjX7WQ', function(data) {
+        liveViewerNumbers = data.items[0].liveStreamingDetails.concurrentViewers;
+          if(liveViewerNumbers==undefined){
+            $.getJSON('https://www.googleapis.com/youtube/v3/videos?part=statistics&id=' + split_url + '&key=AIzaSyDu6Sfm83Qr5-o_k3olARNCQTbq1BjX7WQ', function(data) {
+        viewerNumbers = data.items[0].statistics.viewCount;
+        //popupViewers.innerHTML = viewerNumbers +" watched "
+        viewer.innerText = viewerNumbers +" watched ";
+        viewerTag = viewerNumbers +" watched ";
+      });
+          }
+          else {
+            //popupViewers.innerHTML = liveViewerNumbers +" watching now "
+            viewer.innerText = liveViewerNumbers +" watching now "
+            viewerTag = liveViewerNumbers +" watching now "
 
-
+          }
+        });
+        }
+        else{
+          //twitch의 경우
+          viewer.innerText =  "999 watching now "
+          
+        }*/
 
 
 if(checkNation==0){
@@ -1289,7 +1347,7 @@ bt.innerText=markerData[id].nation;
 var p = document.createElement("p")
 p.title = markerData[id].title;
 p.innerText = markerData[id].title;
-
+list.appendChild(bt);
 
 if(markerData[id].url.indexOf("youtube")!=-1){
 
@@ -1327,6 +1385,7 @@ if(markerData[id].url.indexOf("youtube")!=-1){
     video_panel.appendChild(twitch_panel);
     div.appendChild(video_panel);
     div.appendChild(p);
+    div.appendChild(viewer);
     $('#'+ markerData[id].nation).after([div]); 
 
     var options = {
@@ -1367,7 +1426,7 @@ var split_url = markerData[id].url.split("embed/")
 //div.appendChild(img);
 //div.appendChild(p);
 
-list.appendChild(bt);
+
 //$('#'+ markerData[id].nation).after(div);
 //var toAddClickListener=$('#'+ markerData[id].nation).after(src);
 
@@ -1382,6 +1441,8 @@ var bt = document.getElementById(markerData[id].nation);
 var p = document.createElement("p")
 p.title = markerData[id].title;
 p.innerText = markerData[id].title;
+
+
 //p.addEventListener("click",window.open(markerData[id].url));
 
 //var split_url = markerData[id].url.split("embed/")
@@ -1424,6 +1485,7 @@ if(markerData[id].url.indexOf("youtube")!=-1){
     video_panel.appendChild(twitch_panel);
     div.appendChild(video_panel);
     div.appendChild(p);
+    div.appendChild(viewer);
     $('#'+ markerData[id].nation).after([div]); 
 
     var options = {
