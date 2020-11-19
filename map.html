@@ -1311,21 +1311,21 @@ var viewerNumbers;
 var viewer = document.createElement("p");
 var viewerTag;
 
-/*
+
 if(markerData[id].url.indexOf("youtube")!=-1){
-$.getJSON('https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails&id='+ split_url +'&fields=items%2FliveStreamingDetails%2FconcurrentViewers&key=AIzaSyDu6Sfm83Qr5-o_k3olARNCQTbq1BjX7WQ', function(data) {
+$.getJSON('https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails&id='+ split_url +'&fields=items%2FliveStreamingDetails%2FconcurrentViewers&key=AIzaSyDgv3l-tQ1LK-BTVhPzS0YBzREQNzlTXc4', function(data) {
         liveViewerNumbers = data.items[0].liveStreamingDetails.concurrentViewers;
           if(liveViewerNumbers==undefined){
-            $.getJSON('https://www.googleapis.com/youtube/v3/videos?part=statistics&id=' + split_url + '&key=AIzaSyDu6Sfm83Qr5-o_k3olARNCQTbq1BjX7WQ', function(data) {
+            $.getJSON('https://www.googleapis.com/youtube/v3/videos?part=statistics&id=' + split_url + '&key=AIzaSyC3qOSdg6zVIxN-8EErjczoj99K171N5lw', function(data) {
         viewerNumbers = data.items[0].statistics.viewCount;
         //popupViewers.innerHTML = viewerNumbers +" watched "
-        viewer.innerText = viewerNumbers +" watched ";
+        //viewer.innerText = viewerNumbers +" watched ";
         viewerTag = viewerNumbers +" watched ";
       });
           }
           else {
             //popupViewers.innerHTML = liveViewerNumbers +" watching now "
-            viewer.innerText = liveViewerNumbers +" watching now "
+            //viewer.innerText = liveViewerNumbers +" watching now "
             viewerTag = liveViewerNumbers +" watching now "
 
           }
@@ -1335,7 +1335,7 @@ $.getJSON('https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetail
           //twitch의 경우
           viewer.innerText =  "999 watching now "
           
-        }*/
+        }
 
 
 if(checkNation==0){
@@ -1358,10 +1358,28 @@ if(markerData[id].url.indexOf("youtube")!=-1){
     var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/mqdefault.jpg"
     var localimg = "./img/youtube.png"
 
-    var src = '<div class="panel_list" ><img id = "img_panel" src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <div id = "video_panel" style ="display:none"> <iframe id="yt_panel" width="100%" height="100%" src="'+markerData[id].url+'?enablejsapi=1&version=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
+    var src = '<div class="panel_list" ><img id = "img_panel" src =' + imgsrc + ' class = "thumbnail" /> <div id = "video_panel" style ="display:none"> <iframe id="yt_panel" width="100%" height="100%" src="'+markerData[id].url+'?enablejsapi=1&version=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
 
       var toAddClickListener=$('#'+ markerData[id].nation).after(src);
+      
+      
+      ////////////////////////////
+      var div = document.createElement("div");
+    div.className = "panel_list";
+    var img = document.createElement("img");
+        img.id = "img_panel";
+        img.className = "thumbnail"
+        img.src = imgsrc;
+        var video_panel = document.createElement("div");
+    video_panel.id = "video_panel";
 
+    var iframe = document.createElement("iframe");
+    iframe.id = "yt_panel";
+    iframe.src = markerData[id].url + '?enablejsapi=1&version=3';
+    iframe.frameborder = "0";
+    iframe.allow="autoplay; encrypted-media"
+
+//////////continue
       }
       else{
 
@@ -1461,7 +1479,7 @@ if(markerData[id].url.indexOf("youtube")!=-1){
     var split_url = markerData[id].url.split("embed/")
     var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/hqdefault.jpg"
     var localimg = "./img/youtube.png"
-    var src = '<div class="panel_list" ><img id = "img_panel" src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <div id = "video_panel" style ="display:none"> <iframe id="yt_panel" width="100%" height="100%" src="'+markerData[id].url+'?enablejsapi=1&version=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'
+    var src = '<div class="panel_list" ><img id = "img_panel" src =' + imgsrc + ' class = "thumbnail" onerror="function(){$(this).parent().remove()}"/> <div id = "video_panel" style ="display:none"> <iframe id="yt_panel" width="100%" height="100%" src="'+markerData[id].url+'?enablejsapi=1&version=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div> <p title = "' + markerData[id].title + '">' +markerData[id].title + '</>'+'<div>'+viewerTag+'</div>'
 
       var toAddClickListener = $('#'+ markerData[id].nation).after(src);
 
