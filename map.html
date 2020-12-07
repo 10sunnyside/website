@@ -720,7 +720,28 @@ var markerData = [
             title: "Asea ICT Center, SunnyFive",
             nation:"Korea"
         },
-
+        {
+            lat: 22.283,
+            lng: 114.126,
+            lat2: 22.279,
+            lng2: 114.225,
+            icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+            url: "https://www.youtube.com/embed/qO-q5yICB98",
+            title: "HONG KONG DOUBLE DECKER LIVE TRAM 24/7",
+            nation:"Hongkong",
+            type:"TRANSIT"
+        },
+        {
+            lat: 63.436,
+            lng: 10.398,
+            lat2: 67.286,
+            lng2: 14.391,
+            icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+            url: "https://www.youtube.com/embed/ccbVvCcvPuw",
+            title: "Nordland Line from Trondheim to Bodø",
+            nation:"Norway",
+            type:"TRANSIT"
+        },
 
 
      ];
@@ -849,7 +870,7 @@ function initMap() {
       var liveViewerNumbers;
       const popupViewers = document.createElement("div");
       popupViewers.classList.add("popup-viewers");
-     
+     /*
       $.getJSON('https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails&id='+ split_url +'&fields=items%2FliveStreamingDetails%2FconcurrentViewers&key=AIzaSyDu6Sfm83Qr5-o_k3olARNCQTbq1BjX7WQ', function(data) {
         
           if(data.items[0].liveStreamingDetails.concurrentViewers==undefined){
@@ -889,7 +910,7 @@ function initMap() {
             }
 
           }
-      });
+      });   */
 
       const popupBroadcast = document.createElement("img");
       popupBroadcast.classList.add("popup-broadcast");
@@ -974,6 +995,14 @@ function initMap() {
   class Popup extends google.maps.OverlayView {
     constructor(data) {
       super();
+
+      if(data.type=='TRANSIT'){
+        var ori = new google.maps.LatLng(data.lat,data.lng);
+        var des = new google.maps.LatLng(data.lat2,data.lng2);
+        
+        data.lat
+        route3(map, ori, des);
+      }
       var myLatLng = new google.maps.LatLng(data.lat, data.lng);
       if(data.url.indexOf("youtube")!=-1){
     var split_url = data.url.split("embed/")
@@ -982,6 +1011,9 @@ function initMap() {
       }
       else{
         var localimg = "./img/twitch5.png"
+      }
+      if(data.type=='TRANSIT'){
+        var localimg = "./img/train2.png"
       }
       this.position = myLatLng;
       const imgs = document.createElement("img");
@@ -1225,6 +1257,142 @@ if(data.lat < newNorthEast.lat() ){
 
 }
 
+/*
+fetch("https://www.youtube.com/watch?v=HpZAez2oYsA",{
+  mode: "no-cors" // 'cors' by default
+})
+.then(function(response) {
+  console.log(response);
+  // Do something with response
+})
+.then(res => console.log(res));
+*/
+
+
+function drawBlueLine(map, lineSymbol) {
+  console.log();
+  var startBlue = new google.maps.LatLng(2.852888, 101.651970);
+  var endBlue = new google.maps.LatLng(2.941660, 101.594207);
+
+  var blueLine = new google.maps.Polyline({
+    path: [startBlue, endBlue],
+    strokeColor: '#0000ff',
+    strokeOpacity: 2.0,
+    strokeWeight: 5,
+    icons: [{
+      icon: lineSymbol,
+      offset: '100%'
+    }],
+    map: map
+  });
+  
+  new google.maps.Marker({
+    position: startBlue,
+    map: map
+  });
+  
+  new google.maps.Marker({
+    position: endBlue,
+    map: map
+  });
+}
+var lineSymbol = {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: 6,
+    strokeColor: '#393'
+  };
+drawBlueLine(map, lineSymbol);
+
+function route(map) {
+  const directionsRenderer = new google.maps.DirectionsRenderer();
+  const directionsService = new google.maps.DirectionsService();
+
+  directionsRenderer.setMap(map);
+  calculateAndDisplayRoute(directionsService, directionsRenderer);
+
+}
+
+function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+  //const selectedMode = document.getElementById("mode").value;
+  const selectedMode = 'TRANSIT'
+  directionsService.route(
+    {
+      origin: { lat: 22.283, lng: 114.126 },
+      destination: { lat: 22.279, lng: 114.225 },
+      // Note that Javascript allows us to access the constant
+      // using square brackets and a string value as its
+      // "property."
+      travelMode: google.maps.TravelMode[selectedMode],
+    },
+    (response, status) => {
+      if (status == "OK") {
+        directionsRenderer.setDirections(response);
+      } else {
+        window.alert("Directions request failed due to " + status);
+      }
+    }
+  );
+}
+//route(map);
+ //continue 함수에 위도 경도 받아서 그려준다.
+function route2(map){
+var directionsService = new google.maps.DirectionsService();
+  var directionsRenderer = new google.maps.DirectionsRenderer();
+  var haight = new google.maps.LatLng(37.7699298, -122.4469157);
+  var oceanBeach = new google.maps.LatLng(37.7683909618184, -122.51089453697205);
+
+  directionsRenderer.setMap(map);
+
+  var selectedMode = 'TRANSIT';
+  var request = {
+      origin: haight,
+      destination: oceanBeach,
+      // Note that JavaScript allows us to access the constant
+      // using square brackets and a string value as its
+      // "property."
+      travelMode: google.maps.TravelMode[selectedMode]
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == 'OK') {
+      directionsRenderer.setDirections(response);
+    }
+  });
+}
+//route2(map);
+
+function route3(map, ori, des){
+var directionsService = new google.maps.DirectionsService();
+  var directionsRenderer = new google.maps.DirectionsRenderer();
+  var haight = new google.maps.LatLng(37.7699298, -122.4469157);
+  var oceanBeach = new google.maps.LatLng(37.7683909618184, -122.51089453697205);
+
+  directionsRenderer.setMap(map);
+
+  var selectedMode = 'TRANSIT';
+  var request = {
+      origin: ori,
+      destination: des,
+      // Note that JavaScript allows us to access the constant
+      // using square brackets and a string value as its
+      // "property."
+      travelMode: google.maps.TravelMode[selectedMode],
+      transitOptions: {modes:['RAIL']}
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == 'OK') {
+      directionsRenderer.setDirections(response);
+      marker = new google.maps.Marker({
+    draggable: true,
+    animation: google.maps.Animation.DROP,
+    icon : "http://labs.google.com/ridefinder/images/mm_20_blue.png",
+  });
+      directionsRenderer.setOptions({markerOptions:marker, preserveViewport:true, suppressInfoWindows:true, hideRouteList:true});
+
+    }
+  });
+}
+//route2(map);
+
 
 
 
@@ -1288,7 +1456,7 @@ const input = document.getElementById("pac-input");
 
 
 
-
+//moveToLocation(37.551279, 126.988227);
 }
 
 
@@ -1330,7 +1498,7 @@ var viewer = document.createElement("p");
 var viewerTag;
 var ddd=0;
 
-
+/*
 if(markerData[id].url.indexOf("youtube")!=-1){
 $.getJSON('https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails&id='+ split_url +'&fields=items%2FliveStreamingDetails%2FconcurrentViewers&key=AIzaSyDgv3l-tQ1LK-BTVhPzS0YBzREQNzlTXc4', function(data) {
         
@@ -1355,7 +1523,7 @@ $.getJSON('https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetail
           //twitch의 경우
           viewer.innerText =  "999 watching now "
           
-        }
+        } */
 
 
 if(checkNation==0){
