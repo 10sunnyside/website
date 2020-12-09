@@ -29,14 +29,26 @@
   display: none;
   overflow: hidden;
 }
+@media (max-width: 1128px) {
 .panel_list {
-  width:108%;
+  width:100%;
   padding: 10px 0px;
   background-color: white;
   display: none;
   overflow: hidden;
   border-bottom: 1px solid lightgray;
 }
+}
+@media (min-width: 1128px) {
+  .panel_list {
+    width:108%;
+    padding: 10px 0px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    border-bottom: 1px solid lightgray;
+  }
+  }
 html,
 body {
   width: 100%;
@@ -215,6 +227,8 @@ object-fit: cover;
     width : 480px;
     height : 272px;
     display : none;
+    margin: 10px;
+    float: left; /*오른쪽에 찾을 수 없는 마진으로 가득채워져서 왼쪽 으로 정렬하면 해결됨*/
 }
 
 #yt_panel{
@@ -817,11 +831,8 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 
 .controls{
 
-  
-  margin-right: 20px;
+
   margin-top: 10px;
-  position: relative;
-  left: 50%;
   border-radius: 30px;
   text-align: center;
   height: 40px;
