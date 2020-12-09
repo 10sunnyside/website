@@ -1595,13 +1595,13 @@ if(markerData[id].url.indexOf("youtube")!=-1){
 
 
 
-    var iframe = document.createElement( "div" );
-  //  iframe.setAttribute( "id", "yt_panel_" + split_url[1]);
+    var iframe = document.createElement( "div" ); //필요없나??
+    iframe.setAttribute( "id", "yt_panel_" + split_url[1]);
     //  iframe.setAttribute( "frameborder", "0" );
    //   iframe.setAttribute( "allowfullscreen", "" );
     //    iframe.setAttribute("allow","autoplay");
    //   iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ split_url[1] +"?rel=0&showinfo=0&autoplay=1&enbalejsapi=1&version=3" );
-    //  iframe.setAttribute("class", "yt_class");
+      iframe.setAttribute("class", "yt_class");
       video_panel.appendChild(iframe);
 
     div.appendChild(video_panel);
@@ -1773,7 +1773,7 @@ if(markerData[id].url.indexOf("youtube")!=-1){
      // iframe.setAttribute( "allowfullscreen", "" );
      //   iframe.setAttribute("allow","autoplay");
     //  iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ split_url[1] +"?rel=0&showinfo=0&autoplay=1&enbalejsapi=1&version=3" );
-    //  iframe.setAttribute("class", "yt_class");
+      iframe.setAttribute("class", "yt_class");
       video_panel.appendChild(iframe);
 
 
