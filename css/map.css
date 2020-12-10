@@ -873,7 +873,7 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
   animation: gradient 15s ease infinite;
   position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     background-color: white;
     background: #ffffff;
@@ -881,7 +881,218 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
   font-family: 'Rubik Mono One', sans-serif;
 }
 
+.transitImg {
+  background: yellowgreen;
+  border-radius: 10px;
+  padding: 1px;
+  border: 1px solid yellowgreen;
+  margin-top: 3px;
 
+}
+
+.clicked {
+  background : white;
+}
+
+.none {
+  display:none;
+}
+
+
+
+.fa{
+  font-size: 20px;
+  float: right;
+  position: absolute;
+    top: 10px;
+    right: 10px;
+    color:white;
+}
+
+.fa-bg{
+  font-size: 25px;
+    float: right;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: white;
+
+}
+
+.checked {
+  color: orange;
+}
+       /* Set the size of the div element that contains the map */
+
+  
+  #noList {
+    height: 50%;
+    position: absolute;
+    width: 50%;
+    /* margin: auto; */
+    /* text-align: center; */
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #wrap {
+    width:90%;
+    height:90%;
+    display: flex;
+    padding-top: 110px;
+}
+
+
+      #map {
+
+        height: 100%;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+        margin: 0px;
+        padding: 0px;
+        position : relative;
+        float: left; 
+
+       }
+
+
+#video {
+
+height: 0%;  /* The height is 400 pixels */
+width: 100%;  /* The width is the width of the web page */
+margin: 0px;
+padding: 0px;
+position : relative;
+float: left; 
+
+}
+@media (max-width: 1128px) {
+  #wrap {
+    width:100%;
+    height:90%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+  #list {
+         height:60%;
+         width: 100% !important;
+         padding: 10px;
+         position : relative;
+         float: left; 
+        
+       }
+       #yt {
+height: 40%;  /* The height is 400 pixels */
+/* width: calc(100% - 800px) !important;  /* The width is the width of the web page */
+margin: 0px;
+padding: 10px;
+position : relative;
+float: left; 
+display : block;
+
+
+}
+
+
+
+}
+/*@media (min-width: 768px) and (max-width:1128px) {
+  #list {
+         height:100%;
+         width: 100% !important;
+         padding: 10px;
+         position : relative;
+         float: left; 
+       }
+       #yt {
+height: 100%;  
+width: calc(100% - 800px) !important; 
+margin: 0px;
+padding: 10px;
+position : relative;
+float: left; 
+display : none;
+
+}
+
+}*/
+@media (min-width: 1128px) {
+       #list {
+         height:100%;
+         width: 740px !important;
+         padding: 10px;
+         position : relative;
+         float: left; 
+         /*min-height: calc(100vh - 80px);*/
+         
+       }
+       #yt {
+
+height: 90%;  /* The height is 400 pixels */
+width: calc(100% - 800px) !important;  /* The width is the width of the web page */
+margin: 0px;
+padding: 10px;
+position : fixed;
+float: right;
+right:0px; 
+
+
+}
+}
+
+
+
+
+       #title {
+
+height:auto;  /* The height is 400 pixels */
+width: 60%;  /* The width is the width of the web page */
+margin: 0px;
+padding: 10px;
+position : fixed;
+float: left; 
+z-index: 1;
+top: 0;
+/*text-shadow: 0 0 0.2em #F87, 0 0 0.2em #F87, 0 0 0.2em #F87;
+color:rgb(255, 250, 232);*/
+}
+#input-form {
+         height:auto;
+         width: 30%;
+         padding: 10px;
+         position : relative;
+         float: left; 
+       }
+
+
+       @media (min-width: 1128px) {
+#transitSelector {
+  position : absolute;
+  Z-INDEX: 2;
+  display: grid;
+  background: white;
+  border-radius: 10px;
+  border: 2px solid gold;
+  right: 0px;
+  top: 7%;
+  padding: 5px;
+  margin: 17px;
+}
+       }
+       @media (max-width: 1127px) {
+#transitSelector {
+  position : absolute;
+  Z-INDEX: 2;
+  display: grid;
+  background: white;
+  border-radius: 10px;
+  border: 2px solid gold;
+  left: 0px;
+  top: 20%;
+  padding: 5px;
+  margin: 17px;
+}
+       }
 
 
 .words {
