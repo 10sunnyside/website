@@ -750,11 +750,13 @@ function initMap() {
       super();
 
       if(data.type=='TRANSIT'){
+        
         var ori = new google.maps.LatLng(data.lat,data.lng);
         var des = new google.maps.LatLng(data.lat2,data.lng2);
         
         data.lat
         route3(map, ori, des);
+      
       }
       var myLatLng = new google.maps.LatLng(data.lat, data.lng);
       if(data.url.indexOf("youtube")!=-1){
@@ -1137,7 +1139,7 @@ var directionsService = new google.maps.DirectionsService();
   var directionsRenderer = new google.maps.DirectionsRenderer();
   var haight = new google.maps.LatLng(37.7699298, -122.4469157);
   var oceanBeach = new google.maps.LatLng(37.7683909618184, -122.51089453697205);
-
+  rendererList.push(directionsRenderer);
   directionsRenderer.setMap(map);
 
   var selectedMode = 'TRANSIT';
@@ -1155,10 +1157,11 @@ var directionsService = new google.maps.DirectionsService();
       directionsRenderer.setDirections(response);
       marker = new google.maps.Marker({
     draggable: true,
-    animation: google.maps.Animation.DROP,
+    //animation: google.maps.Animation.DROP,
     icon : "http://labs.google.com/ridefinder/images/mm_20_blue.png",
   });
-      directionsRenderer.setOptions({markerOptions:marker, preserveViewport:true, suppressInfoWindows:true, hideRouteList:true});
+      directionsRenderer.setOptions({ preserveViewport:true, suppressMarkers: true, suppressInfoWindows:true, hideRouteList:true});
+      //directionsRenderer.setOptions({markerOptions:marker, preserveViewport:true, suppressMarkers: false, suppressInfoWindows:true, hideRouteList:true});
 
     }
   });
@@ -1237,6 +1240,7 @@ const input = document.getElementById("pac-input");
 
  var markers = [];
  var selectedPanelList = new Array();
+ var rendererList = new Array();
  var boxList =[];
  var url;
  var count=0;
@@ -2104,6 +2108,18 @@ $(this).find("div[id='video_panel']").show();
              $('#train').click(function(){
                 $(this).toggleClass("clicked");
                 $('#map').find("img[src*='train']").toggleClass("none");
+                if($('#train').hasClass("clicked")){
+                  rendererList.forEach(function(i){
+                    i.setMap(null);
+                  });
+                }
+                else{
+                  rendererList.forEach(function(i){
+                    i.setMap(map);
+                  });
+                }
+               // const directionsRenderer = new google.maps.DirectionsRenderer();
+               // directionsRenderer.setMap(null);
                 map.setZoom(map.getZoom());
                });
             $('#youtube').click(function(){
