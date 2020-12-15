@@ -723,15 +723,15 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
   font-family: sans-serif;
   overflow-y: auto;
   /*max-height: 120px ;*/
-  max-width:300px !important;
+  max-width:280px !important;
  /* box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.5);*/
 }
 
 .popup2-bubble-anchor {
   /* Position the div a fixed distance above the tip. */
   position: absolute;
-  width: 300px;
-  height:275px;
+  width: 280px;
+  height:220px;
   bottom: 8px;
   left: 0;
   border-radius: 10px;
@@ -882,7 +882,8 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 }
 
 .transitImg {
-  background: yellowgreen;
+  /*background: yellowgreen;*/
+  background-color: rgba(154, 205, 50, 0.5);
   border-radius: 10px;
   padding: 1px;
   border: 1px solid yellowgreen;
@@ -901,7 +902,7 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 
 
 .fa{
-  font-size: 20px;
+  font-size: 20px ! important;
   float: right;
   position: absolute;
     top: 10px;
@@ -910,7 +911,7 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 }
 
 .fa-bg{
-  font-size: 25px;
+  font-size: 25px! important;
     float: right;
     position: absolute;
     top: 8px;
@@ -1073,7 +1074,6 @@ color:rgb(255, 250, 232);*/
   background: white;
   border-radius: 10px;
   border: 2px solid gold;
-  right: 0px;
   top: 7%;
   padding: 5px;
   margin: 17px;
