@@ -354,7 +354,8 @@ var markerData = [
     icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
     url: "https://www.youtube.com/embed/1z2coTLH6rQ",
     title: "Nice South of France Côte d'Azur Nature Beach in 4k",
-    nation: "France"
+    nation: "France",
+    type: "beach"
   },
   {
     lat: 35.7015318,
@@ -442,7 +443,8 @@ var markerData = [
     icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
     url: "https://www.youtube.com/embed/5I8z7ljAO98",
     title: "Jeju Incafe on the beach",
-    nation: "Korea"
+    nation: "Korea",
+    type: "beach"
   },
   {
     lat: 37.575996,
