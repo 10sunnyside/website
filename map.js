@@ -33,8 +33,6 @@ var listCount = 0;
 var myArray = new Array();
 var ytCount = 0;
 
-
-
 document.cookie = 'same-site-cookie=foo; SameSite=Lax';
 document.cookie = 'cross-site-cookie=bar; SameSite=None; Secure';
 
@@ -728,7 +726,7 @@ var markerData = [
     icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
     url: "https://www.youtube.com/embed/gUZjDCZEMDA",
     title: "Nkorho Bush Lodge, South Africa",
-    nation: "South Africa",
+    nation: "SouthAfrica",
     type: "animal"
   },
   {
@@ -737,7 +735,7 @@ var markerData = [
     icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
     url: "https://www.youtube.com/embed/8UFA66bi-0g",
     title: "Naledi Cat-EYE, South Africa",
-    nation: "South Africa",
+    nation: "SouthAfrica",
     type: "animal"
   },
   {
@@ -746,7 +744,7 @@ var markerData = [
     icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
     url: "https://www.youtube.com/embed/48MFrf5ADp8",
     title: " Tembe Elephant Park, South Africa",
-    nation: "South Africa",
+    nation: "SouthAfrica",
     type: "animal"
   },
   {
@@ -773,7 +771,7 @@ var markerData = [
     icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
     url: "https://www.youtube.com/embed/sqAdEAH2q_g",
     title: "tau, South Africa",
-    nation: "South Africa",
+    nation: "SouthAfrica",
     type: "animal"
   },
   {
@@ -803,7 +801,61 @@ var markerData = [
     nation: "Spain",
     type: "beach"
   },
+  {
+    lat: 27.758391,  
+    lng: -15.576897,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/cvYNX6OONW4",
+    title: "Yumbo Center, Mexico",
+    nation: "Mexico"
+  },  
+  {
+    lat: 24.559914, 
+    lng: -81.807588,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/dPLIUht1aGE",
+    title: "Mallory Square, Florida, USA",
+    nation: "USA",
+    type: "port"
+  },
+  {
+    lat: 28.950628,
+    lng: -13.605723,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/doqBgKIBBh8",
+    title: "Lanzarote Airport, Spain",
+    nation: "Spain",
+    type: "airport"
+  },
+  {
+    lat: 24.561235, 
+    lng: -81.805857,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/YSRKsa4mTog",
+    title: "Pier House Resort & Spa, Key West, Florida USA",
+    nation: "USA",
+    type: "beach"
+  },
+  {
+    lat: 24.723979, 
+    lng: -81.011935,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/_WfRT0aVllk",
+    title: "Bonefish Towers in Marathon, Florida USA",
+    nation: "USA",
+    type: "beach"
+  },
+  {
+    lat: 47.709540,
+    lng: -121.358925,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/LZ5xUpWnmJ8",
+    title: "Skykomish, Washington USA",
+    nation: "USA",
+    type: "track"
+  },
 
+  
   
 
 
@@ -815,7 +867,34 @@ var nationList = [];
 
 $(document).ready(function () {
   createList(markerData);
+
+  
 });
+
+$(document).ready(function(){ // 태그 등의 셋팅이 완료되었을 시점에 이벤트 발생 
+ 
+  $('.mapDiv').click(function(){
+    for (id in markerData) {
+      var split_url = markerData[id].url.split("embed/");
+      if(split_url[1]==$(this).attr("id")){
+        var offset = $('#wrap').offset(); //선택한 태그의 위치를 반환
+
+                //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 
+
+	        $('html').animate({scrollTop : offset.top}, 400);
+
+        moveToLocation(markerData[id].lat, markerData[id].lng);
+        for(id in idList){
+          if(idList[id] == split_url[1]){
+            $("#"+ id).trigger("click");
+          }
+        }
+      }
+    }
+  });
+
+});
+
 
 function onYouTubeIframeAPIReady() {
   console.log("api is ready");
@@ -1118,7 +1197,8 @@ function initMap() {
   class Popup extends google.maps.OverlayView {
     constructor(data) {
       super();
-
+      
+      var yt_url;
       if (data.type == 'TRANSIT') {
 
         var ori = new google.maps.LatLng(data.lat, data.lng);
@@ -1131,6 +1211,7 @@ function initMap() {
       var myLatLng = new google.maps.LatLng(data.lat, data.lng);
       if (data.url.indexOf("youtube") != -1) {
         var split_url = data.url.split("embed/")
+        yt_url=split_url[1];
         var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/default.jpg"
         var localimg = "./img/youtube48.png"
       }
@@ -1171,13 +1252,17 @@ function initMap() {
       this.containerDiv = document.createElement("div");
       this.containerDiv.classList.add("popup-container");
       this.containerDiv.appendChild(bubbleAnchor);
+      //this.containerDiv.id = split_url[1]+"_"+popupCount;
       this.containerDiv.id = popupCount;
       // Optionally stop clicks, etc., from bubbling up to the map.
       Popup.preventMapHitsAndGesturesFrom(this.containerDiv);
       popupData = data;
       popup2 = new Popup2(data);
       popupList.push(popup2);
-
+      idList.push(yt_url); // 최종 : popup 함수는 그대로 두고 panel 클릭하는 쪽에서 popupCount 찾아서 부를 것임
+      // popup을 만들고 차례대로 popupList에 popup2를 넣는다. 그럼 popup2가 순서대로 list에 들어갈 것 이고
+      // 그 순서는 popup객체의 id로 popupCount 변수로 저장된다.
+      // popup 클릭 -> popup2 열림 연결고리를 만들기 위하여 리스트내 popup2의 순서와 일치하는 숫자가 id로 popup 객체로 들어가 있는 것이다.
     }
     /** Called when the popup is added to the map. */
     onAdd() {
@@ -1191,11 +1276,18 @@ function initMap() {
       // Add a listener - we'll accept clicks anywhere on this div, but you may want
       // to validate the click i.e. verify it occurred in some portion of your overlay.
       google.maps.event.addDomListener(this.containerDiv, 'click', function () {
-
+        
+        console.log(this);
         if (activePopup) { activePopup.setMap(null); }
         //$('#keyword').val(data.title)
+        
+        //var split_id = this.id.split("_");
+        
+        //popupList[this.id].setMap(map);
+        // activePopup = popupList[this.id]
+        // panel list 클릭 시 popup을 띄울수 있게 연결고리를 만들기 위해 this.ContainerDiv의 아이디에 split_url이 추가 됨
         popupList[this.id].setMap(map);
-        activePopup = popupList[this.id]
+        activePopup = popupList[this.id];
 
 
 
@@ -1667,6 +1759,7 @@ var activePopup;
 var popupCount = 0;
 var popupList = [];
 var markerList = [];
+var idList = [];
 // inside function createMap(...)
 
 
@@ -1807,6 +1900,12 @@ function createList(markerData) {
           imgDiv.appendChild(imgTransit);
         }
 
+        var mapDiv = document.createElement("div");
+        var mapImg = document.createElement("img");
+        mapImg.src = "./img/map.png"    
+        mapDiv.appendChild(mapImg);
+        mapDiv.className = "mapDiv";
+        mapDiv.id=split_url[1];
 
 
 
@@ -1822,13 +1921,13 @@ function createList(markerData) {
         div.appendChild(video_panel);
         div.appendChild(imgDiv);
         div.appendChild(p);
+        div.appendChild(mapDiv);
         div.appendChild(viewer);
         $('#' + markerData[id].nation).after([div]);
 
         // var parent = document.getElementById(markerData[id].nation);
         //parent.parentNode.insertBefore(div,parent);
         //document.body.appendChild(video_panel);
-
 
 
 
@@ -2012,7 +2111,12 @@ function createList(markerData) {
           imgDiv.appendChild(imgTransit);
         }
 
-
+        var mapDiv = document.createElement("div");
+       var mapImg = document.createElement("img");
+       mapImg.src = "./img/map.png"  
+       mapDiv.appendChild(mapImg);
+       mapDiv.className = "mapDiv";
+       mapDiv.id=split_url[1];
 
         var iframe = document.createElement("div");
         iframe.setAttribute("id", "yt_panel_" + split_url[1]);
@@ -2027,6 +2131,7 @@ function createList(markerData) {
         div.appendChild(video_panel);
         div.appendChild(imgDiv);
         div.appendChild(p);
+        div.appendChild(mapDiv);
         div.appendChild(viewer);
         $('#' + markerData[id].nation).after([div]);
 
@@ -2152,7 +2257,7 @@ function insertYoutube(markerData) {
       // 4. The API will call this function when the video player is ready.
       function onPlayerReady(event) {
         //event.target.playVideo();
-        console.log(event.target);
+       ////// console.log(event.target);
         // console.log(event);
         ytPlayers[ytCount] = event.target;
         ytCount++;
