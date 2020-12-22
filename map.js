@@ -855,13 +855,525 @@ var markerData = [
     type: "track"
   },
 
-  
-  
+  {
+    lat: 40.6262179,
+    lng: 14.3755998,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "www.youtube.com/embed/WPIuF0-evxo",
+    title: "Sorrento, Italy Walking Tour - July 12, 2020",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 40.6333167,
+    lng: 14.602816,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "www.youtube.com/embed/EJ5Ju8-t3jk",
+    title: "Amalfi Walking Tour 4K - June 27th, 2020",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 40.6276385,
+    lng: 14.487732,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "www.youtube.com/embed/lpo62RjldVA",
+    title: "Beautiful Tour of Positano, Italy in 4K",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 30.0476561,
+    lng: 31.2621408,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "www.youtube.com/embed/YVYDz_coSfY",
+    title: "Cairo's Khan el-Khalili Walking Tour (4K/60fps)",
+    nation: "Egypt",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 40.8033492,
+    lng: 14.3486201,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "www.youtube.com/embed/eXkpFnF7ovY",
+    title: "Herculaneum, Italy Walking Tour in 4K",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 44.1456172,
+    lng: 9.6488237,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/L-CIQchiiv4",
+    title: "Monterosso al Mare Walking Tour - Cinque Terre",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 44.120514,
+    lng: 9.707885,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/sUFIQzXu7S8",
+    title: "Corniglia, Italy Walking Tour - Cinque Terre - [Prowalk Tours]",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 44.107023,
+    lng: 9.7277876,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/QNdkI8BRats",
+    title: "Manarola, Italy Walking Tour - Cinque Terre",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 44.0989247,
+    lng: 9.7376173,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/MIzp8Wrj44s",
+    title: "Riomaggiore Walking Tour - Cinque Terre - Prowalk Tours",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 41.8980466,
+    lng: 12.4624051,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/GXTW_mIC2po",
+    title: "Biking along the Tiber River in Rome - 4K - June 2020",
+    nation: "Rome",
+    type: "biking",
+    video_type: "video"
+  },
+  {
+    lat: 41.9033863,
+    lng: 12.4567101,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/bdjUv2ctBQ4",
+    title: "Biking Tour of Rome, Italy in 4K",
+    nation: "Rome",
+    type: "biking",
+    video_type: "video"
+  },
+
+  {
+    lat: 40.6262179,
+    lng: 14.3755998,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "www.youtube.com/embed/WPIuF0-evxo",
+    title: "Sorrento, Italy Walking Tour - July 12, 2020",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 40.6333167,
+    lng: 14.602816,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "www.youtube.com/embed/EJ5Ju8-t3jk",
+    title: "Amalfi Walking Tour 4K - June 27th, 2020",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 40.6276385,
+    lng: 14.487732,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "www.youtube.com/embed/lpo62RjldVA",
+    title: "Beautiful Tour of Positano, Italy in 4K",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 30.0476561,
+    lng: 31.2621408,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "www.youtube.com/embed/YVYDz_coSfY",
+    title: "Cairo's Khan el-Khalili Walking Tour (4K/60fps)",
+    nation: "Egypt",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 40.8033492,
+    lng: 14.3486201,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "www.youtube.com/embed/eXkpFnF7ovY",
+    title: "Herculaneum, Italy Walking Tour in 4K",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 44.1456172,
+    lng: 9.6488237,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/L-CIQchiiv4",
+    title: "Monterosso al Mare Walking Tour - Cinque Terre",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 44.120514,
+    lng: 9.707885,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/sUFIQzXu7S8",
+    title: "Corniglia, Italy Walking Tour - Cinque Terre - [Prowalk Tours]",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 44.107023,
+    lng: 9.7277876,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/QNdkI8BRats",
+    title: "Manarola, Italy Walking Tour - Cinque Terre",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 44.0989247,
+    lng: 9.7376173,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/MIzp8Wrj44s",
+    title: "Riomaggiore Walking Tour - Cinque Terre - Prowalk Tours",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video"
+  },
+  {
+    lat: 41.8980466,
+    lng: 12.4624051,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/GXTW_mIC2po",
+    title: "Biking along the Tiber River in Rome - 4K - June 2020",
+    nation: "Rome",
+    type: "biking",
+    video_type: "video"
+  },
+  {
+    lat: 41.9033863,
+    lng: 12.4567101,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/bdjUv2ctBQ4",
+    title: "Biking Tour of Rome, Italy in 4K",
+    nation: "Rome",
+    type: "biking",
+    video_type: "video"
+  },
+
+
+  {
+    lat: 40.6310049,
+    lng: 14.582913,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/G4BrczBZAXY",
+    title: "Amalfi, Italy 360 Walking Tour",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video",
+    camera_type: "360"
+  },
+  {
+    lat: 40.6295857,
+    lng: 14.4813007,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/FZL0ynym3DI",
+    title: "Positano, Italy 360 Walking Tour",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video",
+    camera_type: "360"
+  },
+  {
+    lat: 40.6333389,
+    lng: 14.5985189,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/dDuBgKFyQEA",
+    title: "360 Tour of the Entire Amalfi Coast! ",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video",
+    camera_type: "360"
+  },
+  {
+    lat: 40.8498537,
+    lng: 14.2659313,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/RRPY-2AXHlI",
+    title: "Naples 360° Virtual Walking Tour Tour - Porta Nolana Fish Market",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video",
+    camera_type: "360"
+  },
+  {
+    lat: 40.8537158,
+    lng: 14.1729671,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/jJk5e2Gsyy4",
+    title: "Naples 360 Historic Walking Tour",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video",
+    camera_type: "360"
+  },
+  {
+    lat: 40.8034003,
+    lng: 14.3465594,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/_Y277FddmD4",
+    title: "Herculaneum, Italy 360 Walking Tour",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video",
+    camera_type: "360"
+  },
+  {
+    lat: 40.7466508,
+    lng: 14.4761726,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/d4flx14q5OE",
+    title: "Pompeii 360 Virtual Walking Tour",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video",
+    camera_type: "360"
+  },
+  {
+    lat: 45.4853479,
+    lng: 12.4150746,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/E6_JLRwoTqw",
+    title: "Burano, Venice Walking Tour [4K|60fps]",
+    nation: "Italy",
+    type: "walking",
+    video_type: "video"
+  },
+
+// 20201222 Brazil 추가
+
+ {
+    lat: -22.9844357,
+    lng: -43.2063812,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/vpgd9UbCzpU",
+    title: "Rio De Janeiro, BRAZIL — Walking Tour IPANEMA, RIO (Narrated)【4K】",
+    nation: "Brazil",
+    type: "walking",
+    video_type: "video"
+  },
+ {
+    lat: -22.9870353,
+    lng: -43.2105018,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/qADo6lZTcDU",
+    title: "Rio De Janeiro, BRAZIL — IPANEMA Beach, Walking Tour in RIO (Narrated) City Walks【4K】",
+    nation: "Brazil",
+    type: "walking",
+    video_type: "video"
+  },
+ {
+    lat: -22.908169,
+    lng: -43.1806617,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/qMp39dBpsv0",
+    title: "RIO DE JANEIRO Downtown, Walking Tour Rio City Center — BRAZIL Walk (Narrated)【4K】",
+    nation: "Brazil",
+    type: "walking",
+    video_type: "video"
+  },
+ {
+    lat: -22.9760378,
+    lng: -43.1921367,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/qSY5_2tn3bc",
+    title: "COPACABANA, Walking Tour Rio de Janeiro, BRAZIL — Rain Walk (Narrated)【4K】",
+    nation: "Brazil",
+    type: "walking",
+    video_type: "video"
+  },
+ {
+    lat: -22.9837389,
+    lng: -43.2300513,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/ElNLiRGIm1o",
+    title: "Rio De Janeiro, BRAZIL — Walking Tour São Cristóvão Fair, RIO (Narrated)【4K】",
+    nation: "Brazil",
+    type: "walking",
+    video_type: "video"
+  },
+ {
+    lat: -22.9851806,
+    lng: -43.200007,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/rZwXrjFFWcw",
+    title: "RIO DE JANEIRO, Brazil — Walking Tour IPANEMA to LEBLON, RIO (Narrated) City Walks【4K】",
+    nation: "Brazil",
+    type: "walking",
+    video_type: "video"
+  },
+ {
+    lat: -22.9867492,
+    lng: -43.2063462,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/y28bAflJQTs",
+    title: "Rio De Janeiro, BRAZIL — IPANEMA Beach, Walking Tour in RIO (Narrated)【4K】",
+    nation: "Brazil",
+    type: "walking",
+    video_type: "video"
+  },
+ {
+    lat: -22.9773922,
+    lng: -43.1913565,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/gOIdeXa_o3M",
+    title: "COPACABANA, Rio de Janeiro, Walking Tour BRAZIL — Rain Walk (Narrated)【4K】",
+    nation: "Brazil",
+    type: "walking",
+    video_type: "video"
+  },
+{
+    lat: -22.9861544,
+    lng: -43.1887321,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/OvKOk3OD-bY",
+    title: "Rio de Janeiro, BRAZIL — Walking Tour COPACABANA, RIO (Narrated)【4K】",
+    nation: "Brazil",
+    type: "walking",
+    video_type: "video"
+  },
+{
+    lat: -22.9874224,
+    lng: -43.1969296,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/JUx7VOP4cjA",
+    title: "IPANEMA to COPACABANA, Walking Tour ARPOADOR, Rio de Janeiro, BRAZIL — (Narrated)【4K】",
+    nation: "Brazil",
+    type: "walking",
+    video_type: "video"
+  },
+{
+    lat: -22.9835892,
+    lng: -43.2092253,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/sZGVaGjhheQ",
+    title: "Rio De Janeiro, BRAZIL -- Ipanema Walking Tour (Narrated)【4K】",
+    nation: "Brazil",
+    type: "walking",
+    video_type: "video"
+  },
+{
+    lat: -22.9806023,
+    lng: -43.2136391,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/UrgQTIxVziI",
+    title: "Rio De Janeiro, BRAZIL — Walking Tour IPANEMA (Narrated)【4K】",
+    nation: "Brazil",
+    type: "walking",
+    video_type: "video"
+  },
+{
+    lat: -22.9830762,
+    lng: -43.1891481,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/KPrG8YQm5u8",
+    title: "Rio De Janeiro, BRAZIL — Copacabana Beach, Walking Tour in RIO (Narrated)【4K】",
+    nation: "Brazil",
+    type: "walking",
+    video_type: "video"
+  },
+
+
+//20201220 Africa Morocco
+
+{
+    lat: 31.6317074,
+    lng: -8.00227,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/hlCNJ5Qt83s",
+    title: "Walking Tour of Real MARRAKECH — Morocco Africa Video Walk【4K】",
+    nation: "Morocco",
+    type: "walking",
+    video_type: "video"
+  },
+{
+    lat: 31.6330126,
+    lng: -7.9853206,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/KZLyc_Bc_N8",
+    title: "Walking Tour of Marrakech Old Medina Souk — Morocco【4K】",
+    nation: "Morocco",
+    type: "walking",
+    video_type: "video"
+  },
+{
+    lat: 31.6275345,
+    lng: -7.9865339,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/tzWlaGgqdFA",
+    title: "Marrakech Walking Tour — Morocco Video Walk【4K】",
+    nation: "Morocco",
+    type: "walking",
+    video_type: "video"
+  },
+{
+    lat: 31.6375345,
+    lng: -7.9965339,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/OsnRSr7LxII",
+    title: "Walking Tour of Modern Marrakech — Morocco Africa Video Walk【4K】",
+    nation: "Morocco",
+    type: "walking",
+    video_type: "video"
+  },
+{
+    lat: 31.6175345,
+    lng: -7.9765339,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/IGMYckugha4",
+    title: "Walking Tour of Magic MARRAKECH — Africa Video Walk, Morocco【4K】",
+    nation: "Morocco",
+    type: "walking",
+    video_type: "video"
+  },
 
 
 
 
 ];
+
+
+/*
+https://www.youtube.com/watch?v=FEfNcfkfobA
+https://www.youtube.com/watch?v=XnotRrW1udI
+https://www.youtube.com/watch?v=bfGaUembwA8
+https://www.youtube.com/watch?v=nsMrJJaU6gk
+https://www.youtube.com/watch?v=fvzYImIFEfs
+https://www.youtube.com/watch?v=qNkC7fpPsS8
+https://www.youtube.com/watch?v=T0_tcc8KIuw
+https://www.youtube.com/watch?v=6Km4mSHsiWw
+https://www.youtube.com/watch?v=sbxILofJToM
+https://www.youtube.com/watch?v=aQM0YwJmF-4
+https://www.youtube.com/watch?v=LZ5xUpWnmJ8
+https://www.youtube.com/watch?v=aQM0YwJmF-4
+https://www.youtube.com/watch?v=zxYribbndTM
+*/
 var checkNation;
 var nationList = [];
 
@@ -1116,6 +1628,11 @@ function initMap() {
         popupBroadcast2.src = localimg;
 
       }
+      if (data.type == 'walking') {
+        var localimg = "./img/walking.png"
+        popupBroadcast2.src = localimg;
+
+      }
 
 
       popupWrapper.appendChild(popupBroadcast2);
@@ -1238,6 +1755,9 @@ function initMap() {
       }
       if (data.type == 'bridge') {
         var localimg = "./img/bridge.png"
+      }
+      if (data.type == 'walking') {
+        var localimg = "./img/walking.png"
       }
 
       this.position = myLatLng;
@@ -1515,6 +2035,11 @@ function initMap() {
                 }
                 if ($("#bridge").hasClass('clicked')) {
                   if (data.type == "bridge") {
+                    return false;
+                  }
+                }
+                if ($("#walking").hasClass('clicked')) {
+                  if (data.type == "walking") {
                     return false;
                   }
                 }
@@ -1854,12 +2379,22 @@ function createList(markerData) {
 
         div.appendChild(img)
 
-        //패널에 live랑 train 이미지 넣기
+        //패널에 live랑 train 이미지 넣기 // 함수 분기되어있어서 두군데 반영해야 함
         var imgDiv = document.createElement("div");
+
+        if (markerData[id].video_type == 'video') {
+          var imgVideo = document.createElement("img");
+          imgVideo.src = "./img/video.png"
+          imgDiv.appendChild(imgVideo);
+        }
+        else{
         var imgLive = document.createElement("img");
         imgLive.src = "./img/live.png"
 
         imgDiv.appendChild(imgLive);
+        }
+
+
         if (markerData[id].type == 'TRANSIT') {
           var imgTransit = document.createElement("img");
           imgTransit.src = "./img/train2.png"
@@ -1897,6 +2432,12 @@ function createList(markerData) {
         if (markerData[id].type == 'bridge') {
           var imgTransit = document.createElement("img");
           imgTransit.src = "./img/bridge.png"
+          imgDiv.appendChild(imgTransit);
+        }
+
+        if (markerData[id].type == 'walking') {
+          var imgTransit = document.createElement("img");
+          imgTransit.src = "./img/walking.png"
           imgDiv.appendChild(imgTransit);
         }
 
@@ -2066,10 +2607,18 @@ function createList(markerData) {
 
         //패널에 live랑 train 이미지 넣기
         var imgDiv = document.createElement("div");
+
+        if (markerData[id].video_type == 'video') {
+          var imgVideo = document.createElement("img");
+          imgVideo.src = "./img/video.png"
+          imgDiv.appendChild(imgVideo);
+        }
+        else{
         var imgLive = document.createElement("img");
         imgLive.src = "./img/live.png"
 
         imgDiv.appendChild(imgLive);
+        }
         if (markerData[id].type == 'TRANSIT') {
           var imgTransit = document.createElement("img");
           imgTransit.src = "./img/train2.png"
@@ -2108,6 +2657,12 @@ function createList(markerData) {
         if (markerData[id].type == 'bridge') {
           var imgTransit = document.createElement("img");
           imgTransit.src = "./img/bridge.png"
+          imgDiv.appendChild(imgTransit);
+        }
+
+        if (markerData[id].type == 'walking') {
+          var imgTransit = document.createElement("img");
+          imgTransit.src = "./img/walking.png"
           imgDiv.appendChild(imgTransit);
         }
 
@@ -2731,6 +3286,7 @@ $(document).ready(function () {
     $('#port').css("display", "block");
     $('#airplane').css("display", "block");
     $('#bridge').css("display", "block");
+    $('#walking').css("display", "block");
     map.setZoom(map.getZoom());
 
   });
@@ -2742,6 +3298,7 @@ $(document).ready(function () {
     $('#port').css("display", "none");
     $('#airplane').css("display", "none");
     $('#bridge').css("display", "none");
+    $('#walking').css("display", "none");
     map.setZoom(map.getZoom());
 
   });
@@ -2775,6 +3332,14 @@ $(document).ready(function () {
     map.setZoom(map.getZoom());
 
   });
+
+  $('#walking').click(function () {
+    $(this).toggleClass("clicked");
+    $('#map').find("img[src*='walking']").toggleClass("none");
+    map.setZoom(map.getZoom());
+
+  });
+
   $('#track').click(function () {
     $(this).toggleClass("clicked");
     $('#map').find("img[src*='track']").toggleClass("none");
