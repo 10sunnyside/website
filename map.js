@@ -1448,7 +1448,7 @@ var markerData = [
     icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
     url: "https://www.youtube.com/embed/LVHOEGyKkrw",
     title: "Kazan, Bauman street",
-    nation: "Russia",
+    nation: "Russia"
   },
   {
     lat:  56.780756, 
@@ -1465,16 +1465,143 @@ var markerData = [
     icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
     url: "https://www.youtube.com/embed/kkI58FsvNbM",
     title: "Ulitsa Severnaya, 84, Solikamsk Permskiy kray",
-    nation: "Russia",
+    nation: "Russia"
+  },
+  {
+    lat: 57.998420, 
+    lng: 56.218587, 
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/soL42BKsaZE",
+    title: "Russia, Perm city, Dzerzhinsky District",
+    nation: "Russia"
+  },
+  {
+    lat: 56.779230, 
+    lng: 105.746776, 
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/rrC9iQjPMNE",
+    title: "Усть-Кут, сквер Кирова",
+    nation: "Russia"
+  },
+  {
+    lat: 46.488089, 
+    lng: 30.741074,  
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/pFBsLTllFJo",
+    title: "Prymorskyi Boulevard, Odesa",
+    nation: "Ukraine"
+  },
+  {
+    lat: 46.487119, 
+    lng: 30.739141, 
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/xWAaC3MuaZQ",
+    title: "Katerynyns'ka Square, Odesa",
+    nation: "Ukraine"
+  },
+  {
+    lat: 46.496522, 
+    lng: 30.760029, 
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/LolxEeyJCKs",
+    title: "Vorontsov Lighthouse, Prymors'ka Street, Odesa",
+    nation: "Ukraine",
+    type: "port"
+  },
+  {
+    lat: 46.486043, 
+    lng: 30.739110, 
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/IuQwcs_td7c",
+    title: "Katerynyns'ka St, 7-3, Odesa",
+    nation: "Ukraine"
+  },
+  {
+    lat: 46.486043, 
+    lng: 30.739110, 
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/IuQwcs_td7c",
+    title: "Katerynyns'ka St, 7-3, Odesa",
+    nation: "Ukraine"
+  },
+  {
+    lat: 56.803184, 
+    lng: 105.798173, 
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/VJ6aMwqIKzQ",
+    title: "Усть-Кут, Пешеходный переход Школа",
+    nation: "Russia"
+  },
+  {
+    lat:  56.792019, 
+    lng: 105.771719, 
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/qpBv5k2pG5Y",
+    title: "Усть-Кут, Центральный перекресток",
+    nation: "Russia"
+  },
+  {
+    lat:  46.439624, 
+    lng: 30.757247, 
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/Q7K23ARsBKo",
+    title: "10-ho Kvitnya Square, Odesa",
+    nation: "Ukraine"
+  },
+  {
+    lat: 59.933620, 
+    lng: 30.292304, 
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/4QZHSUnpuuA",
+    title: "Griboedov Canal St. Petersburg Russia",
+    nation: "Russia"
+  },
+  {
+    lat: 63.118269, 
+    lng: 7.736939,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/JJuaHGhd8g8",
+    title: "Livecam Kristiansund N",
+    nation: "Norway",
+    type: "port"
+  },
+  {
+    lat: 62.085439, 
+    lng: 6.865016,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/ndhYKVzCIs8",
+    title: "Hellesylt sentrum",
+    nation: "Norway",
+    type: "river"
+  },
+  {
+    lat: 59.019015, 
+    lng: 6.041252,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/SyKE9_Mtjv0",
+    title: "Jørpeland",
+    nation: "Norway",
+    type: "port"
+  },
+  {
+    lat: 46.096110, 
+    lng: 7.228631,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/yDKJMdZTEXQ",
+    title: "Place Centrale, 1936 Bagnes",
+    nation: "Swiss"
+  },
+  {
+    lat: 50.909717, 
+    lng: -1.435745,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/PxY0LZlHKKI",
+    title: "Port of Southampton",
+    nation: "England",
+    type: "port"
   },
 
   
- 
-  
-  
-
-
-
 
 
 ];

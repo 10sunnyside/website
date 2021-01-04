@@ -941,7 +941,7 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
     width:90%;
     height:90%;
     display: flex;
-    padding-top: 110px;
+    padding-top: 0px;
 }
 
 
