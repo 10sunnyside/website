@@ -1352,6 +1352,127 @@ var markerData = [
     type: "walking",
     video_type: "video"
   },
+  {
+    lat: 60.164834, 
+    lng: 24.958250,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/CvOB-Is_yYU",
+    title: "Port of Helsinki - South Harbour Live",
+    nation: "Finland",
+    type: "port"
+  },
+  {
+    lat: 55.369054, 
+    lng: 13.144966,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/GIxsG6j0Pjw",
+    title: "Live Camera Port of Trelleborgs Hamn AB",
+    nation: "Sweden",
+    type: "port"
+  },
+  {
+    lat: 42.975256, 
+    lng: -82.423953,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/XA8tt9INXuo",
+    title: "Port Huron Live Cam showing shipping traffic on the St. Clair River",
+    nation: "USA",
+    type: "port"
+  },
+  {
+    lat: 62.736378, 
+    lng: 7.182225,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/jyQgg71xh0A",
+    title: "Molde Live - Triangel Security AS",
+    nation: "Norway",
+    type: "port"
+  },
+  {
+    lat: 42.998299, 
+    lng: -82.427202,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/Dnnf04x6pXY",
+    title: "Port Huron, Michigan USA - Dossin Great Lakes Museum",
+    nation: "USA",
+    type: "port"
+  },
+  {
+    lat: 42.334685,
+    lng: -82.985561,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/vhmOMEDzLek",
+    title: "Detroit River Live Cam from the Dossin Museum, Detroit, Michigan USA",
+    nation: "USA",
+    type: "river"
+  },
+  {
+    lat: 42.720067, 
+    lng: -82.492219,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/ggGtKXaZ7u4",
+    title: "Marine City, Michigan USA",
+    nation: "USA",
+    type: "river"
+  },
+  {
+    lat: 63.110634, 
+    lng: 7.730641,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/g7Hc38fXxYw",
+    title: "Livecam Kristiansund Sentrum",
+    nation: "Norway",
+    type: "river"
+  },
+  {
+    lat: 59.799577, 
+    lng: 30.633145,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/7tij79-vv1c",
+    title: "Neva River - Zhk Nevskiye Panoramy",
+    nation: "Russia",
+    type: "river"
+  },
+  {
+    lat: 56.780631, 
+    lng: 105.745460,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/hO9Nkorupv4",
+    title: "Усть-Кут Live - Пешеход ст.Лена",
+    nation: "Russia",
+    type: "train"
+  },
+  {
+    lat: 55.787889, 
+    lng: 49.120582,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/LVHOEGyKkrw",
+    title: "Kazan, Bauman street",
+    nation: "Russia",
+  },
+  {
+    lat:  56.780756, 
+    lng: 105.745924, 
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/YqUIBO6-S1k",
+    title: "Усть-Кут, Иркутская обл. станция Лена, ЖД Вокзал",
+    nation: "Russia",
+    type: "train"
+  },
+  {
+    lat: 59.701741, 
+    lng: 56.724986, 
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/kkI58FsvNbM",
+    title: "Ulitsa Severnaya, 84, Solikamsk Permskiy kray",
+    nation: "Russia",
+  },
+
+  
+ 
+  
+  
+
 
 
 
