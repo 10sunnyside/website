@@ -670,7 +670,7 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
   border-radius: 10px;
   font-family: sans-serif;
   overflow-y: auto;
-  max-height: 32px;
+  max-height: 36px;
  /* box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.5);*/
 }
 
@@ -775,6 +775,7 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 
   float:right;
   padding-right:5px;
+  max-height: 32px;
 
 }
 }
@@ -1093,6 +1094,13 @@ color:rgb(255, 250, 232);*/
   margin: 17px;
 }
        }
+
+
+
+
+.list_img {
+  max-height : 32px;
+}
 
 
 

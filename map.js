@@ -1600,14 +1600,59 @@ var markerData = [
     nation: "England",
     type: "port"
   },
+  {
+    lat: 35.693380, 
+    lng: 139.699517,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/RQA5RcIZlAM",
+    title: "1-chōme-2-1 Nishishinjuku, Shinjuku City, Tokyo",
+    nation: "Japan",
+  },
 
-  
+  {
+    lat: 35.694969, 
+    lng: 139.704311,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/EHkMjfMw7oU",
+    title: "2-chōme-10 Kabukichō, Shinjuku City, Tokyo",
+    nation: "Japan",
+  },
+  {
+    lat: 68.438494, 
+    lng: 17.427275,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/NqovjLkxkZI",
+    title: "Narvik Kommune, Norway",
+    nation: "Norway",
+  },
+  {
+    lat: 35.659505, 
+    lng: 139.700580,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/lkIJYc4UH60",
+    title: "Shibuya Scramble",
+    nation: "Japan",
+  },
+  {
+    lat: 69.727754, 
+    lng: 30.044117,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/bdEYa2oBtII",
+    title: "Hans Kirkegaards gate, Norway",
+    nation: "Norway",
+  },
+
+
 
 
 ];
 
 
 /*
+https://www.youtube.com/watch?v=lQSYn1utcdA
+https://www.youtube.com/watch?v=q2p3KqjtFa8
+https://www.youtube.com/watch?v=c4kpeZHcke8
+https://www.youtube.com/watch?v=BB4DYUt1Apg
 https://www.youtube.com/watch?v=Y0BRntF3178
 https://www.youtube.com/watch?v=fhGCYJuWv5I
 https://www.youtube.com/watch?v=fpWVAZRb0R0
@@ -1690,7 +1735,19 @@ function onYouTubeIframeAPIReady() {
 }
 
 
+function markerResizer(){
+  google.maps.event.addListener(map, 'zoom_changed', function() {
+    zoomLevel = map.getZoom();
+    if (zoomLevel >= 4) {
+  $(this).find('.popup-bubble').css('max-height', '42px')
+    }
+    else if(zoomLevel >= 6) {
+      $(this).find('.popup-bubble').css('max-height', '32px')
 
+    }
+
+})
+}
 
 
 
@@ -1862,17 +1919,17 @@ function initMap() {
       const popupBroadcast2 = document.createElement("img");
       popupBroadcast2.classList.add("popup-broadcast");
       if (data.type == 'TRANSIT') {
-        var localimg = "./img/train2.png"
+        var localimg = "./img/train3.png"
         popupBroadcast2.src = localimg;
 
       }
       if (data.type == 'track') {
-        var localimg = "./img/track.png"
+        var localimg = "./img/track5.png"
         popupBroadcast2.src = localimg;
 
       }
       if (data.type == 'animal') {
-        var localimg = "./img/lion.png"
+        var localimg = "./img/lion2.png"
         popupBroadcast2.src = localimg;
 
       }
@@ -1882,12 +1939,12 @@ function initMap() {
 
       }
       if (data.type == 'port') {
-        var localimg = "./img/port.png"
+        var localimg = "./img/pin.png"
         popupBroadcast2.src = localimg;
 
       }
       if (data.type == 'airplane') {
-        var localimg = "./img/airplane.png"
+        var localimg = "./img/airplane2.png"
         popupBroadcast2.src = localimg;
 
       }
@@ -1897,7 +1954,7 @@ function initMap() {
 
       }
       if (data.type == 'walking') {
-        var localimg = "./img/walking.png"
+        var localimg = "./img/walking2.png"
         popupBroadcast2.src = localimg;
 
       }
@@ -1998,34 +2055,34 @@ function initMap() {
         var split_url = data.url.split("embed/")
         yt_url=split_url[1];
         var imgsrc = "https://img.youtube.com/vi/" + split_url[1] + "/default.jpg"
-        var localimg = "./img/youtube48.png"
+        var localimg = "./img/youtube3.png"
       }
       else {
         var localimg = "./img/twitch5.png"
       }
       if (data.type == 'TRANSIT') {
-        var localimg = "./img/train2.png"
+        var localimg = "./img/train3.png"
       }
       if (data.type == 'track') {
-        var localimg = "./img/track.png"
+        var localimg = "./img/track5.png"
       }
       if (data.type == 'animal') {
-        var localimg = "./img/lion.png"
+        var localimg = "./img/lion2.png"
       }
       if (data.type == 'beach') {
         var localimg = "./img/beach.png"
       }
       if (data.type == 'port') {
-        var localimg = "./img/port.png"
+        var localimg = "./img/pin.png"
       }
       if (data.type == 'airplane') {
-        var localimg = "./img/airplane.png"
+        var localimg = "./img/airplane2.png"
       }
       if (data.type == 'bridge') {
         var localimg = "./img/bridge.png"
       }
       if (data.type == 'walking') {
-        var localimg = "./img/walking.png"
+        var localimg = "./img/walking2.png"
       }
 
       this.position = myLatLng;
@@ -2086,7 +2143,7 @@ function initMap() {
 
       google.maps.event.addDomListener(this.containerDiv, 'mouseenter', function () {
 
-        $(this).find('img').css('max-height', '38px')
+        $(this).find('img').css('max-height', '42px')
 
 
         // google.maps.event.trigger(me, 'click');
@@ -2094,7 +2151,7 @@ function initMap() {
 
       google.maps.event.addDomListener(this.containerDiv, 'mouseleave', function () {
 
-        $(this).find('img').css('max-height', '32px')
+        $(this).find('img').css('max-height', '36px')
 
 
         // google.maps.event.trigger(me, 'click');
@@ -2221,6 +2278,7 @@ function initMap() {
       markers[panelCount] = screen2(markerData[markerId]);
     }
 
+    //markerResizer();
   });
 
   map.addListener("click", () => {
@@ -2535,6 +2593,20 @@ function initMap() {
 
 
   //moveToLocation(37.551279, 126.988227);
+
+// zoom에 따라서 마크의 크기를 바꾸는 코드
+  google.maps.event.addListener(map, 'zoom_changed', function() {
+    zoomLevel = map.getZoom();
+    if (zoomLevel > 5) {
+  $('.popup-bubble').css('max-height', '32px')
+    }
+    else if(zoomLevel < 5) {
+      $('.popup-bubble').css('max-height', '32px')
+
+    }
+
+})
+
 }
 
 
@@ -2665,47 +2737,63 @@ function createList(markerData) {
 
         if (markerData[id].type == 'TRANSIT') {
           var imgTransit = document.createElement("img");
-          imgTransit.src = "./img/train2.png"
+          imgTransit.src = "./img/train.png"
+          imgTransit.className = "list_img";
+
           imgDiv.appendChild(imgTransit);
         }
         if (markerData[id].type == 'track') {
           var imgTransit = document.createElement("img");
-          imgTransit.src = "./img/track.png"
+          imgTransit.src = "./img/track5.png"
+          imgTransit.className = "list_img";
+
           imgDiv.appendChild(imgTransit);
         }
         if (markerData[id].type == 'animal') {
           var imgTransit = document.createElement("img");
           imgTransit.src = "./img/lion.png"
+          imgTransit.className = "list_img";
+
           imgDiv.appendChild(imgTransit);
 
         }
         if (markerData[id].type == 'beach') {
           var imgTransit = document.createElement("img");
           imgTransit.src = "./img/beach.png"
+          imgTransit.className = "list_img";
+
           imgDiv.appendChild(imgTransit);
 
         }
         if (markerData[id].type == 'port') {
           var imgTransit = document.createElement("img");
-          imgTransit.src = "./img/port.png"
+          imgTransit.src = "./img/pin.png"
+          imgTransit.className = "list_img";
+
           imgDiv.appendChild(imgTransit);
 
         }
         if (markerData[id].type == 'airplane') {
           var imgTransit = document.createElement("img");
-          imgTransit.src = "./img/airplane.png"
+          imgTransit.src = "./img/airplane2.png"
+          imgTransit.className = "list_img";
+
           imgDiv.appendChild(imgTransit);
 
         }
         if (markerData[id].type == 'bridge') {
           var imgTransit = document.createElement("img");
           imgTransit.src = "./img/bridge.png"
+          imgTransit.className = "list_img";
+
           imgDiv.appendChild(imgTransit);
         }
 
         if (markerData[id].type == 'walking') {
           var imgTransit = document.createElement("img");
           imgTransit.src = "./img/walking.png"
+          imgTransit.className = "list_img";
+
           imgDiv.appendChild(imgTransit);
         }
 
@@ -2889,48 +2977,63 @@ function createList(markerData) {
         }
         if (markerData[id].type == 'TRANSIT') {
           var imgTransit = document.createElement("img");
-          imgTransit.src = "./img/train2.png"
+          imgTransit.src = "./img/train.png"
+          imgTransit.className = "list_img";
           imgDiv.appendChild(imgTransit);
 
         }
         if (markerData[id].type == 'track') {
           var imgTransit = document.createElement("img");
-          imgTransit.src = "./img/track.png"
+          imgTransit.src = "./img/track5.png"
+          imgTransit.className = "list_img";
+
           imgDiv.appendChild(imgTransit);
         }
         if (markerData[id].type == 'animal') {
           var imgTransit = document.createElement("img");
           imgTransit.src = "./img/lion.png"
+          imgTransit.className = "list_img";
+
           imgDiv.appendChild(imgTransit);
 
         }
         if (markerData[id].type == 'beach') {
           var imgTransit = document.createElement("img");
           imgTransit.src = "./img/beach.png"
+          imgTransit.className = "list_img";
+
           imgDiv.appendChild(imgTransit);
 
         }
         if (markerData[id].type == 'port') {
           var imgTransit = document.createElement("img");
-          imgTransit.src = "./img/port.png"
+          imgTransit.src = "./img/pin.png"
+          imgTransit.className = "list_img";
+
           imgDiv.appendChild(imgTransit);
 
         }
         if (markerData[id].type == 'airplane') {
           var imgTransit = document.createElement("img");
-          imgTransit.src = "./img/airplane.png"
+          imgTransit.src = "./img/airplane2.png"
+          imgTransit.className = "list_img";
+
           imgDiv.appendChild(imgTransit);
 
         }
         if (markerData[id].type == 'bridge') {
           var imgTransit = document.createElement("img");
           imgTransit.src = "./img/bridge.png"
+          imgTransit.className = "list_img";
+
           imgDiv.appendChild(imgTransit);
         }
 
         if (markerData[id].type == 'walking') {
           var imgTransit = document.createElement("img");
           imgTransit.src = "./img/walking.png"
+          imgTransit.className = "list_img";
+
           imgDiv.appendChild(imgTransit);
         }
 
