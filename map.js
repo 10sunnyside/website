@@ -187,7 +187,7 @@ var markerData = [
     lat: 35.503667,
     lng: 138.776795,
     icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
-    url: "https://www.youtube.com/embed/yOKn755TA3U",
+    url: "https://www.youtube.com/embed/Sv9hcJ3k5h4",
     title: "Mt.Fuji Panoramic Ropeway",
     nation: "Japan"
   },
@@ -1641,14 +1641,352 @@ var markerData = [
     title: "Hans Kirkegaards gate, Norway",
     nation: "Norway",
   },
-
-
-
+  {
+    lat: 51.468813, 
+    lng: 5.635651,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/lQSYn1utcdA",
+    title: "Mierlo-Hout district of Helmond in Southeast Netherlands",
+    nation: "Netherlands",
+    type: "track"
+  },
+  {
+    lat: 63.441302, 
+    lng: 10.406515,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/q2p3KqjtFa8",
+    title: "Trondheim Havn - Hurtigrutekaia",
+    nation: "Norway",
+    type: "port"
+  },
+  {
+    lat: 18.443148, 
+    lng: -64.763804,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/LXWVYoBluT4",
+    title: "Soggy Dollar Bar Live Webcam - Jost Van Dyke, British Virgin Islands",
+    nation: "England",
+    type: "beach"
+  },
+  {
+    lat: 62.096577, 
+    lng: 7.210560,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/Nu15hl3Eu7U",
+    title: "Hotel Union Geiranger AS",
+    nation: "Norway",
+    type: "river"
+  },
+  {
+    lat: -22.307534, 
+    lng: 166.442005,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/Fzo8jORoQMo",
+    title: "Anse Vata Bay, Nouvelle-Calédonie",
+    nation: "France",
+    type: "port"
+  },
+  {
+    lat: -22.309221, 
+    lng: 166.449140,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/lplCO6ZIPtg",
+    title: "Anse Vata, Hôtel Château Royal, Nouvelle-Calédonie",
+    nation: "France",
+    type: "beach"
+  },
+  {
+    lat: 34.420862, 
+    lng: 135.670851,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/UlF3ePfPsFk",
+    title: "Kunimijo Castle Ruins, 金剛山, Takama, Gose, Nara",
+    nation: "Japan",
+  },
+  {
+    lat: 29.280343, 
+    lng: -94.802741,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/GEZy1rcNQWE",
+    title: "Galveston, Texas",
+    nation: "USA",
+    type : "beach"
+  },
+  {
+    lat: 25.777315, 
+    lng: -80.171774,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/d11qKztvBAM",
+    title: "Port Miami, Florida",
+    nation: "USA",
+    type : "port"
+  },
+  {
+    lat: 25.781683, 
+    lng: -80.186785,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/xuoy96nMcUk",
+    title: "Port Miami, Florida",
+    nation: "USA",
+    type : "port"
+  },
+  {
+    lat: 28.367769, 
+    lng: -80.602811,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/nKrm68n7I_8",
+    title: "Westgate Cocoa Beach Pier, Florida",
+    nation: "USA",
+    type : "beach"
+  },
+  {
+    lat: 25.183244, 
+    lng: -80.388630,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/_LAw6D5CWHo",
+    title: "Black Water Sound - Key Largo, Florida",
+    nation: "USA",
+    type : "beach"
+  },
+  {
+    lat: 24.560481, 
+    lng: -81.805626,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/eDeCOWw5XVU",
+    title: "Key West - Front Street, Florida",
+    nation: "USA"
+  },  
+  {
+    lat: 25.0954586,  
+    lng: -80.436687,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/_XSypYRMFNI",
+    title: "Courtyard by Marriott Key Largo, Florida",
+    nation: "USA",
+    type : "port"
+  },
+  {
+    lat: 24.903286, 
+    lng: -80.649892,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/oXo6pgNsQlE",
+    title: "Pines and Palms Resort, Florida",
+    nation: "USA",
+    type : "beach"
+  },
+  {
+    lat: 17.916949, 
+    lng: -87.963686,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/r_XFhbOQ-Jo",
+    title: "Blue Water Grill - Beachfront, Barrier Reef Dr, San Pedro, Belize",
+    nation: "Mexico",
+    type : "beach"
+  },  
+  {
+    lat: 17.921640, 
+    lng: -87.959983,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/BKPNX0UO60Q",
+    title: "Belize Live Beach - The Phoenix Resort, San Pedro, Ambergris Caye",
+    nation: "Mexico",
+    type : "beach"
+  },
+  {
+    lat: 41.454410, 
+    lng: -70.600268,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/Y0BRntF3178",
+    title: "Black Dog Wharf, Martha's Vineyard Ocean",
+    nation: "USA",
+    type : "port"
+  },
+  {
+    lat: 47.595761, 
+    lng: -120.661281,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/TmtVbezZaqg",
+    title: "Front Street Park, Leavenworth Washington",
+    nation: "USA"
+    },
+    {
+      lat: 43.657262, 
+      lng: -70.259100,
+      icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+      url: "https://www.youtube.com/embed/nxVe3-y96RQ",
+      title: "Monument Square",
+      nation: "USA"
+      },
+    {
+      lat: 17.7620109, 
+      lng: -64.7311565,
+      icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+      url: "https://www.youtube.com/embed/9nmchjRTEtY",
+      title: "Palms at Pelican Cove Beach Resort, St. Croix, USVI",
+      nation: "USA",
+      type : "beach"
+    },
+    {
+    lat: 17.700901, 
+    lng: -64.886255,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/jSWbJ_rZDyA",
+    title: "Cottages By The Sea, St. Croix USVI",
+    nation: "USA",
+    type : "beach"
+  },
+  {
+    lat: 18.343456, 
+    lng: -64.772440,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/BNKeO3Pjo5c",
+    title: "The Windmill Bar - Estate Susannaberg, St. John, US Virgin Islands",
+    nation: "USA",
+    type : "beach"
+  }, 
+  {
+    lat: 18.330175, 
+    lng: -64.797231,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/dBYyZzpeUk",
+    title: "Grande Bay Resort, Cruz Bay, St John, US Virgin Islands",
+    nation: "USA",
+    type : "beach"
+  }, 
+  {
+    lat: 18.331320, 
+    lng: -64.795486,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/x10kOY5zVhA",
+    title: "Cruz Bay Ferry Dock, St John, US Virgin Islands",
+    nation: "USA",
+    type : "beach"
+  },   
+  {
+    lat: 18.330429,  
+    lng: -64.796092,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/5FqPmryS7_k",
+    title: "Beach Bar Sunset, west over Cruz Bay from the bar",
+    nation: "USA",
+    type : "beach"
+  },  
+  {
+    lat: 30.229873, 
+    lng: -87.875715,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/l2em7gqBj00",
+    title: "The Beach Club Resort & Spa",
+    nation: "USA",
+    type : "beach"
+  }, 
+  {
+    lat: 43.695396, 
+    lng: 7.271727,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/8AlvjQmJXuY",
+    title: "Rooftops of Vieux Vieux in Nice South of France Côte d'Azur",
+    nation: "France"
+  }, 
+  {
+    lat: 43.691822, 
+    lng: 7.249842,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/4raY1thzIsU",
+    title: "Nice South of France Côte d'Azur Nature Beach",
+    nation: "France",
+    type : "beach"
+  }, 
+  {
+    lat: 40.747942, 
+    lng: -74.004762,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/gmF1bwfH0i4",
+    title: "NYC High Line Park with Manhattan New York Skyline",
+    nation: "USA"
+  },  
+  {
+    lat: 40.758724, 
+    lng: -73.985047,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/eJ7ZkQ5TC08",
+    title: "Times Square in 4K",
+    nation: "USA"
+  },  
+   {
+    lat: 50.759167,
+    lng: -1.290105,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/iLKEXxJKVrM",
+    title: "Red Funnel Ferries, Cowes Isle of Wight England",
+    nation: "England",
+    type : "port"
+  },   
+  {
+    lat: 41.773356, 
+    lng: 140.727057,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/ugIz1wUdXVU",
+    title: "Hakodate - Hokkaido",
+    nation: "Japan",
+    type : "port"
+  }, 
+  {
+    lat: 36.063253, 
+    lng: 136.214484,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/X0j-lU3Nv5M",
+    title: "Katamachi Entrance",
+    nation: "Japan"
+  }, 
+  {
+    lat: 35.657854, 
+    lng: 139.314941,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/H8lApROr-uA",
+    title: "Tokyo Train Live Camera (Hachioji)",
+    nation: "Japan",
+    type : "track"
+  }, 
+  {
+    lat: 35.695360, 
+    lng: 139.780005,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/Q7Uui8vsdhQ",
+    title: "Higashikanda Entrance",
+    nation: "Japan"
+  },  
+  
+  
 
 ];
 
 
 /*
+https://www.youtube.com/watch?v=xsRDTfuksyI
+https://www.youtube.com/watch?v=ZuoL3P2dgmg
+https://www.youtube.com/watch?v=d11qKztvBAM
+https://www.youtube.com/watch?v=Xc6oY3AlWlg
+https://www.youtube.com/watch?v=v5VOTx1YfAg
+https://www.youtube.com/watch?v=xC2NuF-1oc8
+https://www.youtube.com/watch?v=lkIJYc4UH60
+https://www.youtube.com/watch?v=HM20tigbzpM
+https://www.youtube.com/watch?v=bhsZoZ2bApc
+https://www.youtube.com/watch?v=bm_-L6felME
+https://www.youtube.com/watch?v=r_XFhbOQ-Jo
+https://www.youtube.com/watch?v=rAVwlDS3eB4
+https://www.youtube.com/watch?v=hWHGiIJqtrI
+https://www.youtube.com/watch?v=fhGCYJuWv5I
+https://www.youtube.com/watch?v=7CNRg2nHhRs
+https://www.youtube.com/watch?v=bm_-L6felME
+https://www.youtube.com/watch?v=Mwk2NDQiFhc
+https://www.youtube.com/watch?v=EJDrwUY4EzU
+https://www.youtube.com/watch?v=m7c12NY6xok
+https://www.youtube.com/watch?v=GrZ8LL8yAqs
+https://www.youtube.com/watch?v=RKSL9WI2fc4
+https://www.youtube.com/watch?v=Vhh5eOR3FtM
+https://www.youtube.com/watch?v=_9qjJbxFTTc
+https://www.youtube.com/watch?v=9im50H35mco
 https://www.youtube.com/watch?v=lQSYn1utcdA
 https://www.youtube.com/watch?v=q2p3KqjtFa8
 https://www.youtube.com/watch?v=c4kpeZHcke8
