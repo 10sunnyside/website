@@ -27,7 +27,7 @@
   });
 
   // Collapse Navbar
-  var navbarCollapse = function() {
+ /* var navbarCollapse = function() {
     if ($("#mainNav").offset().top > 100) {
       $("#mainNav").addClass("navbar-shrink");
     } else {
@@ -38,8 +38,9 @@
   navbarCollapse();
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
-
+*/
 })(jQuery); // End of use strict
+//바로 시작 되는 함수, header 배경 변경하는 함수인데, 흰색이 좋아서 막겟음,
 
 
 
@@ -128,6 +129,97 @@ function(){
   //$(this).find('.mhover').css('display','none');
   $(this).prev('.mhover').css('display','none');
 });
+
+
+
+$(document).ready(function() {
+    
+  /* Every time the window is scrolled ... */
+  $(window).scroll( function(){
+  
+      /* Check the location of each desired element */
+      $('.hideme').each( function(i){
+          
+          var bottom_of_object = $(this).position().top + $(this).outerHeight();
+          var bottom_of_window = $(window).scrollTop() + $(window).height()-$(window).height()/2;
+          
+          /* If the object is completely visible in the window, fade it it */
+          if( bottom_of_window > bottom_of_object ){
+             /* 
+              $(this).animate({'opacity':'1'},1000, function() {
+                $( this ).animate( {
+                  'top': '200px'
+                }, 1000 );
+              });
+               */   
+              $(this).animate({'opacity':'1'}, 1500);
+          }
+          
+      }); 
+  
+  });
+  
+});
+
+
+$(document).ready(function() {
+    
+  /* Every time the window is scrolled ... */
+  $(window).scroll( function(){
+  
+      /* Check the location of each desired element */
+      $('.hideme2').each( function(i){
+          
+          var bottom_of_object = $(this).position().top + $(this).outerHeight();
+          var bottom_of_window = $(window).scrollTop() + $(window).height()-$(window).height()/2;
+          
+          /* If the object is completely visible in the window, fade it it */
+          if( bottom_of_window > bottom_of_object ){
+             /* 
+              $(this).animate({'opacity':'1'},1000, function() {
+                $( this ).animate( {
+                  'top': '200px'
+                }, 1000 );
+              });
+               */   
+              $(this).animate({'opacity':'1', 'top': '175px'},1500);
+          }
+          
+      }); 
+  
+  });
+  
+});
+
+$(document).ready(function() {
+    
+  /* Every time the window is scrolled ... */
+  $(window).scroll( function(){
+  
+      /* Check the location of each desired element */
+      $('.hideme3').each( function(i){
+          
+          var bottom_of_object = $(this).position().top + $(this).outerHeight();
+          var bottom_of_window = $(window).scrollTop() + $(window).height()-$(window).height()/2;
+          
+          /* If the object is completely visible in the window, fade it it */
+          if( bottom_of_window > bottom_of_object ){
+             /* 
+              $(this).animate({'opacity':'1'},1000, function() {
+                $( this ).animate( {
+                  'top': '200px'
+                }, 1000 );
+              });
+               */   
+              $(this).animate({'opacity':'1', 'padding-right': '0px'},1500);
+          }
+          
+      }); 
+  
+  });
+  
+});
+
 
 
 

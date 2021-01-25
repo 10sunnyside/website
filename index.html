@@ -65,9 +65,10 @@
 
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-shrink stage" id="mainNav">
     <div class="container" style="margin-left: 0;">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Sunny Five</a>
+      <a style="display:none;" class="navbar-brand js-scroll-trigger" href="#page-top">SUNNYFIVE</a>
+      <img style="max-width: 215px; max-height: 68px;" src="./img/sf_logo.png"></img>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -100,167 +101,134 @@
     </div>
   </nav>
 
-  <header class="masthead">
-    <div class="container h-auto" >
-      
-        
-      <div class="col-lg-9 my-auto" style="z-index: 10000">
-        <!--<div class="header-content mx-auto" style="width:80%">-->
-        <div class="header-content mx-auto" >  
-          <a href="#download" style="position:absolute; " class="mb-4 btn btn-outline btn-xl js-scroll-trigger text-blur-out">SunnyFive</a>
-          <h1 id="1p" style="padding:50px 0px;" class="mb-5 text-blur-out">Anytime, Anywhere</h1></div>
-          
-        </div>
-      </div>
-    <div class="video_wrap masthead" style="position:relative;" > <iframe title="vimeo-player" src="https://player.vimeo.com/video/434660121?autoplay=1&loop=1&autopause=0&muted=1" width="640" height="360" frameborder="0" allow="autoplay;" allowfullscreen></iframe> 
+ 
 
-    </div>
+  <section style="background-image: linear-gradient(to bottom right, rgb(255, 217, 91), rgb(255, 255, 233))!important;" class="download bg-primary text-center "  id="download">
 
-
-        <!--<div class="col-lg-5 my-auto">-->
-          <!--<div class="device-container">
-            <div class="device-mockup iphone6_plus portrait white">
-              <div class="device">
-                <div class="screen">-->
-                  <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                  <!--<img src="img/demo-screen-1.jpg" class="img-fluid" alt="">-->
-                <!--</div>-->
-                <!--<div class="button">-->
-                  <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                <!--</div>
-              </div>
-            </div>
-          </div>-->
-        <!--</div>-->
-      <!--</div>-->
-  </header>
-
-  <section class="download bg-primary text-center" id="download">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 mx-auto" >
-          <h2 class="section-heading">Healthy Sunlight, Anytime, Anywhere</h2>
           <p></p>
-          <p class="section">High CRI * Full Spectrum natural sunlight</p>
-          <p class="section">Health effects such as vitaminD synthesis through uvb</p>
-          <p class="section">Natural sunlight that you can control in your hand</p>
-          <p class="section">Happy life with sunlight without time / place restrictions</p>
           <div class="badges">
            <!-- <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
             <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>-->
           </div>
-        </div>
-    </div>
-    </div>
+          <!--<div class="overlay"></div>-->
+          <div class="section-heading blur_test" style="font-size : 50px; position : relative; text-transform: uppercase; color:rgb(0, 0, 0); font-weight: bold;">Healthy Sunlight, Anytime, Anywhere</div>
+                <!-- z-index, html 순서대로 나중에 불린 놈이 가장 위에 나타난다, z-index는 position 세팅 된 놈들끼리만 적용된다-->
   </section>
+  <section class="download bg-primary text-center fadein"  id="download">
 
- 
+    <p></p>
+    <div class="badges">
+     <!-- <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
+      <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>-->
+    </div>
+    <!--<div class="overlay"></div>-->
+    <div class="section-heading blur_test" style="font-size : 50px; position : relative; text-transform: uppercase; color:rgb(0, 0, 0); font-weight: bold;">Healthy Sunlight, Anytime, Anywhere</div>
+          <!-- z-index, html 순서대로 나중에 불린 놈이 가장 위에 나타난다, z-index는 position 세팅 된 놈들끼리만 적용된다-->
+</section>
 
+
+  <section style="display: flex;  justify-content:center; background-image: linear-gradient(to bottom , rgb(255, 255, 233),rgb(255, 240, 193) )!important;" class="video bg-primary text-center"  id="video">
+    <h3 class="hideme2" style=" font-weight: 800;
+    margin-top: -120px;
+    /* margin-left: -10%; */
+    position: absolute; z-index: 1; color: black; font-size: 55px;">SUNNYFIVE's Features </h3>
+ <div class="hideme3" style="display: grid; padding-right:400px;">
+    <div class="scale" style="display: grid; max-width: 480px; margin-top: 10%; margin-left: 0%; z-index: 1;">
+    <video style="float: left; border-radius: 7px; " src="./img/sunny.mp4" type="video/mp4" poster="img/clabfair.png" width="480px" height="270px" autoplay loop muted playsinline ></video>
+    <p style="font-weight: bold; padding-top: 10px;">Sunlight moving according to the Day Cycle
+      
+
+    </p>
+  </div>
+    <div class="scale" style="display: grid; max-width: 480px; margin-top: 10%; margin-left: 0%; z-index: 1;">
+      <video style="border-radius: 7px; " src="./img/temperature.mp4" type="video/mp4" poster="img/clabfair.png" width="480px" height="270px" autoplay loop muted playsinline ></video>
+      <p style="font-weight: bold; padding-top: 10px;">
+        Full spectrum sunlight colors from dawn to sunset
+        </p>
+    </div>
+  </div>
+  <div class="hideme" style="margin-left: 10%; display: grid;">
+    <div class="scale" style="display: grid; max-width: 480px; margin-top: 10%; margin-left: 0%; z-index: 1;">
+      <video style="float: left; border-radius: 7px; " src="./img/sunny2.mp4" type="video/mp4" poster="img/clabfair.png" width="480px" height="270px" autoplay loop muted playsinline ></video>
+      <p style="font-weight: bold; padding-top: 10px;">IoT-based Home Automation with various scenarios
+  
+      </p>
+    </div>
+    <div class="scale" style="display: grid; max-width: 480px; margin-top: 10%; margin-left: 0%; z-index: 1;">
+      <video style="float: left; border-radius: 7px; " src="./img/sunny3.mp4" type="video/mp4" poster="img/clabfair.png" width="480px" height="270px" autoplay loop muted playsinline ></video>
+      <p style="font-weight: bold; padding-top: 10px;">Set up a beautiful sky outside the window
+        
+  
+      </p>
+    </div>
+  </div>
+    <p></p>
+    <div class="badges">
+     <!-- <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
+      <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>-->
+    </div>
+    <!--<div class="overlay"></div>-->
+    
+          <!-- z-index, html 순서대로 나중에 불린 놈이 가장 위에 나타난다, z-index는 position 세팅 된 놈들끼리만 적용된다-->
+</section>
+
+<section class="raemian bg-primary text-center"  id="raemian">
+
+  <p></p>
+  <div class="badges">
+   <!-- <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
+    <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>-->
+  </div>
+  <!--<div class="overlay"></div>-->
+  <div class="section-heading blur_test" style="bottom: 10px; right: 10px; font-size : 50px; position : absolute; text-transform: uppercase; color:rgb(0, 0, 0); font-weight: bold;">Sunnyfive in Raemian Gallery</div>
+        <!-- z-index, html 순서대로 나중에 불린 놈이 가장 위에 나타난다, z-index는 position 세팅 된 놈들끼리만 적용된다-->
+</section>
+
+<!--
+  <div style="height:100%; background-image: linear-gradient(rgb(255, 238, 179), rgb(255, 255, 255));"> 
+    <img class="hideme" style="padding : 10px; width:90%;" src ="./img/vd_title.png">
+    <img class="hideme" style="margin-top: 13%; margin-left: 5%; float: left; vertical-align: center; padding: 10px; width: 50%;" src ="./img/vd_reason.png">
+    <img class="hideme" style="display: inline-block; padding: 10px; width: 40%;" src ="./img/vd_result.png">
+  </div>
+  <img class="hideme" style="width:100%;" src ="./img/sunny_title.png">
+  <img class="hideme" style="width:100%;" src ="./img/sunnyds.png">
+  <div style= "height: 83%; background-image: url('./img/sunnyfive_bg.png'); background-position: center; background-size: cover;">
+    <img class="hideme" style="margin: 2%; width: 40%;" src ="./img/sf_logo.png">
+    <img class="hideme" style="width: 30%; top: 19%; left: -22%; position: relative;" src ="./img/sf_title.png">
+
+  </div>
+  -->
+  <div style="position:absolute;
+  font-size: 46px !important;
+  color: white;
+  z-index: 1;
+  position: absolute;
+  font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
+  color: white;
+  padding: 4%;
+  margin-top:5%">
+    <h2 style="font-size: 50px;
+    max-width: 100%;
+    margin-top: 0;
+    font-weight: bolder;
+    margin-bottom: 35px;">History</h2>
+    <h5 class="divh2">2019.03 Samsung Electronics, C-Lab, Start with SunnySide</h5>
+    <h5 class="divh2">2019.10 Development of Prototype and Exhibition of Samsung C&T Raemian Gallery</h5>
+    <h5 class="divh2">2019.11 Samsung Electronics, C-Lab Fair Exhibition</h5>
+    <h5 class="divh2">2020.01 CES 2020 Eureka Park Exhibition</h5>
+    <h5 class="divh2">2020.06 Samsung Electronics Spin-off Company, Sunny Five Establishment</h5>
+  </div>
   <section class="cta" id="cta">
     <div class="cta-content">
       <div class="container">
         <!--<h2>Stop waiting.<br>Start building.</h2>
         <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>-->
-        <h2>History</h2>
-        <h5>2019.03 Samsung Electronics, C-Lab, Start with SunnySide</h5>
-        <h5>2019.10 Development of Prototype and Exhibition of Samsung C&T Raemian Gallery</h5>
-        <h5>2019.11 Samsung Electronics, C-Lab Fair Exhibition</h5>
-        <h5>2020.01 CES 2020 Eureka Park Exhibition</h5>
-        <h5>2020.06 Samsung Electronics Spin-off Company, Sunny Five Establishment</h5>
+
       </div>
     </div>
     <div class="overlay"></div>
   </section>
 
-  <section class="features" id="features">
-    <div class="container">
-      <div class="section-heading text-center">
-        <h2>Members</h2>
-        <p class="text-muted">SunnyFive co-founders</p>
-        <hr>
-      </div>
-      <div class="row">
-        <!--<div class="col-lg-4 my-auto">
-          <div class="device-container">
-            <div class="device-mockup iphone6_plus portrait white">
-              <div class="device">
-                <div class="screen">
-                  <img src="img/sunnyside3.png" class="img-fluid" alt="">
-                </div>
-                <div class="button">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>-->
-        <div class="col-lg-12 my-auto">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="intro">
-              <h3 class="mhover"> - Samsung Electronics, Mobile Communications Business <br> - Business Executive <br> - Director of H/W <br>  <br> </h3>
-
-              <div class="col-lg-4 bgmj">
-                <div class="feature-item">
-                  <!--<i class="icon-screen-smartphone text-primary"></i>-->
-                  <h3 class="member">Minjun Kim CEO</h3>
-                  <!--<p class="text-muted">Ready to use HTML/CSS device mockups, no Photoshop required!</p>-->
-                </div>
-              </div>
-            </div>
-            <div class="intro">
-              <h3 class="mhover"> - Samsung Electronics, Visual Display Business <br> - Planning Director <br> - Product strategy <br>  <br> </h3>
-
-              <div class="col-lg-4 bgsy">
-                <div class="feature-item">
-                  <!--<i class="icon-camera text-primary"></i>-->
-                  <h3 class="member">Sooyeon Park COO</h3>
-                  <!--<p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>-->
-                </div>
-              </div>
-            </div>
-              
-            <div class="intro">
-              <h3 class="mhover"> - Samsung Electronics, Health & Medical Equipment Business <br> - Sales Director <br> - Mechanical design, Thermal analysis<br> - Received the business manager award <br> </h3>
-
-              <div class="col-lg-4 bgts">
-                <div class="feature-item">
-                  <!--<i class="icon-camera text-primary"></i>-->
-                  <h3 class="member">Taesik Cho CSO</h3>
-                  <!--<p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>-->
-                </div>
-              </div>
-            </div>
-            </div>
-
-            <div class="row">
-              <div class="intro2">
-                <h3 class="mhover"> - Samsung Electronics, Samsung Research <br> - Marketing Director <br> - Service, Application development <br> </h3>
-
-              <div class="col-lg-6 bgjh">
-                <div class="feature-item">
-                  <!--<i class="icon-present text-primary"></i>-->
-                  <h3 class="member">Daniel Han CMO</h3>
-                  <!--<p class="text-muted">As always, this theme is free to download and use for any purpose!</p>-->
-                </div>
-              </div>
-              </div>
-              <div class="intro2">
-                <h3 class="mhover"> - Samsung Electronics, Samsung Research <br> - Technical director <br> - firmware, AI, Autonomous driving <br> </h3>
-
-              <div class="col-lg-6 bgmk">
-                <div class="feature-item">
-                  <!--<i class="icon-lock-open text-primary"></i>-->
-                  <h3 class="member">Myungyum Kim CTO</h3>
-                  <!--<p class="text-muted">Since this theme is MIT licensed, you can use it commercially!</p>-->
-                </div>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section class="contact bg-primary" id="contact">
     <div class="container">
@@ -269,7 +237,7 @@
           <div class="row">
             <div class="col-lg-6">
               <p style="text-align: left;" class="section">SunnyFive CEO, Minjun Kim</p>
-              <p style="text-align: left;" class="section">Email : mj@sunnyfive.net</p>
+              <p style="text-align: left;" class="section">Email : sunnyfive@sunnyfive.net</p>
               <p style="text-align: left;" class="section">Phone : +82-10-4120-0042</p>
               <p style="text-align: left;" class="section">Address : ASIA ICT 205, 4, Jagok-ro 7-gil, Gangnam-gu, Seoul, Republic of Korea</p>
               </div>
@@ -307,7 +275,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; Your Website 2019. All Rights Reserved.</p>
+      <p>&copy; COPYRIGHT (C) Sunnyfive. All Rights Reserved.</p>
       <ul class="list-inline">
         <li class="list-inline-item">
           <a href="#">Privacy</a>

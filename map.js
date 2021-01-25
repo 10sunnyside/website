@@ -353,7 +353,8 @@ var markerData = [
     url: "https://www.youtube.com/embed/1z2coTLH6rQ",
     title: "Nice South of France Côte d'Azur Nature Beach in 4k",
     nation: "France",
-    type: "beach"
+    type: "beach",
+    video_type : "4k"
   },
   {
     lat: 35.7015318,
@@ -417,7 +418,8 @@ var markerData = [
     icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
     url: "https://www.youtube.com/embed/AcBvgPTL9cg",
     title: "[LIVE] Airport live camera View of Fukuoka Airport",
-    nation: "Japan"
+    nation: "Japan",
+    type : "airport"
   },
   {
     lat: 33.5897319,
@@ -1848,7 +1850,7 @@ var markerData = [
     lat: 18.330175, 
     lng: -64.797231,
     icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
-    url: "https://www.youtube.com/embed/dBYyZzpeUk",
+    url: "https://www.youtube.com/embed/-dBYyZzpeUk",
     title: "Grande Bay Resort, Cruz Bay, St John, US Virgin Islands",
     nation: "USA",
     type : "beach"
@@ -1956,20 +1958,618 @@ var markerData = [
     title: "Higashikanda Entrance",
     nation: "Japan"
   },  
-  
-  
+  {
+    lat: 51.041129, 
+    lng: -114.070259,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/xsRDTfuksyI",
+    title: "Central Memorial Park, Calgary, Alberta",
+    nation: "Canada"
+  },  
+  {
+    lat: 29.759825, 
+    lng: -95.363309,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/ZuoL3P2dgmg",
+    title: "downtown skyline of Houston, Texas.",
+    nation: "USA"
+  },  
+  {
+    lat: 29.725715, 
+    lng: -95.428992,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/Xc6oY3AlWlg",
+    title: "ABC13 tower, Texas.",
+    nation: "USA"
+  }, 
+  {
+    lat: -37.821257, 
+    lng: 144.962285,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/EpvIAopAYbw",
+    title: "Platinum Apartments at Freshwater Place, MELBOURNE.",
+    nation: "Australia"
+  },  
+  {
+    lat: 40.706160, 
+    lng: -73.996923,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/KGuCGd726RA",
+    title: "Brooklyn Bridge - St. George Tower, Brooklyn, NY",
+    nation: "USA"
+  }, 
+  {
+    lat: 40.7058923, 
+    lng: -74.004825,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/Vj0XKu6AoOw",
+    title: " Lower Manhattan & New York Harbor - St. George Tower, Brooklyn, NY",
+    nation: "USA"
+  }, 
+  {
+    lat: 40.7058923, 
+    lng: -74.004825,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/Vj0XKu6AoOw",
+    title: "Lower Manhattan & New York Harbor - St. George Tower, Brooklyn, NY",
+    nation: "USA"
+  }, 
+  {
+    lat: 51.089245, 
+    lng: -115.360928,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/hORCPr-jWhk",
+    title: "Main Street in Canmore, Alberta, Canada",
+    nation: "Canada"
+  }, 
+  {
+    lat: 51.089769, 
+    lng: -115.354277,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/J4TaQqXX0aM",
+    title: "Railway Avenue in Canmore, Alberta, Canada",
+    nation: "Canada"
+  }, 
+  {
+    lat: 41.453950, 
+    lng: -70.601191,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/CHd0z44hTQc",
+    title: "Vineyard Haven, MA, 5 Corners intersection",
+    nation: "USA"
+  },
+  {
+    lat: 44.189413, 
+    lng: -72.823487,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/GTpd5LSRO-0",
+    title: "Waitsfield Covered Bridge in Vermont's River Valley",
+    nation: "USA"
+  }, 
+  {
+    lat: 44.114527, 
+    lng: -72.855758,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/WPXfnrYAzjA",
+    title: "Warren Store, Vermont",
+    nation: "USA"
+  }, 
+  {
+    lat: 44.479292,
+    lng: 73.212723,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/DcDZzEa5Yvw",
+    title: "Church Street Market Place, Burlington, VT",
+    nation: "USA"
+  },
+  {
+    lat: 35.699648, 
+    lng: 139.771370,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/_9qjJbxFTTc",
+    title: "CAisan Denki, Chuo-dori, Akihabara, Tokyo",
+    nation: "Japan"
+  },  
+  {
+    lat: 35.698402, 
+    lng: 139.771186,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/ukoYOfgzt9g",
+    title: "ONODEN, Akihabara, Tokyo",
+    nation: "Japan"
+  },   
+  {
+    lat: 35.698402, 
+    lng: 139.771186,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/ukoYOfgzt9g",
+    title: "ONODEN, Akihabara, Tokyo",
+    nation: "Japan"
+  },   
+  {
+    lat: 35.730003, 
+    lng: 139.791775,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/gZtY_TsjmTo",
+    title: "大関横丁 entrance, Tokyo",
+    nation: "Japan"
+  }, 
+  {
+    lat: 33.588988, 
+    lng: 130.418765,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/gGKhqxJu-wM",
+    title: "博多駅前 Hakata Ekimae, Fukuoka",
+    nation: "Japan"
+  }, 
+  {
+    lat: 35.659218, 
+    lng: 139.730425,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/oGShh37QT1M",
+    title: "Keyaki Zaka, Grand Hyatt Tokyo",
+    nation: "Japan"
+  },  
+  {
+    lat: 35.713605, 
+    lng: 139.796644,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/n9Fcb_6wHrY",
+    title: "Daigyoin, AsakusaGrand Tokyo",
+    nation: "Japan"
+  },  
+  {
+    lat: 35.713946, 
+    lng: 139.796632,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/nOk4cd0kkp8",
+    title: "浅草寺, Sensō-ji Tokyo",
+    nation: "Japan"
+  },  
+  {
+    lat: 35.632448, 
+    lng: 139.767333,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/n3B8fp-Henc",
+    title: "Tokyo Odaiba",
+    nation: "Japan",
+    video_type : "4k"
+  }, 
+  {
+    lat: 35.658632, 
+    lng: 139.745465,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/_TpLXlw8jpc",
+    title: "Tokyo Tower",
+    nation: "Japan"
+  }, 
+  {
+    lat: 57.998420,
+    lng: 56.218587,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/fsUk-xR3o0k",
+    title: "Russia, Perm city, Dzerzhinsky District",
+    nation: "Russia"
+  }, 
+  {
+    lat: 53.218771, 
+    lng: 6.567944,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/ZjfFGJlkjmE",
+    title: "Grote Markt - Groningen - Holland",
+    nation: "Netherlands"
+  }, 
+  {
+    lat: 43.974746, 
+    lng: -75.910609, 
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/qP1y7Tdab7Y",
+    title: "Public Square, Watertown NY",
+    nation: "USA"
+  },
+  {
+    lat: 43.952984, 
+    lng: -76.112438,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/oW4OdgjYMwg",
+    title: "Madison Barracks Marina, Sackets Harbor, NY",
+    nation: "USA",
+    type:"port"
+  }, 
+  {
+    lat: 44.483618, 
+    lng: -75.645065,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/RXY-glUdUr8",
+    title: "McLear's Cottage Colony & Campground, Black Lake, NY",
+    nation: "USA"
+  }, 
+  {
+    lat: 43.962033, 
+    lng: -75.889342,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/WWJTnJUEhmA",
+    title: "Honor the Mountain Monument at Thompson Park, Watertown, NY",
+    nation: "USA"
+  },  
+  {
+    lat: 40.029096, 
+    lng: -92.493809,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/AAQUGsUzWbE",
+    title: "La Plata, Missouri, USA",
+    nation: "USA",
+    type : "track"
+  },  
+  {
+    lat: 42.155880, 
+    lng: -72.329259,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/8QjlZonvbsA",
+    title: "Steaming Tender Restaurant at Palmer, Massachusetts, USA",
+    nation: "USA",
+    type : "track"
+  }, 
+  {
+    lat: 43.102578, 
+    lng: -77.439820,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/bOCo4-eeEjs",
+    title: "Fairport, New York, USA",
+    nation: "USA",
+    type : "track"
+  }, 
+  {
+    lat: 42.209795, 
+    lng: -79.838520,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/2Nnm2tz7ynM",
+    title: "Lake Shore Railway Museum, North East, Pennsylvania USA",
+    nation: "USA",
+    type : "track"
+  }, 
+  {
+    lat: 42.280389, 
+    lng: -72.978586,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/2dRxlKdibW4",
+    title: "Chester Railway Station at Chester, Massachusetts",
+    nation: "USA",
+    type : "track"
+  }, 
+  {
+    lat: 43.361661, 
+    lng: -70.476876,
+    icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+    url: "https://www.youtube.com/embed/lKurYZUFPUI",
+    title: "Dock Square, Kennebunkport, Maine USA",
+    nation: "USA"
+    }, 
+    {
+      lat: 45.183858, 
+      lng: -69.229190,
+      icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+      url: "https://www.youtube.com/embed/ZK7mBOndQbU",
+      title: "Dover-Foxcroft, Maine Center Theatre",
+      nation: "USA"
+      }, 
+      {
+        lat: 45.250285, 
+        lng: -69.239536,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/KCbPcSqHYts",
+        title: "Sebec Lake, Maine From Merrill's Marina",
+        nation: "USA",
+        type : "port"
+      }, 
+      {
+        lat: 43.075490, 
+        lng: -70.753481,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/hBsq3GDqcuw",
+        title: "Strawbery Banke, Portsmouth, New Hampshire USA",
+        nation: "USA"
+      },     
+      {
+        lat: 42.367436, 
+        lng: -71.071227,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/SAWwQqVobRc",
+        title: "Boston, Massachusetts, USA - from the Museum of Science",
+        nation: "USA"
+      },  
+      {
+        lat: 42.129672, 
+        lng: -72.745396,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/ziggKk3-ob8",
+        title: "Great River Bridge, Westfield, Massachusetts USA",
+        nation: "USA",
+        type : "track"
+      },  
+      {
+        lat: 42.359311, 
+        lng: -71.027346,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/q-ygAgH6ano",
+        title: " Hyatt Regency Boston Harbor located at Logan Airport, Boston, Massachusetts USA",
+        nation: "USA",
+        type : "port"
+      }, 
+      {
+        lat: 43.165302, 
+        lng: -70.591168,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/ngCqUYZpyKM",
+        title: "Nubble Lighthouse, York, Maine USA",
+        nation: "USA"
+      },  
+      {
+        lat: 43.078750, 
+        lng: -70.757264,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/GTTpmbyyBn4",
+        title: "Piscataqua River - Portsmouth, New Hampshire USA - Moran Tugboats",
+        nation: "USA",
+        type : "port"
+      }, 
+      {
+        lat: 43.868061, 
+        lng: -71.088914,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/cA9-WXWWMfI",
+        title: "King Pine Ski Area at Madison, New Hampshire USA",
+        nation: "USA"
+      },  
+      {
+        lat: 42.119877, 
+        lng: -72.749422,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/ovn3lz0iZYQ",
+        title: "Westfield, Massachusetts Park Square",
+        nation: "USA"
+      },      
+      {
+        lat: 42.159567, 
+        lng: -72.719683,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/K-7DsErt5y8",
+        title: "Barnes Airport, Westfield, Massachusetts USA",
+        nation: "airport"
+      },  
+      {
+        lat: 43.377884, 
+        lng: -71.794130,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/RAn_2DaQ6d4",
+        title: "Bird and Squirrel Cam - LIVE from New Hampshire, USA",
+        nation: "USA",
+        type : "animal"
+      },  
+      {
+        lat: 43.076861, 
+        lng: -70.758050,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/METQvkCkUjg",
+        title: "Popovers at Market Square",
+        nation: "USA"
+      },   
+      {
+        lat: 46.812354, 
+        lng: -71.213861,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/0To_ooBv57Q",
+        title: "Place d'Youville",
+        nation: "Canada"
+      },      
+      {
+        lat: 35.626011, 
+        lng: 139.782339,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/cnHwi7OrwPM",
+        title: "Palette town ODAIBA TOKYO",
+        nation: "japan",
+        type : "port"
+      },   
+      {
+        lat: 37.262221, 
+        lng: -107.906123,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/C0lJ82pW62Y",
+        title: " Durango, Colorado from Smelter Mountain",
+        nation: "USA"
+      },
+      {
+        lat: 30.437097, 
+        lng: -95.598598,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/rEJjNlsYgCk",
+        title: "Lake Conroe, Texas",
+        nation: "USA"
+      },
+      {
+        lat: 24.812260, 
+        lng: 121.245782,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/1OTZ9rjFv78",
+        title: "Shihmen Dam",
+        nation: "Taiwan"
+      },
+      {
+        lat: 23.559634, 
+        lng: 120.597780,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/k4MuIddrSuM",
+        title: "Taiping Suspension Bridge",
+        nation: "Taiwan"
+      },
+      {
+        lat: 23.417590, 
+        lng: 120.650841,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/m8OTE0_to1g",
+        title: "Eryanping Trail, Alishan",
+        nation: "Taiwan"
+      },
+      {
+        lat: 23.431806, 
+        lng: 120.664267,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/Fqcs_eq-dag",
+        title: "Sheng-Li Farm, Alishan",
+        nation: "Taiwan"
+      },
+      {
+        lat: 23.44366, 
+        lng: 120.59088,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/HUbQTGraucg",
+        title: "Chukou Niubu Aberdeen Prairie (Ali Love Silk Road No. 18)",
+        nation: "Taiwan"
+      },
+      {
+        lat: 22.916476, 
+        lng: 121.121587,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/KkDSzZcqQTQ",
+        title: "Taitung Luye Highland",
+        nation: "Taiwan"
+      },
+      {
+        lat: 23.927916, 
+        lng: 121.509869,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/YlxWDwTUtxg",
+        title: "Hualien Liyu Lake",
+        nation: "Taiwan"
+      },
+      {
+        lat: 23.126180, 
+        lng: 121.421698,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/jFJ59-9tTyM",
+        title: "Sanxiantai",
+        nation: "Taiwan",
+        video_type : "4k"
+      },
+      {
+        lat: 22.806789, 
+        lng: 121.196942,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/ce4RYcnuXPA",
+        title: "Jialulan",
+        nation: "Taiwan",
+        video_type : "4k"
+      },
+      {
+        lat: 23.020352,
+        lng: 121.324965,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/Hb7MeMTVGdM",
+        title: "Torik Visitor Center",
+        nation: "Taiwan",
+        video_type : "4k"
+      },
+      {
+        lat: 25.186128, 
+        lng: 121.525346,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/kWQb-lqU8Eo",
+        title: "二子坪停車場, Erziping Second Parking",
+        nation: "Taiwan"
+      },
+      {
+        lat: 25.167226,
+        lng: 121.574209,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/Iot2IHfilic",
+        title: "擎天崗草原, Qingtiangang Grassland",
+        nation: "Taiwan"
+      },
+      {
+        lat: 25.166077, 
+        lng: 121.563973,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/lComd4NWXeE",
+        title: "冷水坑停車場, Lengshuikeng parking lot #1",
+        nation: "Taiwan"
+      },
+      {
+        lat: 25.170832, 
+        lng: 121.553333,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/5y6pzx1Sthk",
+        title: "七星山實景, Shichisei Mountain",
+        nation: "Taiwan"
+      },
+      {
+        lat: 25.161640, 
+        lng: 121.538932,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/h6_k8G5rMnI",
+        title: "陽明書屋遠眺台北盆地, Yangming Shuwu",
+        nation: "Taiwan"
+      },
+      {
+        lat: 25.179316, 
+        lng: 121.544638,
+        icon: "http://labs.google.com/ridefinder/images/mm_20_red.png",
+        url: "https://www.youtube.com/embed/9vm-Wn7xaTs",
+        title: "小油坑停車場, Xiao You Keng Qiao Parking",
+        nation: "Taiwan"
+      },
 
+      
+      
 ];
 
 
 /*
-https://www.youtube.com/watch?v=xsRDTfuksyI
+https://www.youtube.com/watch?v=w45Y-vzvWGI
+https://www.youtube.com/watch?v=3DVTOIKvOTw
+https://www.youtube.com/watch?v=f0cGgOv3l4c
+나중에 밝을 때 찾을 리스트
+
+https://www.youtube.com/watch?v=ZjfFGJlkjmE
+https://www.youtube.com/watch?v=3OjxWIMEV-o
+https://www.youtube.com/watch?v=0wG5bPNO4oY
+https://www.youtube.com/watch?v=Kn4sf1nJXCU
+https://www.youtube.com/watch?v=5Y07kM2RgKM
+https://www.youtube.com/watch?v=Kk_k7wSYiHQ
+https://www.youtube.com/watch?v=d66NPsy_MPg
+https://www.youtube.com/watch?v=St7aTfoIdYQ
+https://www.youtube.com/watch?v=oT4s0SlQ89E
+https://www.youtube.com/watch?v=gM9OjGvig88
+https://www.youtube.com/watch?v=ZP9PFQdFxh0
+https://www.youtube.com/watch?v=aXClDkUunDk
+https://www.youtube.com/watch?v=if91GyWP3zQ
+
+
+
+
+https://www.youtube.com/watch?v=Y8farqtu4xc
+https://www.youtube.com/watch?v=lKurYZUFPUI
+
+https://www.youtube.com/watch?v=ziggKk3-ob8
+
+https://www.youtube.com/watch?v=dOq_gNJ5zrw
+
+
+즐겨찾기 사이트도 추가
+
+https://www.youtube.com/channel/UCbn5eHDjwmPC2K9RG8P0i_A
+https://www.youtube.com/channel/UCMaXtOvzgcCQt7MZwJmr7XA
+https://www.youtube.com/channel/UC-iKt6xd8uD-8_kXRfPY7Jw
+
+https://www.youtube.com/watch?v=WHX2yx1FD-w
+https://www.youtube.com/watch?v=Cod_ggrs69U
+https://www.youtube.com/channel/UCBcVQr-07MH-p9e2kRTdB3A
+https://www.youtube.com/watch?v=iGxFLjqhkSA // 위치 찾기 불가
+
 https://www.youtube.com/watch?v=ZuoL3P2dgmg
 https://www.youtube.com/watch?v=d11qKztvBAM
-https://www.youtube.com/watch?v=Xc6oY3AlWlg
 https://www.youtube.com/watch?v=v5VOTx1YfAg
 https://www.youtube.com/watch?v=xC2NuF-1oc8
-https://www.youtube.com/watch?v=lkIJYc4UH60
 https://www.youtube.com/watch?v=HM20tigbzpM
 https://www.youtube.com/watch?v=bhsZoZ2bApc
 https://www.youtube.com/watch?v=bm_-L6felME
@@ -1977,6 +2577,7 @@ https://www.youtube.com/watch?v=r_XFhbOQ-Jo
 https://www.youtube.com/watch?v=rAVwlDS3eB4
 https://www.youtube.com/watch?v=hWHGiIJqtrI
 https://www.youtube.com/watch?v=fhGCYJuWv5I
+
 https://www.youtube.com/watch?v=7CNRg2nHhRs
 https://www.youtube.com/watch?v=bm_-L6felME
 https://www.youtube.com/watch?v=Mwk2NDQiFhc
@@ -1991,7 +2592,6 @@ https://www.youtube.com/watch?v=lQSYn1utcdA
 https://www.youtube.com/watch?v=q2p3KqjtFa8
 https://www.youtube.com/watch?v=c4kpeZHcke8
 https://www.youtube.com/watch?v=BB4DYUt1Apg
-https://www.youtube.com/watch?v=Y0BRntF3178
 https://www.youtube.com/watch?v=fhGCYJuWv5I
 https://www.youtube.com/watch?v=fpWVAZRb0R0
 https://www.youtube.com/watch?v=tGx-EMuruq8
@@ -2005,11 +2605,9 @@ https://www.youtube.com/watch?v=nTQeFkm-8EI
 https://www.youtube.com/watch?v=4FtrcTF4fN0
 https://www.youtube.com/watch?v=QTV4B59VuNU
 https://www.youtube.com/watch?v=TLASOp8vgoc
-https://www.youtube.com/watch?v=rEJjNlsYgCk
-https://www.youtube.com/watch?v=GEZy1rcNQWE
+
 https://www.youtube.com/watch?v=my4RpvVntAY
 https://www.youtube.com/watch?v=vhmOMEDzLek
-https://www.youtube.com/watch?v=Y0BRntF3178
 https://www.youtube.com/watch?v=ADFndsSb3Sc
 https://www.youtube.com/watch?v=FEfNcfkfobA
 https://www.youtube.com/watch?v=XnotRrW1udI
