@@ -636,6 +636,16 @@ top:100px;
 	        animation: text-blur-out 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) 3s both;
 }
 
+.blur_test_font {
+text-align: center;
+width: 100%; 
+font-size : 50px;
+position : absolute;
+text-transform: uppercase;
+color:rgb(0, 0, 0);
+font-weight: bold;
+}
+
 .blur_test {
 	color: transparent;
 	animation: blur 20s ease-out infinite; /* infinite 붙이면 반복*/
@@ -690,6 +700,32 @@ top:100px;
 	100%	{text-shadow:  0 0 100px #fff; opacity:0; }
 }
 
+.blur_test3 {
+	color: transparent;
+	animation: blur 10s ease-out infinite; /* infinite 붙이면 반복*/
+	-webkit-animation: blur 10s ease-out infinite ;
+}
+@keyframes blur {
+	0%		{text-shadow:  0 0 100px #f5deb3; opacity:0;}
+	5%		{text-shadow:  0 0 90px #f5deb3;}
+	15%		{opacity: 1;}
+	20%		{text-shadow:  0 0 0px #f5deb3;}
+	80%		{text-shadow:  0 0 0px #f5deb3;}
+	85%		{opacity: 1;}
+	95%		{text-shadow:  0 0 90px #f5deb3;}
+	100%	{text-shadow:  0 0 100px #f5deb3; opacity:0; }
+}
+
+@-webkit-keyframes blur {
+	0%		{text-shadow:  0 0 100px #f5deb3; opacity:0; }
+	5%		{text-shadow:  0 0 90px #f5deb3;}
+	15%		{opacity: 1;}
+	20%		{text-shadow:  0 0 0px #f5deb3;}
+	80%		{text-shadow:  0 0 0px #f5deb3;}
+	85%		{opacity: 1;}
+	95%		{text-shadow:  0 0 90px #f5deb3;}
+	100%	{text-shadow:  0 0 100px #f5deb3; opacity:0; }
+}
 
 .fadein {
   /*position: absolute!important;*/
@@ -979,7 +1015,10 @@ margin-left: 2vh;
   margin : -3px;
 }
 
-
+.text_align {
+  align-items: center;
+  display: flex;
+}
 
 
 
@@ -1173,5 +1212,11 @@ background-repeat: no-repeat;
   }
 }
 
+
+
+
+
+
+/*history*/
 
 
