@@ -211,7 +211,7 @@ $(document).ready(function() {
                 }, 1000 );
               });
                */   
-              $(this).animate({'opacity':'1', 'padding-right': '0px'},1500);
+              $(this).animate({'opacity':'1', 'margin-top': '0px'},1500);
           }
           
       }); 
