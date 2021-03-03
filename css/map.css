@@ -981,7 +981,7 @@ float: left;
          padding: 10px;
          position : relative;
          float: left; 
-        
+         display: none;
        }
        #yt {
 height: 40%;  /* The height is 400 pixels */
@@ -1025,7 +1025,6 @@ display : none;
          padding: 10px;
          position : relative;
          float: left; 
-         display: none;
          /*min-height: calc(100vh - 80px);*/
          
        }
