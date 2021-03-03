@@ -4107,6 +4107,7 @@ function insertYoutube(markerData) {
         height: '272',
         width: '480',
         videoId: split_url[1],
+        playersVar : { autoplay:1},
         events: {
           'onReady': onPlayerReady,
           'onStateChange': onPlayerStateChange
