@@ -4656,6 +4656,9 @@ $(document).ready(function () {
     map.setZoom(map.getZoom());
 
   });
+
+  $(window).resize(function() { if($(window).width() >1128) { /* do something */ 
+
   $('#add').click(function () {
     $(this).css("display", "none");
     $('#minus').css("display", "block");
@@ -4680,6 +4683,58 @@ $(document).ready(function () {
     map.setZoom(map.getZoom());
 
   });
+
+} });
+
+$(window).resize(function() { if($(window).width() <= 1128) { /* do something */ 
+
+  $('#twitch').css("display", "none");
+  $('#youtube').css("display", "none");
+  $('#track').css("display", "none");
+  $('#train').css("display", "none");
+
+
+
+
+  $('#add').click(function () {
+    $(this).css("display", "none");
+    $('#minus').css("display", "block");
+    $('#youtube').css("display", "block");
+    $('#track').css("display", "block");
+    $('#train').css("display", "block");
+    $('#animal').css("display", "block");
+    $('#beach').css("display", "block");
+    $('#port').css("display", "block");
+    $('#airplane').css("display", "block");
+    $('#bridge').css("display", "block");
+    $('#walking').css("display", "block");
+    map.setZoom(map.getZoom());
+
+  });
+  $('#minus').click(function () {
+    $(this).css("display", "none");
+    $('#add').css("display", "block");
+    $('#twitch').css("display", "none");
+    $('#youtube').css("display", "none");
+    $('#track').css("display", "none");
+    $('#train').css("display", "none");
+    $('#animal').css("display", "none");
+    $('#beach').css("display", "none");
+    $('#port').css("display", "none");
+    $('#airplane').css("display", "none");
+    $('#bridge').css("display", "none");
+    $('#walking').css("display", "none");
+    map.setZoom(map.getZoom());
+
+  });
+
+
+
+} });
+
+
+
+
   $('#beach').click(function () {
     $(this).toggleClass("clicked");
     $('#map').find("img[src*='beach']").toggleClass("none");
