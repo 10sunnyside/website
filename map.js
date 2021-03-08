@@ -2626,11 +2626,11 @@ https://www.youtube.com/watch?v=zxYribbndTM
 var checkNation;
 var nationList = [];
 
+$(window).resize(function() { if($(window).width() >1128) { /* 창 길이가 작을때,(모바일일때) 영상을 많이 띄우는 버든을 없애기 위해 list를 만들지 않음 */ 
 $(document).ready(function () {
   createList(markerData);
-
-  
 });
+} });
 
 $(document).ready(function(){ // 태그 등의 셋팅이 완료되었을 시점에 이벤트 발생 
  
@@ -2895,6 +2895,10 @@ function initMap() {
 
       }
 
+      //insertYoutube_1(data);
+
+      //$(video).find("iframe")[0].src = data.url;
+      //$(video).css("display", "block");
 
       popupWrapper.appendChild(popupBroadcast2);
 
@@ -3070,7 +3074,10 @@ function initMap() {
         popupList[this.id].setMap(map);
         activePopup = popupList[this.id];
 
+        
 
+
+        $(video).find("iframe")[0].src = "https://www.youtube.com/embed/"+idList[this.id];
 
 
 
@@ -4156,6 +4163,69 @@ function insertYoutube(markerData) {
 
 }
 
+
+
+
+function insertYoutube_1(data) {
+
+
+
+    if (data.url.indexOf("youtube") != -1) {
+      var split_url = data.url.split("embed/")
+
+
+      var ytPlayer = new YT.Player("video", {
+        height: '272',
+        width: '480',
+        videoId: split_url[1],
+        playersVar : { autoplay:1},
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+
+      // console.log(ytPlayer);
+
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        //event.target.playVideo();
+       ////// console.log(event.target);
+        // console.log(event);
+        ytPlayers[ytCount] = event.target;
+        ytCount++;
+
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        //player.stopVideo();
+      }
+
+
+      // eval("ytPlayer_" + split_url[1] + "= ytPlayer" );
+
+
+
+    }
+    else {
+
+    }
+
+
+  
+
+}
 
 
 
