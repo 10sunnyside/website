@@ -2626,6 +2626,13 @@ https://www.youtube.com/watch?v=zxYribbndTM
 var checkNation;
 var nationList = [];
 
+$(document).ready(function () {
+  if($(window).width() >1128) {
+  createList(markerData);
+  }
+});
+
+
 $(window).resize(function() { if($(window).width() >1128) { /* 창 길이가 작을때,(모바일일때) 영상을 많이 띄우는 버든을 없애기 위해 list를 만들지 않음 */ 
 $(document).ready(function () {
   createList(markerData);
@@ -4657,7 +4664,50 @@ $(document).ready(function () {
 
   });
 
+
+  $(document).ready(function () {
+  
+    if($(window).width() > 1128) {
+  
+      $('#add').click(function () {
+        $(this).css("display", "none");
+        $('#minus').css("display", "block");
+        $('#animal').css("display", "block");
+        $('#beach').css("display", "block");
+        $('#port').css("display", "block");
+        $('#airplane').css("display", "block");
+        $('#bridge').css("display", "block");
+        $('#walking').css("display", "block");
+        map.setZoom(map.getZoom());
+    
+      });
+      $('#minus').click(function () {
+        $(this).css("display", "none");
+        $('#add').css("display", "block");
+        $('#animal').css("display", "none");
+        $('#beach').css("display", "none");
+        $('#port').css("display", "none");
+        $('#airplane').css("display", "none");
+        $('#bridge').css("display", "none");
+        $('#walking').css("display", "none");
+        map.setZoom(map.getZoom());
+    
+      });
+
+    }
+  });
+
+
+
+
+
   $(window).resize(function() { if($(window).width() >1128) { /* do something */ 
+
+    $('#twitch').css("display", "block");
+    $('#youtube').css("display", "block");
+    $('#track').css("display", "block");
+    $('#train').css("display", "block");
+
 
   $('#add').click(function () {
     $(this).css("display", "none");
@@ -4685,16 +4735,51 @@ $(document).ready(function () {
   });
 
 } });
+$(document).ready(function () {
+  
+  if($(window).width() <= 1128) {
+
+    $('#twitch').css("display", "none");
+    $('#youtube').css("display", "none");
+    $('#track').css("display", "none");
+    $('#train').css("display", "none");
+
+    $('#add').click(function () {
+      $(this).css("display", "none");
+      $('#minus').css("display", "block");
+      $('#youtube').css("display", "block");
+      $('#track').css("display", "block");
+      $('#train').css("display", "block");
+      $('#animal').css("display", "block");
+      $('#beach').css("display", "block");
+      $('#port').css("display", "block");
+      $('#airplane').css("display", "block");
+      $('#bridge').css("display", "block");
+      $('#walking').css("display", "block");
+      map.setZoom(map.getZoom());
+  
+    });
+    $('#minus').click(function () {
+      $(this).css("display", "none");
+      $('#add').css("display", "block");
+      $('#twitch').css("display", "none");
+      $('#youtube').css("display", "none");
+      $('#track').css("display", "none");
+      $('#train').css("display", "none");
+      $('#animal').css("display", "none");
+      $('#beach').css("display", "none");
+      $('#port').css("display", "none");
+      $('#airplane').css("display", "none");
+      $('#bridge').css("display", "none");
+      $('#walking').css("display", "none");
+      map.setZoom(map.getZoom());
+    });
+
+
+  }
+});
 
 $(window).resize(function() { if($(window).width() <= 1128) { /* do something */ 
-
-  $('#twitch').css("display", "none");
-  $('#youtube').css("display", "none");
-  $('#track').css("display", "none");
-  $('#train').css("display", "none");
-
-
-
 
   $('#add').click(function () {
     $(this).css("display", "none");

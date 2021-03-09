@@ -989,7 +989,7 @@ height: 100%;  /* The height is 400 pixels */
 
 width: 100%; /*패널리스트 빼면서 빈자리가 생기고 그걸 메꾸기 위해서 */
 margin: 0px;
-padding: 10px;
+padding: 0px;
 position : relative;
 float: left; 
 display : block;
