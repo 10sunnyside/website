@@ -866,6 +866,8 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 }
 
 .sHeader {
+  justify-content: space-between;
+  display: flex;
   box-shadow: 0 3px 5px grey;
   height: 85px;
   /*background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
