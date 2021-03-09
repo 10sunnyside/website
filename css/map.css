@@ -52,7 +52,7 @@
 html,
 body {
   width: 100%;
-  height: 100%;
+  height: 99%;
   margin: 0;
 }
 
@@ -973,7 +973,7 @@ float: left;
 @media (max-width: 1128px) {
   #wrap {
     width:100%;
-    height:90%;
+    height:93%;
     display: flex;
     /*flex-direction: column-reverse;*//*패널리스트 빼면서 빈자리가 생기고 그걸 메꾸기 위해서 */ 
 }
