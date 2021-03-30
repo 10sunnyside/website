@@ -4771,12 +4771,13 @@ function insertYoutube_1(data) {
 
 
 
-function insertYoutube3(url) {
+function insertYoutube3(markerData) {
+  for (id in markerData) {
 
 
 
-    if (url.indexOf("youtube") != -1) {
-      var split_url = url.split("embed/")
+    if (markerData[id].url.indexOf("youtube") != -1) {
+      var split_url = markerData[id].url.split("embed/")
 
 
       var ytPlayer = new YT.Player("yt_panel_" + split_url[1], {
@@ -4820,11 +4821,15 @@ function insertYoutube3(url) {
 
       // eval("ytPlayer_" + split_url[1] + "= ytPlayer" );
 
+
+
     }
     else {
 
     }
- 
+
+
+  }
 
 }
 
@@ -5047,7 +5052,7 @@ $(document).ready(function () {
     $(video).find("iframe")[0].src = url;
     $(video).css("display", "block");
 
-/*
+
     $( '#iframeyt' ).remove();
 
     var iframe = document.createElement( "iframe" );
@@ -5055,18 +5060,13 @@ $(document).ready(function () {
     iframe.setAttribute("id","iframeyt")
     iframe.setAttribute( "frameborder", "0" );
     iframe.setAttribute( "allowfullscreen", "" );
-    iframe.setAttribute( "src", url +"?rel=0&showinfo=0&autoplay=1" );
+    iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0&autoplay=1" );
 
-    //this.innerHTML = "";
+    this.innerHTML = "";
     this.appendChild( iframe );
 
-*/
-insertYoutube3(url);
-// 방법이 2개임, insertyoutube3 함수로 youtube player api 사용해서 하면 만들어놓은 ytpanel_id div 가 iframe으로 바뀌면서 하나씩 클릭할때마다 만들어지게 되고
-// 컨트롤도 아래 함수들에 의해 stop video 같은게 먹힘, 단점은 계속해서 생겨만 난다는 점임, 장점은 지금 틀 그대로 사용가능
-// 다른 방법으로 는 위에 주석처리해놓은 appendchild 로 새로 넣는 방식인데, 이건 클릭할때마다 생성해주고 나머지는 클릭할때 지우면서 시작하기때문에 남아서 누적되는 iframe이 없음
-// 단점으로는, 기존 틀이 남아 있다는 것인데, 1. jquery 로 ytpanel_id 찾아서 그 밑에서 append 해도 되고, 기존 틀은 지우고 위의 코드에 기존 틀에서 쓰던 class 만 set attribute
-// 해줘도 될 것 같음. 현재는 전자를 사용중.
+
+
 
     //$("iframe[id*='yt_panel']").each(function() { $(this)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');} );
     $("div[id='video_panel']").hide();
