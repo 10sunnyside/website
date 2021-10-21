@@ -237,3 +237,9 @@ setInterval(function(){
 
 
 
+function popup(){
+  var url = "bond.html";
+  var name = "popup test";
+  var option = "width = 640, height = 480, top = 10, left = 200, location = no"
+  window.open(url, name, option);
+}
